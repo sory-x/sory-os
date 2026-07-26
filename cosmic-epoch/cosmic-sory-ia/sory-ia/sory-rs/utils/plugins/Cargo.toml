@@ -1,0 +1,25 @@
+
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-utils-plugins"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "sory_utils_plugins"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-exec-server = { workspace = true }
+sory-login = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt"] }

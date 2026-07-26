@@ -1,0 +1,17 @@
+[package]
+name = "sory-utils-oss"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-core = { workspace = true }
+sory-lmstudio = { workspace = true }
+sory-model-provider-info = { workspace = true }
+sory-ollama = { workspace = true }
+
+[lib]
+doctest = false

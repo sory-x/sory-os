@@ -1,0 +1,32 @@
+[package]
+name = "sory-chatgpt"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+sory-app-server-protocol = { workspace = true }
+sory-connectors = { workspace = true }
+sory-core = { workspace = true }
+sory-core-plugins = { workspace = true }
+sory-git-utils = { workspace = true }
+sory-login = { workspace = true }
+sory-model-provider = { workspace = true }
+sory-plugin = { workspace = true }
+sory-utils-cli = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+tokio = { workspace = true, features = ["full"] }
+
+[dev-dependencies]
+sory-utils-cargo-bin = { workspace = true }
+pretty_assertions = { workspace = true }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+
+[lib]
+doctest = false

@@ -1,0 +1,18 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-extension-api"
+version.workspace = true
+
+[lib]
+name = "sory_extension_api"
+path = "src/lib.rs"
+test = false
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-protocol = { workspace = true }
+sory-tools = { workspace = true }

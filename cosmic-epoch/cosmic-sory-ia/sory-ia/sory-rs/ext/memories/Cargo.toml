@@ -1,0 +1,33 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-memories-extension"
+version.workspace = true
+
+[lib]
+name = "sory_memories_extension"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+async-trait = { workspace = true }
+sory-core = { workspace = true }
+sory-extension-api = { workspace = true }
+sory-features = { workspace = true }
+sory-memories-read = { workspace = true }
+sory-tools = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-output-truncation = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["fs"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros"] }

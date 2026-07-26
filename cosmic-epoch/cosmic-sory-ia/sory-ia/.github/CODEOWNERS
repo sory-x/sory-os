@@ -1,0 +1,6 @@
+# Core crate ownership.
+/sory-rs/core/ @openai/sory-core-agent-team
+/sory-rs/ext/extension-api/ @openai/sory-core-agent-team
+
+# Keep ownership changes reviewed by the same team.
+/.github/CODEOWNERS @openai/sory-core-agent-team

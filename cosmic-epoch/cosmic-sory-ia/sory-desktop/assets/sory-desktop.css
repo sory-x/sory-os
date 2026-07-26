@@ -1,0 +1,45 @@
+/*
+ * Sory IA Desktop visual contract.
+ *
+ * The native Rust UI maps these classes to libcosmic container styles in code.
+ * This file keeps the SoryOS CSS vocabulary close to the desktop app so the
+ * same visual language can be ported to GTK/shell surfaces if needed.
+ */
+
+.sory-window {
+  background: #07090d;
+  color: #f3f4f6;
+}
+
+.sory-left-sidebar {
+  background: linear-gradient(180deg, #160804 0%, #0b0706 100%);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sory-chat-surface {
+  background: radial-gradient(circle at 50% 0%, rgba(178, 69, 23, 0.16), transparent 45%),
+    #120603;
+}
+
+.sory-right-sidebar {
+  background: #15110f;
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sory-agent-card {
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.sory-tool-card {
+  background: rgba(178, 69, 23, 0.12);
+  border: 1px solid rgba(178, 69, 23, 0.36);
+  border-radius: 6px;
+}
+
+.sory-composer {
+  background: rgba(8, 8, 10, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 8px;
+}

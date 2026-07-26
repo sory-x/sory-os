@@ -1,0 +1,11 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+SCHEMA_FIXTURES = glob(["schema/generated/*.json"], allow_empty = False)
+
+sory_rust_crate(
+    name = "hooks",
+    crate_name = "sory_hooks",
+    compile_data = SCHEMA_FIXTURES,
+    integration_compile_data_extra = SCHEMA_FIXTURES,
+    test_data_extra = SCHEMA_FIXTURES,
+)

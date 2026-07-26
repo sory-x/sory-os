@@ -1,0 +1,12 @@
+target/
+*.swp
+*.swo
+*~
+.DS_Store
+*.log
+*.o
+*.pyc
+__pycache__/
+.env
+.private/
+etudis/

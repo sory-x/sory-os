@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+export DESTDIR = debian/cosmic-sory-ia
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	cargo build --release --workspace
+
+override_dh_auto_install:
+	mkdir -p $(DESTDIR)/usr/bin
+	cp target/release/sory $(DESTDIR)/usr/bin/sory
+	cp target/release/sory-desktop $(DESTDIR)/usr/bin/sory-desktop
+	cp target/release/sory-tui $(DESTDIR)/usr/bin/sory-tui
+	cp target/release/sory-app-server $(DESTDIR)/usr/bin/sory-app-server
+	cp target/release/sory-mcp-server $(DESTDIR)/usr/bin/sory-mcp-server
+	cp target/release/sory-exec $(DESTDIR)/usr/bin/sory-exec
+	cp target/release/sory-execpolicy $(DESTDIR)/usr/bin/sory-execpolicy
+	cp target/release/sory-file-search $(DESTDIR)/usr/bin/sory-file-search
+	cp target/release/sory-linux-sandbox $(DESTDIR)/usr/bin/sory-linux-sandbox
+	cp target/release/sory-responses-api-proxy $(DESTDIR)/usr/bin/sory-responses-api-proxy
+	cp target/release/sory-stdio-to-uds $(DESTDIR)/usr/bin/sory-stdio-to-uds
+	cp target/release/sory-execve-wrapper $(DESTDIR)/usr/bin/sory-execve-wrapper

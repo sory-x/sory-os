@@ -1,0 +1,18 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-utils-output-truncation"
+version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-protocol = { workspace = true }
+sory-utils-string = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+
+[lib]
+doctest = false

@@ -1,0 +1,53 @@
+[package]
+name = "sory-mcp-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "sory-mcp-server"
+path = "src/main.rs"
+
+[lib]
+name = "sory_mcp_server"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+sory-arg0 = { workspace = true }
+sory-config = { workspace = true }
+sory-core = { workspace = true }
+sory-exec-server = { workspace = true }
+sory-extension-api = { workspace = true }
+sory-login = { workspace = true }
+sory-protocol = { workspace = true }
+sory-utils-cli = { workspace = true }
+sory-utils-json-to-toml = { workspace = true }
+rmcp = { workspace = true }
+schemars = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+shlex = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tracing = { workspace = true, features = ["log"] }
+tracing-subscriber = { workspace = true, features = ["env-filter", "fmt"] }
+
+[dev-dependencies]
+sory-utils-absolute-path = { workspace = true }
+sory-shell-command = { workspace = true }
+core_test_support = { workspace = true }
+mcp_test_support = { workspace = true }
+os_info = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+wiremock = { workspace = true }

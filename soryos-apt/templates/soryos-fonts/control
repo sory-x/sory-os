@@ -1,0 +1,11 @@
+Package: soryos-fonts
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: fonts-open-sans, fonts-noto-core, fonts-noto-color-emoji
+Description: SoryOS font selection package
+ This package defines the SoryOS desktop font boundary. It currently depends on
+ stable Ubuntu/Debian font packages while SoryOS-specific typography is
+ designed and packaged.
+Section: fonts
+Priority: optional

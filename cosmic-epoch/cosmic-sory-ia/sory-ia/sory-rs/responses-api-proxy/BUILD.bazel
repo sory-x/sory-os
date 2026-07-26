@@ -1,0 +1,6 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+sory_rust_crate(
+    name = "responses-api-proxy",
+    crate_name = "sory_responses_api_proxy",
+)

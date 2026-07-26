@@ -1,0 +1,361 @@
+Package: cosmic-sory-ia
+Version: 0.0.0
+Architecture: amd64
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: soryos-archive-keyring, libcap2, libfontconfig1, libfreetype6, libxkbcommon0
+Filename: pool/stable/cosmic-sory-ia_0.0.0_amd64.deb
+Size: 1022
+MD5sum: 7e974c983ccc60566325fab5035186db
+SHA1: 7647f22520a9100f060d530fafb426c6f5d92049
+SHA256: ba03c139b543daecaecbd3d55e4ddc2604eafe701c91d667144fc44a62054359
+Section: admin
+Priority: optional
+Description: SoryOS AI engine — CLI, desktop GUI, TUI, and servers
+ SoryOS AI is a unified workspace built on a fork of OpenAI Codex
+ with COSMIC desktop integration.
+ .
+ This package contains:
+  - sory       : main AI CLI
+  - sory-desktop : COSMIC desktop GUI
+  - sory-tui   : terminal UI (ratatui)
+  - sory-app-server : app server daemon
+  - sory-mcp-server  : MCP protocol server
+  - sory-exec, sory-execpolicy : sandboxed execution
+  - sory-file-search, sory-linux-sandbox
+
+Package: gnome-shell-extension-soryos-power
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: soryos-power
+Filename: pool/stable/gnome-shell-extension-soryos-power_0.1.0_all.deb
+Size: 786
+MD5sum: 7653b1d2cb7e6e32cfa4ff36ad182498
+SHA1: e498914e263be4a75f002832f77d2bf57b4cce01
+SHA256: cf4613f3634e46596c6ee95c394d5c22566cee9ed96a363d7deb5fd765c9c3e7
+Section: gnome
+Priority: optional
+Description: SoryOS GNOME power extension integration package
+ This package reserves the SoryOS GNOME power extension integration boundary.
+
+Package: libcosmic
+Version: 1.0.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: soryos-archive-keyring, pkgconf, cmake, libexpat1-dev, libfontconfig-dev, libfreetype-dev, libxkbcommon-dev, rust-all
+Filename: pool/stable/libcosmic_1.0.0_all.deb
+Size: 926
+MD5sum: 0e36d1c3da75ec74f8f4c6fdf4e706a9
+SHA1: 8c6d7b79e0de764f85253a36adf918131f9b1bac
+SHA256: 6bc503c4176e60eb3c5d5330e9488dde0d0696f187bf817261fca9ccb9558a1e
+Section: libdevel
+Priority: optional
+Description: COSMIC GUI toolkit (Rust) — development headers
+ libcosmic is the Rust GUI toolkit for the COSMIC desktop environment,
+ built on a vendored fork of iced.
+ .
+ This development package provides the build environment for creating
+ COSMIC desktop applications in Rust.
+
+Package: soryos-acpi-dkms
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-acpi-dkms_0.1.0_all.deb
+Size: 788
+MD5sum: c38883bc5011a0398410c8691aff8e57
+SHA1: f81adc44e4a97da8d98ed740108bb77774a4d92a
+SHA256: 844f528c4cc1fe86840de18a82237e6d75ce06e26930d4ea8b6f263585df5023
+Section: kernel
+Priority: optional
+Description: SoryOS ACPI DKMS integration package
+ This package reserves the SoryOS ACPI DKMS integration boundary. It does not
+ replace Ubuntu or Debian kernel packages.
+
+Package: soryos-appstream-data
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-appstream-data_0.1.0_all.deb
+Size: 834
+MD5sum: f9e66fdc2449ca33bf58c45e87d9fc9f
+SHA1: 0ba4c01937de726a628fcfcb2eae2c2fa070ecbb
+SHA256: b6f5112f203ff0fc3ef0cbe6bb1f16f71b20af1376ef450a264b0cfae3afeca8
+Section: admin
+Priority: optional
+Description: SoryOS AppStream metadata package
+ This package provides the SoryOS AppStream metadata boundary used by the
+ software center and initial setup. It is intentionally small while SoryOS
+ application metadata is migrated module by module.
+
+Package: soryos-archive-keyring
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-archive-keyring_0.1.0_all.deb
+Size: 2022
+MD5sum: 00cb1cde756a25243b88b8fe335b3296
+SHA1: bcbe4bb3e80b8a861e1dba81cd6f226e39cec8d0
+SHA256: 53d07ee454edc303517e7830a1cc40b94bfdedfb708c44e64cb816ffe04a354b
+Section: misc
+Priority: optional
+Description: SoryOS APT archive signing keyring
+ This package installs the public SoryOS APT archive keyring for signed APT
+ repository usage.
+
+Package: soryos-desktop
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: soryos-archive-keyring, soryos-system-lock, soryos-identity, cosmic-session, cosmic-term, cosmic-store
+Filename: pool/stable/soryos-desktop_0.1.0_all.deb
+Size: 848
+MD5sum: 3e5869d13cf0c8d1fc716dfae2596d4a
+SHA1: d2b72178306caf7c636eb934be3f0a8213213e91
+SHA256: 64b873c4a5e773732046d7679e9a51e109690a00290ad8bbb04701e902147820
+Section: metapackages
+Priority: optional
+Description: SoryOS desktop metapackage
+ This metapackage installs the current SoryOS desktop migration modules.
+ It is intentionally small and does not remove or replace upstream packages.
+
+Package: soryos-dkms
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-dkms_0.1.0_all.deb
+Size: 776
+MD5sum: 21036063a02ca9e1869c801e598b55b9
+SHA1: 2686cb4b187c771c29d223f6991779e822d8f99b
+SHA256: 0810e30dd05ec39131b4e7fc6d68ea16ce72b3d7281180ab37891e15df509982
+Section: kernel
+Priority: optional
+Description: SoryOS DKMS integration package
+ This package reserves the SoryOS DKMS integration boundary. It does not
+ replace Ubuntu or Debian kernel packages.
+
+Package: soryos-driver
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-driver_0.1.0_all.deb
+Size: 746
+MD5sum: 521f2994599277d312f1f00935ba58bb
+SHA1: 981d36f8b7e19d0ab26e095f4f733fdcc5b77b19
+SHA256: 4bfd4e9c92062d676883492e5db91c035f59277ba1b418b069b25e41f8fa5dd5
+Section: admin
+Priority: optional
+Description: SoryOS driver integration package
+ This package reserves the SoryOS hardware driver integration boundary.
+
+Package: soryos-driver-nvidia
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-driver-nvidia_0.1.0_all.deb
+Size: 754
+MD5sum: 952d6c8373c8231b7a31ce1e8540937c
+SHA1: ebd833558f39cf0561c7cb004b8417e417d0632f
+SHA256: 5771ce6ce4d5c94a6795b06af8745c5446992faeb2888b678e29f12910ebe8dc
+Section: admin
+Priority: optional
+Description: SoryOS NVIDIA driver integration package
+ This package reserves the SoryOS NVIDIA driver integration boundary.
+
+Package: soryos-firmware-daemon
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-firmware-daemon_0.1.0_all.deb
+Size: 754
+MD5sum: e66bf9ce7956adb56a186b277a21f997
+SHA1: 21f8685317eebc58f03e06bdb301656ba68b63ad
+SHA256: 1d58a17fb848fa3297fb44fb9b69453b49b6fe3422061a7d06426e9139a1d78d
+Section: admin
+Priority: optional
+Description: SoryOS firmware daemon integration package
+ This package reserves the SoryOS firmware daemon integration boundary.
+
+Package: soryos-fonts
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: fonts-open-sans, fonts-noto-core, fonts-noto-color-emoji
+Filename: pool/stable/soryos-fonts_0.1.0_all.deb
+Size: 846
+MD5sum: 843b6c4f29c4dde5c78113c96c9cdf96
+SHA1: 9f7c65838bdf031bd538b6a319c0b17499e5d243
+SHA256: 84244410f5dbe36d45739247e6f582c1afc982affa541c8b648f48ec1b9534f1
+Section: fonts
+Priority: optional
+Description: SoryOS font selection package
+ This package defines the SoryOS desktop font boundary. It currently depends on
+ stable Ubuntu/Debian font packages while SoryOS-specific typography is
+ designed and packaged.
+
+Package: soryos-hp-vendor
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-hp-vendor_0.1.0_all.deb
+Size: 744
+MD5sum: 0ede8a1938333bf009b4a84eacb6ca02
+SHA1: 2108b8ff416a9abea6868bcebad31f52599006d8
+SHA256: 6dd040897911da216dafc6fca535d7ae90d44172cdde763229db0d853d3fd807
+Section: admin
+Priority: optional
+Description: SoryOS HP vendor integration package
+ This package reserves the SoryOS HP vendor integration boundary.
+
+Package: soryos-hp-vendor-dkms
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-hp-vendor-dkms_0.1.0_all.deb
+Size: 800
+MD5sum: c63c1f0a8f6839aae8a37667527a928e
+SHA1: d768478a3bbeb8f83e309bb550aabe55574b4cf2
+SHA256: b176933d9ef3754403d132820b691139b235569445975db48e005201304455df
+Section: kernel
+Priority: optional
+Description: SoryOS HP vendor DKMS integration package
+ This package reserves the SoryOS HP vendor DKMS integration boundary without
+ replacing the kernel or Ubuntu/Debian base packages.
+
+Package: soryos-hp-wallpapers
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-hp-wallpapers_0.1.0_all.deb
+Size: 754
+MD5sum: f141b725c06c9a1e96e3163a138a353c
+SHA1: 1b6552ff51bd5808f031bb1b81952dd7c0036ff9
+SHA256: d588020ad1f4ff1d091c324cec482ed0f4039dda95ce53b17dba68f3b1f19919
+Section: misc
+Priority: optional
+Description: SoryOS HP wallpaper integration package
+ This package reserves the SoryOS HP wallpaper integration boundary.
+
+Package: soryos-icon-theme
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-icon-theme_0.1.0_all.deb
+Size: 802
+MD5sum: e12b1996c764345a07346855db399ae6
+SHA1: e9bcbbf8e119686df9a2ace15b06732238d6b5cc
+SHA256: 124d15ec1f149fbb57a3621482f88a7222d6fbbf30db67baea47ffdf51cfb3f2
+Section: x11
+Priority: optional
+Description: SoryOS icon theme package
+ This package provides the SoryOS icon theme boundary used by SoryOS desktop
+ components. It starts small and will grow as application icons are migrated.
+
+Package: soryos-identity
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-identity_0.1.0_all.deb
+Size: 856
+MD5sum: 1e76ce725aabecea1329c857070aaf85
+SHA1: dd21a54df374db97e0ef31fd9420e3cddc3ce98b
+SHA256: 236df43e79979546e013d53e5086db1000c1ce3a6ab0fc81d431237126cb4a43
+Section: admin
+Priority: optional
+Description: SoryOS operating system identity files
+ This package provides SoryOS identity templates and a safe helper to apply
+ SoryOS branding to os-release, lsb-release, and issue files. It does not
+ replace Ubuntu, Debian, kernel, bootloader, apt, dpkg, or systemd packages.
+
+Package: soryos-io-dkms
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-io-dkms_0.1.0_all.deb
+Size: 782
+MD5sum: ad6ae10244a550bba034ebf484a47751
+SHA1: 8f821451d6456771b63cec8906fb0c2e1577945f
+SHA256: 362d4636ecb5e75fccc36718439ad2721f1747d4dc27ed663691e8a6238a6828
+Section: kernel
+Priority: optional
+Description: SoryOS IO DKMS integration package
+ This package reserves the SoryOS IO DKMS integration boundary. It does not
+ replace Ubuntu or Debian kernel packages.
+
+Package: soryos-oled
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-oled_0.1.0_all.deb
+Size: 734
+MD5sum: e7eff5da4a6063cd315cb9c25315687b
+SHA1: bdb94f94cc737ac267a3d02be98256ac514defc2
+SHA256: e59afe6b6df7e33bd0b3679cf7bbf105f366cbbfffa56485b47ce077ed99ec50
+Section: admin
+Priority: optional
+Description: SoryOS OLED integration package
+ This package reserves the SoryOS OLED integration boundary.
+
+Package: soryos-power
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-power_0.1.0_all.deb
+Size: 744
+MD5sum: 86e9f7136cdfab621b3a3856027f657b
+SHA1: 0416b3bc5942d0ef820f99916dbec50263f5ee8b
+SHA256: c418ad0ea060be58d7e90e2fe23e230812b2f4d54de58e8faacbe5e2680ae46b
+Section: admin
+Priority: optional
+Description: SoryOS power integration package
+ This package reserves the SoryOS power management integration boundary.
+
+Package: soryos-sound-theme
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: sound-theme-freedesktop
+Filename: pool/stable/soryos-sound-theme_0.1.0_all.deb
+Size: 816
+MD5sum: 9419228e6cff0030056441bad764733b
+SHA1: cf5205e9579db6bb7c93c9a5bb64658fcf08f7ec
+SHA256: a7199f735759114aec0f0abcf76bb9a6bf31444628637fbdf42bf0b4db5b0247
+Section: sound
+Priority: optional
+Description: SoryOS sound theme package
+ This package defines the SoryOS desktop sound theme boundary. It currently
+ inherits the freedesktop sound theme while SoryOS-specific sounds are designed
+ and packaged.
+
+Package: soryos-system-lock
+Version: 0.1.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Depends: soryos-archive-keyring
+Filename: pool/stable/soryos-system-lock_0.1.0_all.deb
+Size: 870
+MD5sum: b70751503c7938d8d252c2bdd7a6a113
+SHA1: 7272a5b82a66788256e4a37a26a2d20938a972a7
+SHA256: 3e1e8870fd92927ed7674aba817691da3b6bfed525e906f5782e45f71b07e38a
+Section: admin
+Priority: optional
+Description: SoryOS APT system stability lock
+ This package installs SoryOS APT pinning and stability helper commands.
+ It protects SoryOS packages from replacement by other repositories while
+ keeping Ubuntu available as the low-priority base fallback source.
+
+Package: soryos-wallpapers
+Version: 0.2.0
+Architecture: all
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Filename: pool/stable/soryos-wallpapers_0.2.0_all.deb
+Size: 776
+MD5sum: c192aa962e0fb72361e0186df43e0833
+SHA1: c0de0918ed1285b1c1dcc5351e9ed9fc11d719ad
+SHA256: 4315875fc9b35484368ac47f23b0cfbd6488cade2d355c4c0ecab3f68de5dd65
+Section: misc
+Priority: optional
+Description: SoryOS wallpaper package
+ SoryOS wallpapers for the desktop background.
+ This package provides the default SoryOS wallpapers in dark and light variants.
+

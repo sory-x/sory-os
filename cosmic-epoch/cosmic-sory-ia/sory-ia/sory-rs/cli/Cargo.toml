@@ -1,0 +1,91 @@
+[package]
+name = "sory-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+build = "build.rs"
+
+[[bin]]
+name = "sory"
+path = "src/main.rs"
+
+[lib]
+name = "sory_cli"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+clap_complete = { workspace = true }
+sory-app-server = { workspace = true }
+sory-app-server-daemon = { workspace = true }
+sory-app-server-protocol = { workspace = true }
+sory-app-server-test-client = { workspace = true }
+sory-arg0 = { workspace = true }
+sory-api = { workspace = true }
+sory-chatgpt = { workspace = true }
+sory-cloud-tasks = { path = "../cloud-tasks" }
+sory-utils-cli = { workspace = true }
+sory-config = { workspace = true }
+sory-core = { workspace = true }
+sory-core-plugins = { workspace = true }
+sory-exec = { workspace = true }
+sory-exec-server = { workspace = true }
+sory-execpolicy = { workspace = true }
+sory-features = { workspace = true }
+sory-install-context = { workspace = true }
+sory-login = { workspace = true }
+sory-memories-write = { workspace = true }
+sory-mcp = { workspace = true }
+sory-mcp-server = { workspace = true }
+sory-model-provider = { workspace = true }
+sory-models-manager = { workspace = true }
+sory-plugin = { workspace = true }
+sory-protocol = { workspace = true }
+sory-responses-api-proxy = { workspace = true }
+sory-rmcp-client = { workspace = true }
+sory-rollout-trace = { workspace = true }
+sory-sandboxing = { workspace = true }
+sory-state = { workspace = true }
+sory-stdio-to-uds = { workspace = true }
+sory-terminal-detection = { workspace = true }
+sory-tui = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-path = { workspace = true }
+crossterm = { workspace = true }
+http = { workspace = true }
+libc = { workspace = true }
+owo-colors = { workspace = true }
+regex-lite = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+supports-color = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "net",
+    "process",
+    "rt-multi-thread",
+    "signal",
+    "time",
+] }
+toml = { workspace = true }
+tracing = { workspace = true }
+tracing-appender = { workspace = true }
+tracing-subscriber = { workspace = true }
+
+[target.'cfg(target_os = "windows")'.dependencies]
+sory_windows_sandbox = { package = "sory-windows-sandbox", path = "../windows-sandbox-rs" }
+
+[dev-dependencies]
+assert_cmd = { workspace = true }
+assert_matches = { workspace = true }
+sory-utils-cargo-bin = { workspace = true }
+predicates = { workspace = true }
+pretty_assertions = { workspace = true }
+sqlx = { workspace = true }

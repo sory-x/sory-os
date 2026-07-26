@@ -1,0 +1,44 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Architectures: amd64
+Codename: testing
+Components: main
+Date: Sun, 26 Jul 2026 12:00:35 +0000
+Description: SoryOS APT Repository
+Label: SoryOS
+Origin: SoryOS
+Suite: testing
+MD5Sum:
+ 8681f6913bb29a7883ac425b4001a710              173 Release
+ d41d8cd98f00b204e9800998ecf8427e                0 main/binary-amd64/Packages
+ 4a4dd3598707603b3f76a2378a4504aa               20 main/binary-amd64/Packages.gz
+SHA1:
+ 46b195f6ca98f4bca678cd02e70c3f9d806ca849              173 Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709                0 main/binary-amd64/Packages
+ a0fddd5458378c1bf3c10dd2f5c060d1347741ed               20 main/binary-amd64/Packages.gz
+SHA256:
+ 759bf1353ac71486e545e04611023d743514279524aa73c2428a5ff9c4961f2f              173 Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 main/binary-amd64/Packages
+ f61f27bd17de546264aa58f40f3aafaac7021e0ef69c17f6b1b4cd7664a037ec               20 main/binary-amd64/Packages.gz
+SHA512:
+ 6bd2aa5370aaf8fa7d70a80cab3b47039e47fcb26370dec5fb8bb0d53dcb5257ea2d43c2ca7e19887a62699f4918a4bc8e7f7f58cc423144b947eac0604e4c7e              173 Release
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 main/binary-amd64/Packages
+ 1b46b9b08d5b338be9d732a1724795b2eab63daffde377218727c90857b79fe6a47bceed495117fcde60f7339812ef75ef4c69f82dd79fb69b6cbf8006b521f2               20 main/binary-amd64/Packages.gz
+-----BEGIN PGP SIGNATURE-----
+
+iQJFBAEBCgAvFiEEXjNRDGbFTb2CLzMnMe5HY57vYqkFAmpl9uMRHGFwdEBzb3J5
+b3MubG9jYWwACgkQMe5HY57vYqnQIw/+I7DZVn7SMTrrPlF7c3IFmoYYRgA+1Twx
+fkcbxeGVttHJT/r6j5rkUhBDYxvMzVpzLzr8VuWLP0EL2VzWlgwdStMFDMJbStnQ
+MtepueBUFDKeDAGdzmkpMZXspXGW8spMvapu3/YkilH7Nljkqy/9tcQj8CTvkcLG
+q2DDIRuciXOl19dFR+NNgvC8li1WNLGtNjwZmkG1n+dYJgZU6MQWGax8B5dNAPU+
+eKFpfTjAD0xfQliK7mjPM5Ti7Tr5cp25kMwkn11EguUvCEt3upFfwUVJ+Hnmfutf
+Q1G9bLvYQOLhBV39Akes9HumokAWQBf7fHpecJLXIySP+LTOI9G/p5aoA4+gdQkw
+n7GhhDF/HC1yKwgrRJT/kfWL5I+f7b6gpJ7xym4VBZKS419Jx3Lc3Zt9J11PyrST
+dcK33jZwixGpvYDsnDNtSx1VW5ycB2M8AH/XeB091CWrblFhP+0vBEP1/EhMXzk8
+HKOnPxVG0JaAt2T4CwApnYU8jqetVg4vouWk6QfOtNNPBMI8R2vhFD3E6Rzgzx55
+piAAFqSFy4bZj3Qr8Yhu16r3Spw9DZBGvPEAK1xiQM4I1/XUOJH+MVe1pOPw9lp0
+X9K9SiniO0Hu1O3fnOSkLsMV9/trRW7giv58nWuo6ZpQ9lOpGkiKLXJ+3vazY/4w
+oz3MC6iLbp8=
+=yJKD
+-----END PGP SIGNATURE-----

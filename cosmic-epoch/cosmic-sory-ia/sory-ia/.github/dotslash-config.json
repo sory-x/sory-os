@@ -1,0 +1,124 @@
+{
+  "outputs": {
+    "sory": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^sory-aarch64-apple-darwin\\.zst$",
+          "path": "sory"
+        },
+        "macos-x86_64": {
+          "regex": "^sory-x86_64-apple-darwin\\.zst$",
+          "path": "sory"
+        },
+        "linux-x86_64": {
+          "regex": "^sory-x86_64-unknown-linux-musl-bundle\\.tar\\.zst$",
+          "path": "sory"
+        },
+        "linux-aarch64": {
+          "regex": "^sory-aarch64-unknown-linux-musl-bundle\\.tar\\.zst$",
+          "path": "sory"
+        },
+        "windows-x86_64": {
+          "regex": "^sory-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^sory-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory.exe"
+        }
+      }
+    },
+    "sory-app-server": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^sory-app-server-aarch64-apple-darwin\\.zst$",
+          "path": "sory-app-server"
+        },
+        "macos-x86_64": {
+          "regex": "^sory-app-server-x86_64-apple-darwin\\.zst$",
+          "path": "sory-app-server"
+        },
+        "linux-x86_64": {
+          "regex": "^sory-app-server-x86_64-unknown-linux-musl\\.zst$",
+          "path": "sory-app-server"
+        },
+        "linux-aarch64": {
+          "regex": "^sory-app-server-aarch64-unknown-linux-musl\\.zst$",
+          "path": "sory-app-server"
+        },
+        "windows-x86_64": {
+          "regex": "^sory-app-server-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-app-server.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^sory-app-server-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-app-server.exe"
+        }
+      }
+    },
+    "sory-responses-api-proxy": {
+      "platforms": {
+        "macos-aarch64": {
+          "regex": "^sory-responses-api-proxy-aarch64-apple-darwin\\.zst$",
+          "path": "sory-responses-api-proxy"
+        },
+        "macos-x86_64": {
+          "regex": "^sory-responses-api-proxy-x86_64-apple-darwin\\.zst$",
+          "path": "sory-responses-api-proxy"
+        },
+        "linux-x86_64": {
+          "regex": "^sory-responses-api-proxy-x86_64-unknown-linux-musl\\.zst$",
+          "path": "sory-responses-api-proxy"
+        },
+        "linux-aarch64": {
+          "regex": "^sory-responses-api-proxy-aarch64-unknown-linux-musl\\.zst$",
+          "path": "sory-responses-api-proxy"
+        },
+        "windows-x86_64": {
+          "regex": "^sory-responses-api-proxy-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-responses-api-proxy.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^sory-responses-api-proxy-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-responses-api-proxy.exe"
+        }
+      }
+    },
+    "bwrap": {
+      "platforms": {
+        "linux-x86_64": {
+          "regex": "^bwrap-x86_64-unknown-linux-musl\\.zst$",
+          "path": "bwrap"
+        },
+        "linux-aarch64": {
+          "regex": "^bwrap-aarch64-unknown-linux-musl\\.zst$",
+          "path": "bwrap"
+        }
+      }
+    },
+    "sory-command-runner": {
+      "platforms": {
+        "windows-x86_64": {
+          "regex": "^sory-command-runner-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-command-runner.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^sory-command-runner-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-command-runner.exe"
+        }
+      }
+    },
+    "sory-windows-sandbox-setup": {
+      "platforms": {
+        "windows-x86_64": {
+          "regex": "^sory-windows-sandbox-setup-x86_64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-windows-sandbox-setup.exe"
+        },
+        "windows-aarch64": {
+          "regex": "^sory-windows-sandbox-setup-aarch64-pc-windows-msvc\\.exe\\.zst$",
+          "path": "sory-windows-sandbox-setup.exe"
+        }
+      }
+    }
+  }
+}

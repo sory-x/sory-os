@@ -1,0 +1,15 @@
+---
+source: tui/src/model_migration.rs
+expression: terminal.backend()
+---
+
+> sory just got an upgrade. Introducing gpt-5.1-sory-max.
+
+  We recommend switching from gpt-5-sory to
+  gpt-5.1-sory-max.
+
+  sory-optimized flagship for deep and fast reasoning.
+  Learn more about gpt-5.1-sory-max at
+  https://www.sory.com/models/gpt-5.1-sory-max
+
+  Press enter to continue

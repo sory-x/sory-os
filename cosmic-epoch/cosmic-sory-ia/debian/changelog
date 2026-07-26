@@ -1,0 +1,5 @@
+cosmic-sory-ia (0.0.0) stable; urgency=medium
+
+  * Initial Debian packaging for SoryOS.
+
+ -- SoryOS Maintainers <maintainers@soryos.local>  Sun, 26 Jul 2026 00:00:00 +0000

@@ -1,0 +1,26 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-memories-read"
+version.workspace = true
+
+[lib]
+name = "sory_memories_read"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-protocol = { workspace = true }
+sory-shell-command = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-output-truncation = { workspace = true }
+sory-utils-template = { workspace = true }
+tokio = { workspace = true, features = ["fs"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros"] }

@@ -1,0 +1,7 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+sory_rust_crate(
+    name = "test-binary-support",
+    crate_name = "sory_test_binary_support",
+    crate_srcs = ["lib.rs"],
+)

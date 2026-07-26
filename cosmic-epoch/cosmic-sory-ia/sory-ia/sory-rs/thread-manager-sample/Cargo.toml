@@ -1,0 +1,18 @@
+[package]
+name = "sory-thread-manager-sample"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+# Keep this sample limited to a single sory workspace dependency.
+# Add new sory surface area to `sory-core-api` instead of depending on
+# additional `sory-*` crates here.
+sory-core-api = { workspace = true }
+tracing = { workspace = true }

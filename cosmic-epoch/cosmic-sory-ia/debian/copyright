@@ -1,0 +1,8 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: cosmic-sory-ia
+Upstream-Contact: SoryOS Maintainers <maintainers@soryos.local>
+Source: https://github.com/sory-x/cosmic-sory-ia
+
+Files: *
+Copyright: 2026 SoryOS
+License: GPL-3.0-only

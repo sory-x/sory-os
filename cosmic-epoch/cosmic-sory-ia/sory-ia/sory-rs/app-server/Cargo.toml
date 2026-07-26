@@ -1,0 +1,125 @@
+[package]
+name = "sory-app-server"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+
+[[bin]]
+name = "sory-app-server"
+path = "src/main.rs"
+
+[[bin]]
+name = "sory-app-server-test-notify-capture"
+path = "src/bin/notify_capture.rs"
+
+[lib]
+name = "sory_app_server"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+async-trait = { workspace = true }
+base64 = { workspace = true }
+axum = { workspace = true, default-features = false, features = [
+    "http1",
+    "json",
+    "tokio",
+    "ws",
+] }
+sory-analytics = { workspace = true }
+sory-arg0 = { workspace = true }
+sory-cloud-requirements = { workspace = true }
+sory-config = { workspace = true }
+sory-core = { workspace = true }
+sory-core-plugins = { workspace = true }
+sory-exec-server = { workspace = true }
+sory-extension-api = { workspace = true }
+sory-external-agent-migration = { workspace = true }
+sory-external-agent-sessions = { workspace = true }
+sory-features = { workspace = true }
+sory-guardian = { workspace = true }
+sory-git-utils = { workspace = true }
+sory-file-watcher = { workspace = true }
+sory-hooks = { workspace = true }
+sory-otel = { workspace = true }
+sory-plugin = { workspace = true }
+sory-shell-command = { workspace = true }
+sory-utils-cli = { workspace = true }
+sory-utils-pty = { workspace = true }
+sory-backend-client = { workspace = true }
+sory-file-search = { workspace = true }
+sory-chatgpt = { workspace = true }
+sory-login = { workspace = true }
+sory-memories-extension = { workspace = true }
+sory-memories-write = { workspace = true }
+sory-mcp = { workspace = true }
+sory-model-provider = { workspace = true }
+sory-models-manager = { workspace = true }
+sory-protocol = { workspace = true }
+sory-app-server-protocol = { workspace = true }
+sory-app-server-transport = { workspace = true }
+sory-feedback = { workspace = true }
+sory-rmcp-client = { workspace = true }
+sory-rollout = { workspace = true }
+sory-sandboxing = { workspace = true }
+sory-state = { workspace = true }
+sory-thread-store = { workspace = true }
+sory-tools = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-json-to-toml = { workspace = true }
+chrono = { workspace = true }
+clap = { workspace = true, features = ["derive"] }
+futures = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+time = { workspace = true }
+toml = { workspace = true }
+toml_edit = { workspace = true }
+tokio = { workspace = true, features = [
+    "io-std",
+    "macros",
+    "process",
+    "rt-multi-thread",
+    "signal",
+] }
+tokio-util = { workspace = true }
+tracing = { workspace = true, features = ["log"] }
+tracing-subscriber = { workspace = true, features = ["env-filter", "fmt", "json"] }
+uuid = { workspace = true, features = ["serde", "v7"] }
+
+[dev-dependencies]
+app_test_support = { workspace = true }
+axum = { workspace = true, default-features = false, features = [
+    "http1",
+    "json",
+    "tokio",
+] }
+base64 = { workspace = true }
+sory-model-provider-info = { workspace = true }
+sory-utils-cargo-bin = { workspace = true }
+core_test_support = { workspace = true }
+flate2 = { workspace = true }
+hmac = { workspace = true }
+opentelemetry = { workspace = true }
+opentelemetry_sdk = { workspace = true }
+pretty_assertions = { workspace = true }
+reqwest = { workspace = true, features = ["rustls-tls"] }
+rmcp = { workspace = true, default-features = false, features = [
+    "elicitation",
+    "server",
+    "transport-streamable-http-server",
+] }
+serial_test = { workspace = true }
+sha2 = { workspace = true }
+shlex = { workspace = true }
+tar = { workspace = true }
+tokio-tungstenite = { workspace = true }
+tracing-opentelemetry = { workspace = true }
+url = { workspace = true }
+wiremock = { workspace = true }

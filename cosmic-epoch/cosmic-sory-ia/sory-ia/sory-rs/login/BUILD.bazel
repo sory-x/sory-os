@@ -1,0 +1,11 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+sory_rust_crate(
+    name = "login",
+    crate_name = "sory_login",
+    compile_data = [
+        "src/assets/error.html",
+        "src/assets/success.html",
+        "src/assets/success_legacy.html",
+    ],
+)

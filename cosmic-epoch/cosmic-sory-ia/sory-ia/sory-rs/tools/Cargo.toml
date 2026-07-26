@@ -1,0 +1,34 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-tools"
+version.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+async-trait = { workspace = true }
+sory-app-server-protocol = { workspace = true }
+sory-code-mode = { workspace = true }
+sory-features = { workspace = true }
+sory-protocol = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-pty = { workspace = true }
+sory-utils-string = { workspace = true }
+rmcp = { workspace = true, default-features = false, features = [
+    "base64",
+    "macros",
+    "schemars",
+    "server",
+] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+
+[lib]
+doctest = false

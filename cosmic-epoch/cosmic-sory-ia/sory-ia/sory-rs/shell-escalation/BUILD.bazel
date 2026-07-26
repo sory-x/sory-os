@@ -1,0 +1,6 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+sory_rust_crate(
+    name = "shell-escalation",
+    crate_name = "sory_shell_escalation",
+)

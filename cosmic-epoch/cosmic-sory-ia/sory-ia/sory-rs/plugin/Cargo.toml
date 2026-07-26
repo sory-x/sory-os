@@ -1,0 +1,19 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-plugin"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "sory_plugin"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-config = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-plugins = { workspace = true }
+thiserror = { workspace = true }

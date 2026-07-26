@@ -1,0 +1,33 @@
+[package]
+name = "sory-desktop"
+version = "0.1.0"
+authors = ["SoryOS Maintainers <maintainers@soryos.local>"]
+edition = "2024"
+license = "GPL-3.0-only"
+rust-version = "1.93"
+description = "Native SoryOS desktop client for Sory IA"
+
+[dependencies]
+# Dépendances partagées via workspace
+anyhow.workspace = true
+env_logger.workspace = true
+futures-util.workspace = true
+hashbrown.workspace = true
+log.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+starlark_map.workspace = true
+icu_calendar.workspace = true
+rand.workspace = true
+thiserror.workspace = true
+tokio.workspace = true
+tokio-stream.workspace = true
+uuid.workspace = true
+
+# Dépendances locales depuis sory-rs (maintenant dans le même workspace)
+sory-app-server-client = { path = "../sory-ia/sory-rs/app-server-client", version = "0.0.0" }
+sory-app-server-protocol = { path = "../sory-ia/sory-rs/app-server-protocol", version = "0.0.0" }
+sory-utils-absolute-path = { path = "../sory-ia/sory-rs/utils/absolute-path", version = "0.0.0" }
+sory-utils-home-dir = { path = "../sory-ia/sory-rs/utils/home-dir", version = "0.0.0" }
+libcosmic = { path = "../../../libcosmic", default-features = false, features = ["tokio", "winit", "wgpu", "wayland", "multi-window"] }
+

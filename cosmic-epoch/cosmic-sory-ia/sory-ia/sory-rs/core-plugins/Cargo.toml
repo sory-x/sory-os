@@ -1,0 +1,50 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-core-plugins"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "sory_core_plugins"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+sory-analytics = { workspace = true }
+sory-app-server-protocol = { workspace = true }
+sory-config = { workspace = true }
+sory-core-skills = { workspace = true }
+sory-exec-server = { workspace = true }
+sory-git-utils = { workspace = true }
+sory-hooks = { workspace = true }
+sory-login = { workspace = true }
+sory-model-provider = { workspace = true }
+sory-otel = { workspace = true }
+sory-plugin = { workspace = true }
+sory-protocol = { workspace = true }
+sory-utils-absolute-path = { workspace = true }
+sory-utils-plugins = { workspace = true }
+chrono = { workspace = true }
+dirs = { workspace = true }
+flate2 = { workspace = true }
+reqwest = { workspace = true }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+tar = { workspace = true }
+tempfile = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true, features = ["fs", "macros", "rt", "time"] }
+toml = { workspace = true }
+tracing = { workspace = true }
+url = { workspace = true }
+zip = { workspace = true }
+
+[dev-dependencies]
+libc = { workspace = true }
+pretty_assertions = { workspace = true }
+tempfile = { workspace = true }
+wiremock = { workspace = true }

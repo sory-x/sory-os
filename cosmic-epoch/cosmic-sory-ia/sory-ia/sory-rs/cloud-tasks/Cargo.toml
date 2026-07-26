@@ -1,0 +1,46 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-cloud-tasks"
+version.workspace = true
+
+[lib]
+name = "sory_cloud_tasks"
+path = "src/lib.rs"
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true, features = ["serde"] }
+clap = { workspace = true, features = ["derive"] }
+sory-client = { workspace = true }
+sory-cloud-tasks-client = { workspace = true }
+# TODO: sory-cloud-tasks-mock-client should be in dev-dependencies.
+sory-cloud-tasks-mock-client = { workspace = true }
+sory-core = { workspace = true }
+sory-git-utils = { workspace = true }
+sory-login = { path = "../login" }
+sory-model-provider = { workspace = true }
+sory-tui = { workspace = true }
+sory-utils-cli = { workspace = true }
+crossterm = { workspace = true, features = ["event-stream"] }
+owo-colors = { workspace = true, features = ["supports-colors"] }
+ratatui = { workspace = true }
+reqwest = { workspace = true, features = ["json"] }
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true }
+supports-color = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }
+tokio-stream = { workspace = true }
+tracing = { workspace = true, features = ["log"] }
+tracing-subscriber = { workspace = true, features = ["env-filter"] }
+unicode-width = { workspace = true }
+
+[dependencies.async-trait]
+workspace = true
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }

@@ -1,0 +1,6 @@
+load("//:defs.bzl", "sory_rust_crate")
+
+sory_rust_crate(
+    name = "rollout-trace",
+    crate_name = "sory_rollout_trace",
+)

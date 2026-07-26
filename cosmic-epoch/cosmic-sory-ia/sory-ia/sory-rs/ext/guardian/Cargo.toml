@@ -1,0 +1,19 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-guardian"
+version.workspace = true
+
+[lib]
+name = "sory_guardian"
+path = "src/lib.rs"
+test = false
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+sory-core = { workspace = true }
+sory-extension-api = { workspace = true }
+sory-protocol = { workspace = true }

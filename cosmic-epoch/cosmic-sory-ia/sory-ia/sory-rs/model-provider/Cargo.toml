@@ -1,0 +1,36 @@
+[package]
+edition.workspace = true
+license.workspace = true
+name = "sory-model-provider"
+version.workspace = true
+
+[lib]
+doctest = false
+name = "sory_model_provider"
+path = "src/lib.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+async-trait = { workspace = true }
+sory-api = { workspace = true }
+sory-agent-identity = { workspace = true }
+sory-aws-auth = { workspace = true }
+sory-client = { workspace = true }
+sory-feedback = { workspace = true }
+sory-login = { workspace = true }
+sory-model-provider-info = { workspace = true }
+sory-models-manager = { workspace = true }
+sory-otel = { workspace = true }
+sory-protocol = { workspace = true }
+sory-response-debug-context = { workspace = true }
+http = { workspace = true }
+tokio = { workspace = true, features = ["sync", "time"] }
+tracing = { workspace = true, features = ["log"] }
+
+[dev-dependencies]
+pretty_assertions = { workspace = true }
+serde_json = { workspace = true }
+tokio = { workspace = true, features = ["macros", "rt"] }
+wiremock = { workspace = true }
