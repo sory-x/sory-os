@@ -35,7 +35,7 @@ build_component() {
   printf 'Building %s (%s)...\n' "$dir" "$source_name" | tee -a "$LOG_FILE"
 
   pushd "$dir" >/dev/null
-  if dpkg-buildpackage -us -uc -b >> "$LOG_FILE" 2>&1; then
+  if dpkg-buildpackage -us -uc -b -d >> "$LOG_FILE" 2>&1; then
     popd >/dev/null
     # Move .deb to pool
     for deb in "${source_name}"_*.deb; do

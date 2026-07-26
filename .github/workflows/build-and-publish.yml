@@ -32,6 +32,7 @@ jobs:
             libegl1-mesa-dev libxcb1-dev libdisplay-info-dev \
             libdav1d-dev libexpat1-dev \
             libflatpak-dev libpolkit-agent-1-dev \
+            libpulse-dev \
             imagemagick fonts-open-sans \
             meson patchelf
 
