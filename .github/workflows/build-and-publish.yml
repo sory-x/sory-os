@@ -23,7 +23,7 @@ jobs:
           sudo apt-get install -y \
             build-essential devscripts debhelper dpkg-dev \
             apt-utils gnupg gzip \
-            cargo rustup pkg-config cmake just \
+            rustup pkg-config cmake just \
             libwayland-dev libxkbcommon-dev libglib2.0-dev \
             libclang-dev libpipewire-0.3-dev libudev-dev \
             libinput-dev libgbm-dev libseat-dev libsystemd-dev \
@@ -34,6 +34,13 @@ jobs:
             libflatpak-dev libpolkit-agent-1-dev \
             imagemagick fonts-open-sans \
             meson patchelf
+
+      - name: Setup Rust toolchain
+        run: |
+          rustup default stable 2>/dev/null || {
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+            echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          }
 
       - name: Build integration packages
         run: |
