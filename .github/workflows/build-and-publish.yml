@@ -3,9 +3,6 @@ name: Build & Publish SoryOS APT
 on:
   push:
     branches: [main]
-    paths:
-      - 'soryos-apt/**'
-      - 'cosmic-epoch/**'
   workflow_dispatch:
 
 env:
