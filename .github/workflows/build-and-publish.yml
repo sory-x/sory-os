@@ -1,0 +1,107 @@
+name: Build & Publish SoryOS APT
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'soryos-apt/**'
+      - 'cosmic-epoch/**'
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+  DEBIAN_FRONTEND: noninteractive
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            build-essential devscripts debhelper dpkg-dev \
+            dpkg-scanpackages apt-utils gnupg gzip \
+            cargo rustup pkg-config cmake just \
+            libwayland-dev libxkbcommon-dev libglib2.0-dev \
+            libclang-dev libpipewire-0.3-dev libudev-dev \
+            libinput-dev libgbm-dev libseat-dev libsystemd-dev \
+            libdbus-1-dev libpam0g-dev libssl-dev libzstd-dev \
+            libpixman-1-dev libfontconfig-dev libfreetype-dev \
+            libegl1-mesa-dev libxcb1-dev libdisplay-info-dev \
+            libdav1d-dev libexpat1-dev \
+            libflatpak-dev libpolkit-agent-1-dev \
+            imagemagick fonts-open-sans \
+            meson patchelf
+
+      - name: Build integration packages
+        run: |
+          cd soryos-apt
+          mkdir -p pool/stable
+          ./scripts/build-packages.sh
+
+      - name: Build COSMIC components
+        run: |
+          cd soryos-apt
+          ./scripts/build-cosmic-local.sh --all
+
+      - name: Build cosmic-sound-theme
+        run: |
+          cd cosmic-epoch/cosmic-sound-theme
+          VERSION=$(grep "version:" meson.build | head -1 | \
+            sed "s/.*version: '*//;s/'*,//;s/[' ]//g")
+          PKGDIR="/tmp/pkg/cosmic-sound-theme"
+          rm -rf "$PKGDIR"
+          mkdir -p "$PKGDIR/DEBIAN"
+          cat > "$PKGDIR/DEBIAN/control" <<CTRL
+          Package: cosmic-sound-theme
+          Version: $VERSION
+          Section: sound
+          Priority: optional
+          Architecture: all
+          Maintainer: SoryOS Maintainers <maintainers@soryos.local>
+          Description: COSMIC Sound Theme
+           Sound theme for the COSMIC desktop environment.
+          CTRL
+          meson setup build --prefix=/usr --destdir="$PKGDIR"
+          meson install -C build
+          dpkg-deb --build "$PKGDIR" "../cosmic-sound-theme_${VERSION}_all.deb"
+          cp "../cosmic-sound-theme_${VERSION}_all.deb" ../soryos-apt/pool/stable/
+
+      - name: List built packages
+        run: ls -lh soryos-apt/pool/stable/*.deb
+
+      - name: Generate APT index
+        run: |
+          cd soryos-apt
+          ./scripts/generate-index.sh
+
+      - name: Import signing key
+        env:
+          SORYOS_GPG_PRIVATE_KEY: ${{ secrets.SORYOS_GPG_PRIVATE_KEY }}
+        run: |
+          cd soryos-apt
+          ./scripts/ci-import-signing-key.sh
+
+      - name: Sign repository
+        run: |
+          cd soryos-apt
+          ./scripts/sign-repository.sh
+
+      - name: Validate repository
+        run: |
+          cd soryos-apt
+          mkdir -p pool/testing pool/nightly
+          SORYOS_SUITES=stable ./scripts/test-local-repo.sh
+
+      - name: Publish to sory-x/soryos-apt
+        env:
+          APT_REPO_TOKEN: ${{ secrets.APT_REPO_TOKEN }}
+        run: |
+          echo "$APT_REPO_TOKEN" > token-classic
+          cd soryos-apt
+          ./scripts/publish-to-github.py

@@ -54,7 +54,7 @@ for d in [pool_dir, dists_dir]:
         print(f"ERROR: {d} not found")
         sys.exit(1)
 
-debs = sorted(glob.glob(os.path.join(pool_dir, '*.deb')))
+debs = sorted(glob.glob(os.path.join(pool_dir, '**/*.deb'), recursive=True))
 print(f"Pool: {len(debs)} .deb files")
 print()
 

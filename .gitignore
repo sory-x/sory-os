@@ -9,4 +9,20 @@ target/
 __pycache__/
 .env
 .private/
+.secret/
 etudis/
+
+# Binaires et artefacts de build (dépôt source uniquement)
+*.deb
+*.rpm
+*.iso
+*.squashfs
+*.img
+
+# APT repo generated files (CI pushes to sory-x/soryos-apt)
+soryos-apt/dists/
+soryos-apt/pool/
+
+# Tokens (locaux, jamais commités)
+token-classic
+.github_token
