@@ -76,6 +76,16 @@ jobs:
           path: cosmic-epoch
           submodules: recursive
 
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-cosmic
+          restore-keys: |
+            ${{ runner.os }}-cargo-
+
       - name: Install build dependencies
         run: |
           sudo apt-get update
