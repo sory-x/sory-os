@@ -1,0 +1,11 @@
+Source: soryos-fonts
+Section: gnome
+Priority: optional
+Maintainer: SoryOS Team <maintainers@soryos.local>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.6.2
+Homepage: https://github.com/sory-x/soryos
+
+Package: soryos-fonts
+Architecture: all
+Description: SoryOS fonts - Fira Sans and Roboto Slab
