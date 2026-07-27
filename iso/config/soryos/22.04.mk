@@ -54,7 +54,9 @@ LIVE_PKGS=\
 	casper \
 	distinst \
 	expect \
-	gparted
+	gparted \
+	cosmic-greeter \
+	greetd
 
 # Packages to remove from installed system (usually installed as Recommends)
 RM_PKGS=\
