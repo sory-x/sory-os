@@ -1,3 +1,9 @@
+soryos-launcher (1.2.6+soryos1) stable; urgency=medium
+
+  * Initial SoryOS release: rename from pop-launcher
+
+ -- SoryOS Team <maintainers@soryos.local>  Mon, 27 Jul 2026 00:00:00 +0000
+
 pop-launcher (1.2.6) jammy; urgency=medium
 
   * Update all cargo dependencies as of 2025-09-25

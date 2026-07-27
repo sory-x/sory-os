@@ -89,7 +89,7 @@ repos:
     description: COSMIC Launcher (application launcher)
     architecture: amd64 arm64
     depends:
-      - pop-launcher
+      - soryos-launcher
     build_depends:
       - debhelper (>= 11), debhelper-compat (= 11)
       - rustc (>=1.63), cargo, just, intltool
@@ -172,7 +172,7 @@ repos:
       - cosmic-term
       - cosmic-wallpapers
       - cosmic-workspaces-epoch
-      - pop-launcher
+      - soryos-launcher
       - xdg-desktop-portal-cosmic
       - simple-wrapper
 
@@ -339,11 +339,13 @@ repos:
     branch: master
     description: XDG Desktop Portal backend for COSMIC
 
-  - name: pop-launcher
+  - name: soryos-launcher
     url: https://github.com/sory-x/launcher
     type: rust
     branch: master
-    description: Modular IPC-based desktop launcher service
+    local_path: /home/sory/Bureau/soryos/cosmic-epoch/soryos-launcher
+    has_debian: true
+    description: SoryOS IPC-based desktop launcher service
 
   - name: simple-wrapper
     url: https://github.com/sory-x/simple-wrapper
@@ -394,7 +396,8 @@ repos:
 
   - name: soryos-fonts
     type: local
-    template: soryos-fonts
+    local_path: /home/sory/Bureau/soryos/cosmic-epoch/fonts
+    has_debian: true
 
   - name: soryos-sound-theme
     type: local

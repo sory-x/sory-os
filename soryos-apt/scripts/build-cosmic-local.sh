@@ -72,7 +72,7 @@ COMPONENTS=(
     cosmic-notifications cosmic-osd cosmic-panel cosmic-player
     cosmic-randr cosmic-screenshot cosmic-session cosmic-settings
     cosmic-settings-daemon cosmic-sory-ia cosmic-store cosmic-term cosmic-wallpapers
-    cosmic-workspaces-epoch pop-launcher simple-wrapper xdg-desktop-portal-cosmic
+    cosmic-workspaces-epoch soryos-launcher simple-wrapper xdg-desktop-portal-cosmic
 )
 
 BUILD_ALL=false

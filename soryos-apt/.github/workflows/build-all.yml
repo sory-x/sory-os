@@ -66,14 +66,15 @@ jobs:
           - cosmic-term
           - cosmic-wallpapers
           - cosmic-workspaces-epoch
-          - pop-launcher
+          - fonts
+          - soryos-launcher
           - simple-wrapper
           - xdg-desktop-portal-cosmic
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: sory-x/cosmic-epoch
-          path: cosmic-epoch
+          repository: sory-x/soryos
+          path: soryos
           submodules: recursive
 
       - name: Cache Cargo registry
@@ -108,7 +109,7 @@ jobs:
         id: build
         run: |
           set -e
-          cd cosmic-epoch/${{ matrix.component }}
+          cd soryos/cosmic-epoch/${{ matrix.component }}
 
           if [ ! -f debian/control ]; then
             echo "No debian/control - skipping dpkg-buildpackage"
@@ -127,11 +128,10 @@ jobs:
       - name: Collect .deb
         if: steps.build.outputs.no_deb != 'true'
         run: |
-          cd cosmic-epoch
+          cd soryos/cosmic-epoch
           SOURCE="${{ steps.build.outputs.source }}"
           echo "Looking for debs matching source=$SOURCE"
           ls -la ${SOURCE}_*.deb 2>/dev/null || true
-          # dpkg-buildpackage puts debs in parent directory
           for deb in ${SOURCE}_*.deb; do
             if [ -f "$deb" ]; then
               echo "Found: $deb"
@@ -144,7 +144,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deb-${{ matrix.component }}
-          path: cosmic-epoch/${{ steps.build.outputs.source }}_*.deb
+          path: soryos/cosmic-epoch/${{ steps.build.outputs.source }}_*.deb
           retention-days: 1
 
   build-sound-theme:
@@ -153,13 +153,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: sory-x/cosmic-epoch
-          path: cosmic-epoch
+          repository: sory-x/soryos
+          path: soryos
           submodules: recursive
 
       - name: Build cosmic-sound-theme with meson
         run: |
-          cd cosmic-epoch/cosmic-sound-theme
+          cd soryos/cosmic-epoch/cosmic-sound-theme
           VERSION=$(grep "version:" meson.build | head -1 | sed "s/.*version: '*//;s/'*,//;s/[' ]//g")
           PKGDIR="/tmp/pkg/cosmic-sound-theme"
           rm -rf "$PKGDIR"
@@ -184,7 +184,7 @@ CTRL
         uses: actions/upload-artifact@v4
         with:
           name: deb-cosmic-sound-theme
-          path: cosmic-epoch/cosmic-sound-theme_*.deb
+          path: soryos/cosmic-epoch/cosmic-sound-theme_*.deb
           retention-days: 1
 
   publish:

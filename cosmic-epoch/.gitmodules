@@ -102,8 +102,8 @@
 	path = cosmic-initial-setup
 	url = https://github.com/pop-os/cosmic-initial-setup
 	branch = master
-[submodule "pop-launcher"]
-	path = pop-launcher
+[submodule "soryos-launcher"]
+	path = soryos-launcher
 	url = https://github.com/pop-os/launcher.git
 	branch = master
 [submodule "cosmic-monitor"]

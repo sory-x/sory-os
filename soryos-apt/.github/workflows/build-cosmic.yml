@@ -32,17 +32,17 @@ jobs:
           path: soryos-apt
       - uses: actions/checkout@v4
         with:
-          repository: sory-x/cosmic-epoch
-          path: cosmic-epoch
+          repository: sory-x/soryos
+          path: soryos
           submodules: recursive
 
       - name: Detect version changes
         id: detect
         run: |
-          cd cosmic-epoch
+          cd soryos/cosmic-epoch
           CHANGES=""
 
-          ALL_COMPONENTS="cosmic-applets cosmic-applibrary cosmic-bg cosmic-comp cosmic-edit cosmic-files cosmic-greeter cosmic-icons cosmic-idle cosmic-initial-setup cosmic-launcher cosmic-monitor cosmic-notifications cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-sory-ia cosmic-store cosmic-term cosmic-wallpapers cosmic-workspaces-epoch pop-launcher simple-wrapper xdg-desktop-portal-cosmic"
+          ALL_COMPONENTS="cosmic-applets cosmic-applibrary cosmic-bg cosmic-comp cosmic-edit cosmic-files cosmic-greeter cosmic-icons cosmic-idle cosmic-initial-setup cosmic-launcher cosmic-monitor cosmic-notifications cosmic-osd cosmic-panel cosmic-player cosmic-randr cosmic-screenshot cosmic-session cosmic-settings cosmic-settings-daemon cosmic-sory-ia cosmic-store cosmic-term cosmic-wallpapers cosmic-workspaces-epoch fonts soryos-launcher simple-wrapper xdg-desktop-portal-cosmic"
 
           for dir in $ALL_COMPONENTS; do
             if [ ! -d "$dir" ]; then continue; fi
@@ -64,7 +64,7 @@ jobs:
             fi
 
             # Check pool
-            DEB=$(ls "../soryos-apt/pool/stable/${PKG_NAME}_"*.deb 2>/dev/null | head -1)
+            DEB=$(ls "../../soryos-apt/pool/stable/${PKG_NAME}_"*.deb 2>/dev/null | head -1)
             if [ -n "$DEB" ]; then
               POOL_VER=$(basename "$DEB" | sed "s/${PKG_NAME}_//;s/_all.deb//;s/_amd64.deb//")
             else
@@ -106,8 +106,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: sory-x/cosmic-epoch
-          path: cosmic-epoch
+          repository: sory-x/soryos
+          path: soryos
           submodules: recursive
 
       - name: Cache Cargo registry
@@ -121,8 +121,6 @@ jobs:
             ${{ runner.os }}-cargo-
 
       - name: Install build dependencies
-
-
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -142,7 +140,7 @@ jobs:
         id: build
         run: |
           set -e
-          cd cosmic-epoch/${{ matrix.component }}
+          cd soryos/cosmic-epoch/${{ matrix.component }}
 
           if [ ! -f debian/control ]; then
             echo "No debian/control - skipping"
@@ -160,11 +158,11 @@ jobs:
       - name: Collect .deb
         if: steps.build.outputs.no_deb != 'true'
         run: |
-          cd cosmic-epoch
-          mkdir -p ../soryos-apt/pool/stable
+          cd soryos/cosmic-epoch
+          mkdir -p ../../soryos-apt/pool/stable
           for deb in ${{ steps.build.outputs.source }}_*.deb; do
             if [ -f "$deb" ]; then
-              cp "$deb" ../soryos-apt/pool/stable/
+              cp "$deb" ../../soryos-apt/pool/stable/
               echo "Collected: $deb"
             fi
           done
@@ -174,7 +172,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: deb-${{ matrix.component }}
-          path: cosmic-epoch/${{ steps.build.outputs.source }}_*.deb
+          path: soryos/cosmic-epoch/${{ steps.build.outputs.source }}_*.deb
           retention-days: 1
 
   publish:
