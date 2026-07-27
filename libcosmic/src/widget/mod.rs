@@ -16,7 +16,7 @@
 //! use cosmic::prelude::*;
 //! use cosmic::{cosmic_theme, theme, widget};
 //!
-//! const REPOSITORY: &str = "https://github.com/pop-os/libcosmic";
+//! const REPOSITORY: &str = "https://github.com/sory-x/libcosmic";
 //!
 //! let cosmic_theme::Spacing { space_xxs, .. } = theme::spacing();
 //!

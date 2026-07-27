@@ -11,4 +11,4 @@ Included scripts are free software licenced under the terms of the [GNU General 
 
 When reusing this work please include a proper attribution:
 
-> "[Cosmic Icons](http://github.com/pop-os/cosmic-icons)" by [System76](http://system76.com/) is licensed under [CC-SA-4.0](http://creativecommons.org/licenses/by-sa/4.0/)
+> "[Cosmic Icons](http://github.com/sory-x/cosmic-icons)" by [System76](http://system76.com/) is licensed under [CC-SA-4.0](http://creativecommons.org/licenses/by-sa/4.0/)

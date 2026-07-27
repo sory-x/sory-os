@@ -11,5 +11,5 @@ tokio = { workspace = true, features = ["time"] }
 tracing = "0.1.44"
 
 [dependencies.cosmic-settings-audio-client]
-git = "https://github.com/pop-os/cosmic-settings-daemon"
+git = "https://github.com/sory-x/cosmic-settings-daemon"
 features = ["codec"]

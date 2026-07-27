@@ -15,24 +15,24 @@ members = ["cosmic-portal-config"]
 [dependencies]
 anyhow = "1.0.102"
 ashpd = "0.12"
-cosmic-files = { git = "https://github.com/pop-os/cosmic-files", default-features = false, features = [
+cosmic-files = { git = "https://github.com/sory-x/cosmic-files", default-features = false, features = [
     "gvfs",
     "wayland",
 ] }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
-cosmic-client-toolkit = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols", rev = "32283d7" }
+cosmic-client-toolkit = { git = "https://github.com/sory-x/cosmic-protocols", rev = "32283d7" }
 futures = "0.3"
 image = "0.25"
-cosmic-bg-config = { git = "https://github.com/pop-os/cosmic-bg" }
+cosmic-bg-config = { git = "https://github.com/sory-x/cosmic-bg" }
 cosmic-portal-config = { path = "./cosmic-portal-config" }
 memmap2 = "0.9.10"
-# pipewire = { git = "https://github.com/pop-os/pipewire-rs" }
+# pipewire = { git = "https://github.com/sory-x/pipewire-rs" }
 pipewire = { git = "https://gitlab.freedesktop.org/pipewire/pipewire-rs", features = [
     "v0_3_33",
 ] }
 png = "0.18"
 rustix = { version = "1.1", features = ["fs"] }
-# spa_sys = { package = "libspa-sys", git = "https://github.com/pop-os/pipewire-rs" }
+# spa_sys = { package = "libspa-sys", git = "https://github.com/sory-x/pipewire-rs" }
 zbus = { version = "5.15.0", default-features = false, features = ["tokio"] }
 gbm = "0.18.0"
 wayland-protocols = "0.32.12"
@@ -60,7 +60,7 @@ tracing-subscriber = "0.3.23"
 log-panics = { version = "2.1.0", features = ["with-backtrace"] }
 
 [dependencies.libcosmic]
-git = "https://github.com/pop-os/libcosmic"
+path = "../../libcosmic"
 # TODO: a11y feature crashes file chooser dialog
 default-features = false
 features = [
@@ -75,7 +75,7 @@ features = [
 ]
 
 [workspace.dependencies]
-cosmic-config = { git = "https://github.com/pop-os/libcosmic" }
+cosmic-config = { path = "../../libcosmic" }
 log = "0.4.29"
 serde = "1.0.228"
 
@@ -83,13 +83,13 @@ serde = "1.0.228"
 gst = { package = "gstreamer", version = "0.25.1" }
 clap = { version = "4.6.1", features = ["derive"] }
 
-[patch."https://github.com/pop-os/libcosmic"]
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# iced_futures = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+[patch."https://github.com/sory-x/libcosmic"]
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
+# iced_futures = { path = "../../libcosmic", branch = "theme-v2" }
 libcosmic = { path = "../../libcosmic" }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../libcosmic/cosmic-theme" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
 
 [profile.release]
 opt-level = 3

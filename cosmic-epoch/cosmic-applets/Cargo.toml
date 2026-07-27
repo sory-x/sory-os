@@ -25,9 +25,9 @@ resolver = "3"
 
 [workspace.dependencies]
 anyhow = "1.0.102"
-cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit", rev = "a7d2d7a" }
+cctk = { git = "https://github.com/sory-x/cosmic-protocols", package = "cosmic-client-toolkit", rev = "a7d2d7a" }
 cosmic-applets-config = { path = "cosmic-applets-config" }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", default-features = false, features = [
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols", default-features = false, features = [
     "client",
 ], rev = "a7d2d7a" }
 
@@ -38,7 +38,7 @@ i18n-embed = { version = "0.16.0", features = [
     "desktop-requester",
 ] }
 i18n-embed-fl = "0.10"
-libcosmic = { git = "https://github.com/pop-os/libcosmic", default-features = false, features = [
+libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "applet",
     "applet-token",
     "dbus-config",
@@ -57,8 +57,8 @@ tracing = "0.1"
 tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
 tracing-log = "0.2.0"
 tokio = { version = "1.49.0", features = ["full"] }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-config = { git = "https://github.com/pop-os/libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-config = { path = "../../libcosmic" }
 serde = { version = "1.0.228", features = ["derive"] }
 zlink = "0.5.0"
 
@@ -70,22 +70,22 @@ lto = "thin"
 [workspace.metadata.cargo-machete]
 ignored = ["libcosmic"]
 
-[patch."https://github.com/pop-os/libcosmic"]
-cosmic-config = { path = "../libcosmic/cosmic-config" }
+[patch."https://github.com/sory-x/libcosmic"]
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
 libcosmic = { path = "../../libcosmic" }
-iced_futures = { path = "../libcosmic/iced/futures" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# iced_futures = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+iced_futures = { path = "../../libcosmic/iced/futures" }
+# cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# iced_futures = { path = "../../libcosmic", branch = "theme-v2" }
 
 [patch."https://github.com/smithay/client-toolkit.git"]
 sctk = { package = "smithay-client-toolkit", version = "0.20.0" }
 
-[patch."https://github.com/pop-os/cosmic-protocols"]
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "32283d7" }
-cosmic-client-toolkit = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "32283d7" }
+[patch."https://github.com/sory-x/cosmic-protocols"]
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols//", rev = "32283d7" }
+cosmic-client-toolkit = { git = "https://github.com/sory-x/cosmic-protocols//", rev = "32283d7" }
 
-# [patch.'https://github.com/pop-os/dbus-settings-bindings']
+# [patch.'https://github.com/sory-x/dbus-settings-bindings']
 # cosmic-dbus-networkmanager = { path = "../dbus-settings-bindings/networkmanager" }
 # upower_dbus = { path = "../dbus-settings-bindings/upower" }
 # nm-secret-agent-manager = { path = "../dbus-settings-bindings/nm-secret-agent-manager" }

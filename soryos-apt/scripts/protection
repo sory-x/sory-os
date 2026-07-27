@@ -4,9 +4,9 @@ import argparse
 import os.path
 import sys
 
-from lib import foreach_repo, github, github_no_pages
+from lib import foreach_soryos_repo, github, github_no_pages
 
-parser = argparse.ArgumentParser(description="Check protection of all Pop!_OS repositories")
+parser = argparse.ArgumentParser(description="Check protection of all SoryOS repositories")
 parser.add_argument("repos", nargs="*", default=[])
 args = parser.parse_args(sys.argv[1:])
 
@@ -16,14 +16,14 @@ def get_branch_serieses(repo, branch):
         if len(parts) > 1:
             series = [parts[len(parts) - 1]]
         else:
-            series = ["bionic", "focal", "impish", "jammy"]
+            series = ["jammy", "noble", "resolute"]
     else:
         series = []
 
     return series
 
 def get_context_series(context):
-    if context.startswith("pop-os/staging/"):
+    if context.startswith("sory-x/staging/"):
         parts = context.split("/")
         if len(parts) > 2:
             series = parts[2]
@@ -42,7 +42,7 @@ def callback(repo):
 
     for branch in github(repo["branches_url"].replace("{/branch}", "")):
         if branch["name"].startswith("master"):
-            print(branch["name"] + ":", "https://github.com/pop-os/" + repo["name"] + "/settings/branches/"),
+            print(branch["name"] + ":", "https://github.com/sory-x/" + repo["name"] + "/settings/branches/"),
 
             info = github_no_pages(repo["branches_url"].replace("{/branch}", "/" + branch["name"]))
             protection = info["protection"]
@@ -66,11 +66,11 @@ def callback(repo):
             for branch_series in branch_serieses:
                 print("    Series: " + branch_series)
 
-                source_context = "pop-os/staging/" + branch_series + "/source"
+                source_context = "sory-x/staging/" + branch_series + "/source"
                 if not source_context in contexts:
                     print(bold + "    Missing Context: " + source_context + reset)
 
-                binary_context = "pop-os/staging/" + branch_series + "/binary"
+                binary_context = "sory-x/staging/" + branch_series + "/binary"
                 if not binary_context in contexts:
                     print(bold + "    Missing Context: " + binary_context + reset)
 
@@ -82,4 +82,4 @@ def callback(repo):
 
 
 
-foreach_repo(callback, args.repos)
+foreach_soryos_repo(callback, args.repos)

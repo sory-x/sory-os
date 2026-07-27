@@ -6,7 +6,7 @@ edition = "2024"
 rust-version = "1.93"
 
 [dependencies]
-libcosmic = { git = "https://github.com/pop-os/libcosmic", default-features = false, features = [
+libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "autosize",
     "dbus-config",
     "a11y",
@@ -20,7 +20,7 @@ anyhow = "1.0"
 color-backtrace = "0.7.2"
 cosmic-notifications-util = { path = "./cosmic-notifications-util" }
 cosmic-notifications-config = { path = "./cosmic-notifications-config" }
-cosmic-panel-config = { git = "https://github.com/pop-os/cosmic-panel" }
+cosmic-panel-config = { git = "https://github.com/sory-x/cosmic-panel" }
 rustix = "1.1.4"
 tokio = { version = "1.52.1", features = [
     "sync",
@@ -47,13 +47,9 @@ members = ["cosmic-notifications-util", "cosmic-notifications-config"]
 opt-level = "s"
 lto = "thin"
 
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//" }
-[patch.'https://github.com/pop-os/libcosmic']
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//" }
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-libcosmic = { path = "../../libcosmic" }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../libcosmic/cosmic-theme" }
+[patch.'https://github.com/sory-x/soryos']
+libcosmic = { path = "../../../libcosmic" }
+cosmic-config = { path = "../../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
+
+# cosmic-config = { path = "../../../libcosmic/cosmic-config" }

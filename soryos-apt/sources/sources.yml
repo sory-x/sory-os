@@ -3,17 +3,17 @@
 # Versions : epoch-1.4.0 (sauf indication contraire)
 # =========================================================================
 
-upstream_org: pop-os
+upstream_org: sory-x
 fork_org: sory-x
 # NOTE: toutes les URLs ci-dessous pointent vers nos forks sory-x
-# Les originaux upstream sont chez pop-os
+# Les originaux upstream sont chez sory-x
 epoch_version: "1.4.0"
 
 repos:
 
   # ═════════════════════════════════════════════════════════════════════
   # COSMIC Desktop — Composants Rust (debhelper/cargo)
-  # Tous forkés de pop-os/cosmic-epoch vers sory-x/cosmic-epoch
+  # Tous dans le monorepo sory-x/soryos
   # ═════════════════════════════════════════════════════════════════════
 
   # ── Dépôts avec debian/control complets (build dpkg natif) ────────

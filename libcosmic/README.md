@@ -4,13 +4,13 @@ A platform toolkit based on iced for creating applets and applications for the C
 
 ## Documentation
 
-- [API Documentation](https://pop-os.github.io/libcosmic/cosmic/): Automatically generated from this repository via `cargo doc`
-- [libcosmic Book](https://pop-os.github.io/libcosmic-book/): A reference for learning libcosmic
+- [API Documentation](https://sory-x.github.io/libcosmic/cosmic/): Automatically generated from this repository via `cargo doc`
+- [libcosmic Book](https://sory-x.github.io/libcosmic-book/): A reference for learning libcosmic
 
 ## Templates
 
-- https://github.com/pop-os/cosmic-app-template: Application project template
-- https://github.com/pop-os/cosmic-applet-template: Panel applet project template
+- https://github.com/sory-x/cosmic-app-template: Application project template
+- https://github.com/sory-x/cosmic-applet-template: Panel applet project template
 
 ## Dependencies
 
@@ -44,7 +44,7 @@ Some examples are included in the [examples](./examples) directory to to kicksta
 COSMIC adventure. To run them, you need to clone the repository with the following commands:
 
 ```sh
-git clone --recurse-submodules https://github.com/pop-os/libcosmic
+git clone --recurse-submodules https://github.com/sory-x/libcosmic
 cd libcosmic
 ```
 
@@ -80,13 +80,13 @@ Available cargo features to choose from:
 
 ### Project Showcase
 
-- [COSMIC App Library](https://github.com/pop-os/cosmic-applibrary)
-- [COSMIC Applets](https://github.com/pop-os/cosmic-applets)
-- [COSMIC Launcher](https://github.com/pop-os/cosmic-launcher)
-- [COSMIC Notifications](https://github.com/pop-os/cosmic-notifications)
-- [COSMIC Panel](https://github.com/pop-os/cosmic-panel)
-- [COSMIC Text Editor](https://github.com/pop-os/cosmic-text-editor)
-- [COSMIC Settings](https://github.com/pop-os/cosmic-settings)
+- [COSMIC App Library](https://github.com/sory-x/cosmic-applibrary)
+- [COSMIC Applets](https://github.com/sory-x/cosmic-applets)
+- [COSMIC Launcher](https://github.com/sory-x/cosmic-launcher)
+- [COSMIC Notifications](https://github.com/sory-x/cosmic-notifications)
+- [COSMIC Panel](https://github.com/sory-x/cosmic-panel)
+- [COSMIC Text Editor](https://github.com/sory-x/cosmic-text-editor)
+- [COSMIC Settings](https://github.com/sory-x/cosmic-settings)
 
 ## Licence
 

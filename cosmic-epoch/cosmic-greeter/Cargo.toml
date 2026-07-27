@@ -40,28 +40,28 @@ xdg = "3.0"
 #TODO: reduce features
 tokio = { workspace = true, features = ["full"] }
 wayland-client = "0.31.14"
-# cosmic-settings-subscriptions = { git = "https://github.com/pop-os/cosmic-settings-subscriptions", default-features = false, features = [
+# cosmic-settings-subscriptions = { git = "https://github.com/sory-x/cosmic-settings-subscriptions", default-features = false, features = [
 #     "accessibility",
 #     "cosmic_a11y_manager",
 # ] }
 
-cosmic-settings-accessibility-subscription = { git = "https://github.com/pop-os/cosmic-settings", default-features = false }
-cosmic-settings-a11y-manager-subscription = { git = "https://github.com/pop-os/cosmic-settings", default-features = false }
-cosmic-settings-daemon-config = { git = "https://github.com/pop-os/cosmic-settings-daemon", default-features = false, features = [
+cosmic-settings-accessibility-subscription = { git = "https://github.com/sory-x/cosmic-settings", default-features = false }
+cosmic-settings-a11y-manager-subscription = { git = "https://github.com/sory-x/cosmic-settings", default-features = false }
+cosmic-settings-daemon-config = { git = "https://github.com/sory-x/cosmic-settings-daemon", default-features = false, features = [
     "greeter",
 ] }
 
-cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit" }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", default-features = false, features = [
+cctk = { git = "https://github.com/sory-x/cosmic-protocols", package = "cosmic-client-toolkit" }
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols", default-features = false, features = [
     "client",
 ] }
 
 # For network status using networkmanager feature
-cosmic-dbus-networkmanager = { git = "https://github.com/pop-os/dbus-settings-bindings", optional = true }
+cosmic-dbus-networkmanager = { git = "https://github.com/sory-x/dbus-settings-bindings", optional = true }
 # For logind integration using logind feature
 logind-zbus = { version = "5", optional = true }
 # For power status with upower feature
-upower_dbus = { git = "https://github.com/pop-os/dbus-settings-bindings", optional = true }
+upower_dbus = { git = "https://github.com/sory-x/dbus-settings-bindings", optional = true }
 # Required for some features
 zbus = { workspace = true }
 # CLI arguments
@@ -74,7 +74,7 @@ i18n-embed = { version = "0.16", features = [
 i18n-embed-fl = "0.10"
 rust-embed = "8"
 futures-util = "0.3.32"
-timedate-zbus = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+timedate-zbus = { git = "https://github.com/sory-x/dbus-settings-bindings" }
 cosmic-randr-shell = { workspace = true }
 kdl.workspace = true
 color-eyre.workspace = true
@@ -124,18 +124,18 @@ serde = "1"
 tokio = "1.52.1"
 zbus = "5"
 kdl = "6"
-cosmic-randr-shell = { git = "https://github.com/pop-os/cosmic-randr", default-features = false }
+cosmic-randr-shell = { git = "https://github.com/sory-x/cosmic-randr", default-features = false }
 
 [workspace.dependencies.cosmic-applets-config]
-git = "https://github.com/pop-os/cosmic-applets"
+git = "https://github.com/sory-x/cosmic-applets"
 default-features = false
 
 [workspace.dependencies.cosmic-bg-config]
-git = "https://github.com/pop-os/cosmic-bg"
+git = "https://github.com/sory-x/cosmic-bg"
 default-features = false
 
 [workspace.dependencies.cosmic-comp-config]
-git = "https://github.com/pop-os/cosmic-comp"
+git = "https://github.com/sory-x/cosmic-comp"
 default-features = false
 features = ["output", "randr"]
 
@@ -143,30 +143,30 @@ features = ["output", "randr"]
 path = "cosmic-greeter-config"
 
 [workspace.dependencies.cosmic-config]
-git = "https://github.com/pop-os/libcosmic"
+path = "../../../libcosmic/cosmic-config"
 default-features = false
 
 [workspace.dependencies.cosmic-theme]
-git = "https://github.com/pop-os/libcosmic"
+path = "../../../libcosmic/cosmic-theme"
 default-features = false
 
 [workspace.dependencies.libcosmic]
-git = "https://github.com/pop-os/libcosmic"
+path = "../../../libcosmic"
 default-features = false
 features = ["advanced-shaping"]
 
-[patch."https://github.com/pop-os/cosmic-protocols"]
-cctk = { git = "https://github.com/pop-os/cosmic-protocols//", package = "cosmic-client-toolkit", rev = "32283d7" }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "32283d7" }
+[patch."https://github.com/sory-x/cosmic-protocols"]
+cctk = { git = "https://github.com/sory-x/cosmic-protocols//", package = "cosmic-client-toolkit", rev = "32283d7" }
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols//", rev = "32283d7" }
 
-[patch."https://github.com/pop-os/libcosmic"]
-# iced_core = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# iced_futures = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-libcosmic = { path = "../../libcosmic" }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../libcosmic/cosmic-theme" }
-iced_futures = { path = "../libcosmic/iced/futures" }
-iced_winit = { path = "../libcosmic/iced/winit" }
+[patch."https://github.com/sory-x/soryos"]
+# iced_core = { path = "../../../libcosmic", branch = "theme-v2" }
+# iced_futures = { path = "../../../libcosmic", branch = "theme-v2" }
+# libcosmic = { path = "../../../libcosmic", branch = "theme-v2" }
+# cosmic-config = { path = "../../../libcosmic/cosmic-config", branch = "theme-v2" }
+# cosmic-theme = { path = "../../../libcosmic/cosmic-theme", branch = "theme-v2" }
+libcosmic = { path = "../../../libcosmic" }
+cosmic-config = { path = "../../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
+iced_futures = { path = "../../../libcosmic/iced/futures" }
+iced_winit = { path = "../../../libcosmic/iced/winit" }

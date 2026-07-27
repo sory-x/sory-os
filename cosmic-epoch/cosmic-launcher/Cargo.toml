@@ -18,7 +18,7 @@ i18n-embed = { version = "0.16", features = [
     "desktop-requester",
 ] }
 i18n-embed-fl = "0.10"
-libcosmic = { git = "https://github.com/pop-os/libcosmic/", features = [
+libcosmic = { path = "../../libcosmic", features = [
     "autosize",
     "dbus-config",
     "winit",
@@ -38,20 +38,18 @@ tracing-subscriber = { version = "0.3.22", default-features = false, features = 
 tracing-journald = "0.3.2"
 tokio-stream = "0.1.18"
 nix = { version = "0.31.1", features = ["process"] }
-pop-launcher = { git = "https://github.com/pop-os/launcher/" }
-pop-launcher-service = { git = "https://github.com/pop-os/launcher/" }
+pop-launcher = { git = "https://github.com/sory-x/launcher/" }
+pop-launcher-service = { git = "https://github.com/sory-x/launcher/" }
 rust-embed = "8.11.0"
 serde = { version = "1.0.228", features = ["derive"] }
 serde_json = "1.0.149"
 tokio = { version = "1.49.0", features = ["sync", "rt"] }
 clap = { version = "4.5.56", features = ["derive"] }
-switcheroo-control = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+switcheroo-control = { git = "https://github.com/sory-x/dbus-settings-bindings" }
 zbus = { version = "5.13", default-features = false, features = ["tokio"] }
 
-[patch.'https://github.com/pop-os/libcosmic']
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-libcosmic = { path = "../../libcosmic" }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../libcosmic/cosmic-theme" }
+[patch.'https://github.com/sory-x/soryos']
+libcosmic = { path = "../../../libcosmic" }
+cosmic-config = { path = "../../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
+

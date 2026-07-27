@@ -21,18 +21,18 @@ sctk = { package = "smithay-client-toolkit", version = "0.20.0", features = [
     "xkbcommon",
 ] }
 
-[patch."https://github.com/pop-os/cosmic-protocols"]
-cctk = { package = "cosmic-client-toolkit", git = "https://github.com/pop-os//cosmic-protocols", rev = "32283d7" }
-cosmic-protocols = { git = "https://github.com/pop-os//cosmic-protocols", rev = "32283d7" }
+[patch."https://github.com/sory-x/cosmic-protocols"]
+cctk = { package = "cosmic-client-toolkit", git = "https://github.com/sory-x//cosmic-protocols", rev = "32283d7" }
+cosmic-protocols = { git = "https://github.com/sory-x//cosmic-protocols", rev = "32283d7" }
 
-# [patch."https://github.com/pop-os/xdg-shell-wrapper"]
+# [patch."https://github.com/sory-x/xdg-shell-wrapper"]
 # xdg-shell-wrapper-config = { path = "../xdg-shell-wrapper/xdg-shell-wrapper-config" }
 # xdg-shell-wrapper = { path = "../xdg-shell-wrapper" }
-# xdg-shell-wrapper = { git = "https://github.com/pop-os/xdg-shell-wrapper//", branch = "update" }
-# xdg-shell-wrapper-config = { git = "https://github.com/pop-os/xdg-shell-wrapper//", branch = "update" }
+# xdg-shell-wrapper = { git = "https://github.com/sory-x/xdg-shell-wrapper//", branch = "update" }
+# xdg-shell-wrapper-config = { git = "https://github.com/sory-x/xdg-shell-wrapper//", branch = "update" }
 
-[patch."https://github.com/pop-os/libcosmic"]
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# iced_tiny_skia = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+[patch."https://github.com/sory-x/libcosmic"]
+# cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-theme = { path = "../../libcosmic", branch = "theme-v2" }
+# iced_tiny_skia = { path = "../../libcosmic", branch = "theme-v2" }

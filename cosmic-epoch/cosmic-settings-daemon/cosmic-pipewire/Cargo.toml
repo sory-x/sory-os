@@ -2,7 +2,7 @@
 name = "cosmic-pipewire"
 version = "1.0.8"
 edition = "2024"
-repository = "https://github.com/pop-os/cosmic-settings-daemon"
+repository = "https://github.com/sory-x/cosmic-settings-daemon"
 license = "MPL-2.0"
 publish = true
 

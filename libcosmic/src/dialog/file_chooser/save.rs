@@ -3,7 +3,7 @@
 
 //! Choose a location to save a file to.
 //!
-//! Check out the [open-dialog](https://github.com/pop-os/libcosmic/tree/master/examples/open-dialog)
+//! Check out the [open-dialog](https://github.com/sory-x/libcosmic/tree/master/examples/open-dialog)
 //! example in our repository.
 
 #[cfg(feature = "xdg-portal")]

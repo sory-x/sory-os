@@ -17,15 +17,15 @@ cosmic-comp-config = { path = "cosmic-comp-config", features = [
     "libdisplay-info",
     "output",
 ] }
-cosmic-config = { git = "https://github.com/pop-os/libcosmic", features = [
+cosmic-config = { path = "../../libcosmic", features = [
     "calloop",
     "macro",
 ] }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "160b086", default-features = false, features = [
+cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols", rev = "160b086", default-features = false, features = [
     "server",
 ] }
-cosmic-settings-config = { git = "https://github.com/pop-os/cosmic-settings-daemon" }
-cosmic-settings-daemon-config = { git = "https://github.com/pop-os/cosmic-settings-daemon", features = [
+cosmic-settings-config = { git = "https://github.com/sory-x/cosmic-settings-daemon" }
+cosmic-settings-daemon-config = { git = "https://github.com/sory-x/cosmic-settings-daemon", features = [
     "greeter",
 ] }
 cosmic-text = { version = "0.19", features = [
@@ -39,11 +39,11 @@ i18n-embed = { version = "0.16", features = [
     "desktop-requester",
 ] }
 i18n-embed-fl = "0.10"
-iced_tiny_skia = { git = "https://github.com/pop-os/libcosmic" }
-iced_graphics = { git = "https://github.com/pop-os/libcosmic/", features = ["geometry"] }
+iced_tiny_skia = { path = "../../libcosmic" }
+iced_graphics = { path = "../../libcosmic", features = ["geometry"] }
 indexmap = "2.13"
 keyframe = "1.1.1"
-libcosmic = { git = "https://github.com/pop-os/libcosmic", default-features = false }
+libcosmic = { path = "../../libcosmic", default-features = false }
 libsystemd = { version = "0.7", optional = true }
 log-panics = { version = "2", features = ["with-backtrace"] }
 ordered-float = "5.1"
@@ -140,8 +140,8 @@ inherits = "release"
 [profile.release]
 lto = "fat"
 
-[patch."https://github.com/pop-os/cosmic-protocols"]
-cosmic-protocols = { git = "https://github.com/pop-os//cosmic-protocols", branch = "main" }
+[patch."https://github.com/sory-x/cosmic-protocols"]
+cosmic-protocols = { git = "https://github.com/sory-x//cosmic-protocols", branch = "main" }
 
 [patch.crates-io]
 smithay = { git = "https://github.com/smithay/smithay.git", rev = "1ed69cb" }

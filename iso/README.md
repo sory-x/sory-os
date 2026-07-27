@@ -26,7 +26,7 @@ While you are waiting for your key to be uploaded, install the dependencies:
 ## Building
 
 The build is controlled by the Makefile. The following commands can be used:
-- `make` - Build an ISO at `build/17.10/pop-os.iso`
+- `make` - Build an ISO at `build/22.04/soryos.iso`
 - `make qemu_bios` - Run the ISO in BIOS mode
 - `make qemu_uefi` - Run the ISO in UEFI mode
 - `make clean` - Remove the build files, keeping the debootstrap

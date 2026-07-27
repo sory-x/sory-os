@@ -3,7 +3,7 @@
 
 //! Build interactive cross-platform COSMIC applications.
 //!
-//! Check out our [application](https://github.com/pop-os/libcosmic/tree/master/examples/application)
+//! Check out our [application](https://github.com/sory-x/libcosmic/tree/master/examples/application)
 //! example in our repository.
 
 mod action;

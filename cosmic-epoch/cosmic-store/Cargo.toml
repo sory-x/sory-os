@@ -49,12 +49,12 @@ zbus = { version = "5", optional = true }
 notify-rust = { version = "4", optional = true }
 # packagekit feature
 packagekit-zbus = { version = "0.2", optional = true }
-cosmic-panel-config = { git = "https://github.com/pop-os/cosmic-panel", optional = true }
+cosmic-panel-config = { git = "https://github.com/sory-x/cosmic-panel", optional = true }
 freedesktop-desktop-entry = { version = "0.8.1", optional = true }
-switcheroo-control = { git = "https://github.com/pop-os/dbus-settings-bindings", optional = true }
+switcheroo-control = { git = "https://github.com/sory-x/dbus-settings-bindings", optional = true }
 
 [dependencies.libcosmic]
-git = "https://github.com/pop-os/libcosmic.git"
+path = "../../libcosmic"
 default-features = false
 features = ["multi-window", "tokio", "winit"]
 
@@ -100,16 +100,16 @@ debug = true
 [workspace]
 members = ["flathub-stats"]
 
-# [patch.'https://github.com/pop-os/cosmic-text.git']
+# [patch.'https://github.com/sory-x/cosmic-text.git']
 # cosmic-text = { path = "../cosmic-text" }
 
-[patch.'https://github.com/pop-os/libcosmic.git']
+[patch.'https://github.com/sory-x/soryos']
 libcosmic = { path = "../../libcosmic" }
-cosmic-config = { path = "../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../libcosmic/cosmic-theme" }
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-theme = { path = "../../libcosmic", branch = "theme-v2" }
 # [patch.'https://github.com/jackpot51/appstream.git']
 # appstream = { path = "../../appstream" }
 

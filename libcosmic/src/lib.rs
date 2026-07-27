@@ -61,8 +61,8 @@
 //! with one of the following templates. The app template is for developing desktop
 //! applications and the applet template is for developing COSMIC applets.
 //!
-//! - [App Template](https://github.com/pop-os/cosmic-app-template/)
-//! - [Applet Template](https://github.com/pop-os/cosmic-applet-template/)
+//! - [App Template](https://github.com/sory-x/cosmic-app-template/)
+//! - [Applet Template](https://github.com/sory-x/cosmic-applet-template/)
 //!
 //! ## Widgets
 //!

@@ -7,7 +7,7 @@ Build-Depends:
   debhelper-compat (= 11),
   just,
 Standards-Version: 4.3.0
-Homepage: https://github.com/pop-os/cosmic-icons
+Homepage: https://github.com/sory-x/cosmic-icons
 
 Package: cosmic-icons
 Architecture: amd64 arm64

@@ -14,8 +14,8 @@ wayland-protocols-wlr = { version = "0.3.12", features = [
     "server",
     "client",
 ], optional = true }
-cosmic-config = { git = "https://github.com/pop-os/libcosmic" }
+cosmic-config = { git = "https://github.com/sory-x/libcosmic" }
 xdg-shell-wrapper-config = { path = "../xdg-shell-wrapper-config", optional = true }
-# xdg-shell-wrapper-config = { git = "https://github.com/pop-os/xdg-shell-wrapper", optional = true }
+# xdg-shell-wrapper-config = { git = "https://github.com/sory-x/xdg-shell-wrapper", optional = true }
 sctk.workspace = true
 sctk.optional = true

@@ -11,7 +11,7 @@ wgpu = ["libcosmic/wgpu"]
 
 [dependencies]
 zbus = "5.12"
-libcosmic = { git = "https://github.com/pop-os/libcosmic", features = [
+libcosmic = { path = "../../libcosmic", features = [
     "dbus-config",
     "desktop",
     "winit",
@@ -43,16 +43,16 @@ itertools = "0.14"
 url = "2.5"
 nix = "0.30"
 clap = { version = "4.5", features = ["derive"] }
-switcheroo-control = { git = "https://github.com/pop-os/dbus-settings-bindings" }
-cosmic-app-list-config = { git = "https://github.com/pop-os/cosmic-applets" }
+switcheroo-control = { git = "https://github.com/sory-x/dbus-settings-bindings" }
+cosmic-app-list-config = { git = "https://github.com/sory-x/cosmic-applets" }
 # cosmic-app-list-config = { path = "../cosmic-applets/cosmic-app-list/cosmic-app-list-config/" }
 
 [profile.release]
 lto = "thin"
 
-[patch."https://github.com/pop-os/libcosmic/"]
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-cosmic-config = { path = "../libcosmic/cosmic-config/" }
-libcosmic = { path = "../libcosmic/" }
+[patch."https://github.com/sory-x/libcosmic/"]
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-theme = { path = "../../libcosmic", branch = "theme-v2" }
+cosmic-config = { path = "../../libcosmic/cosmic-config/" }
+libcosmic = { path = "../../libcosmic/" }

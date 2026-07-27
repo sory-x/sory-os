@@ -17,9 +17,9 @@ tracing-subscriber.workspace = true
 tracing.workspace = true
 
 [dependencies.cosmic-settings-a11y-manager-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
+git = "https://github.com/sory-x/cosmic-settings"
 # path = "../../cosmic-settings/subscriptions/a11y-manager"
 
 [dependencies.cosmic-settings-accessibility-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
+git = "https://github.com/sory-x/cosmic-settings"
 # path = "../../cosmic-settings/subscriptions/accessibility"

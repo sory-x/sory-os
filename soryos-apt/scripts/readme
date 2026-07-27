@@ -7,7 +7,7 @@ from lib import foreach_repo, foreach_soryos_repo, markdown_escape
 
 parser = argparse.ArgumentParser(description="Generate REPOS.md")
 parser.add_argument("repos", nargs="*", default=[])
-parser.add_argument("--soryos", action="store_true", help="Generate for sory-x org instead of pop-os")
+parser.add_argument("--soryos", action="store_true", help="Generate for sory-x org")
 args = parser.parse_args(sys.argv[1:])
 
 f = open("REPOS.md", "w")

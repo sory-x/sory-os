@@ -11,6 +11,6 @@
         ["bash", "-c", "cd source && ./buildchain.sh"]
     ],
     "publish": [
-        ["mv", "source/build/17.10/pop-os.tar", "artifacts"]
+        ["mv", "source/build/17.10/soryos.tar", "artifacts"]
     ]
 }

@@ -1,6 +1,6 @@
 Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cosmic-icons
-Source: https://github.com/pop-os/cosmic-icons
+Source: https://github.com/sory-x/cosmic-icons
 
 Files: *
 Copyright: Copyright 2022 System76

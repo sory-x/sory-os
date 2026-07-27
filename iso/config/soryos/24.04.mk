@@ -30,7 +30,7 @@ POST_DISTRO_PKGS+=rsync
 
 #TODO: systemd-boot is added because it is not depended on by anything
 # This was broken out from the systemd package for 24.04 and should be
-# added to pop-desktop and/or kernelstub
+# added to soryos-desktop and/or kernelstub
 POST_DISTRO_PKGS+=systemd-boot
 
 ifeq ($(NVIDIA),1)

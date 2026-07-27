@@ -73,8 +73,8 @@ impl cosmic::Application for App {
             .developers([("Michael Murphy", "info@system76.com")])
             .links([
                 ("Website", "https://system76.com/cosmic"),
-                ("Repository", "https://github.com/pop-os/libcosmic"),
-                ("Support", "https://github.com/pop-os/libcosmic/issues"),
+                ("Repository", "https://github.com/sory-x/libcosmic"),
+                ("Support", "https://github.com/sory-x/libcosmic/issues"),
             ]);
 
         let mut app = App {

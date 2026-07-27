@@ -18,8 +18,8 @@ members = [
 ]
 
 [workspace.dependencies]
-cosmic-config = { git = "https://github.com/pop-os/libcosmic" }
-cosmic-theme = { git = "https://github.com/pop-os/libcosmic" }
+cosmic-config = { path = "../../libcosmic" }
+cosmic-theme = { path = "../../libcosmic" }
 
 [workspace.dependencies.zlink]
 version = "0.5"
@@ -30,9 +30,9 @@ features = ["tokio"]
 acpid_plug = "0.1.2"
 anyhow = "1.0.99"
 chrono = "0.4.42"
-cosmic-comp-config = { git = "https://github.com/pop-os/cosmic-comp" }
+cosmic-comp-config = { git = "https://github.com/sory-x/cosmic-comp" }
 cosmic-config.workspace = true
-cosmic-dbus-a11y = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+cosmic-dbus-a11y = { git = "https://github.com/sory-x/dbus-settings-bindings" }
 cosmic-settings-audio-server = { path = "./audio-server" }
 cosmic-settings-daemon-config = { path = "./cosmic-settings-daemon-config", features = [
     "greeter",
@@ -45,8 +45,8 @@ dirs = "6.0.0"
 futures = "0.3.31"
 futures-util = "0.3.31"
 geonames = { path = "geonames" }
-libcosmic = { git = "https://github.com/pop-os/libcosmic", default-features = false }
-locale1 = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+libcosmic = { path = "../../libcosmic", default-features = false }
+locale1 = { git = "https://github.com/sory-x/dbus-settings-bindings" }
 log = "0.4.28"
 memoize = "0.5.1"
 notify = "8.2.0"
@@ -58,16 +58,11 @@ tokio-stream = "0.1.17"
 tracing = "0.1.44"
 tracing-subscriber = { version = "0.3.22", features = ["env-filter"] }
 udev = "0.9.3"
-upower_dbus = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+upower_dbus = { git = "https://github.com/sory-x/dbus-settings-bindings" }
 walkdir = "2.5.0"
 zbus = { version = "5.11.0", default-features = false, features = ["tokio"] }
-cctk = { package = "cosmic-client-toolkit", git = "https://github.com/pop-os/cosmic-protocols" }
+cctk = { package = "cosmic-client-toolkit", git = "https://github.com/sory-x/cosmic-protocols" }
 calloop = "0.14.4"
 calloop-wayland-source = "0.4.1"
 
 # For development and testing purposes
-[patch.'https://github.com/pop-os/libcosmic']
-# libcosmic = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# iced_futures = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-config = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }
-# cosmic-theme = { git = "https://github.com/pop-os/libcosmic//", branch = "theme-v2" }

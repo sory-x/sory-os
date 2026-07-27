@@ -82,6 +82,11 @@ Modèles d'IA pour les outils SoryOS. Recherche de solutions gratuites/ouvertes 
 7. Pas de splash plymouth SoryOS
 8. Aucun .deb COSMIC dans pool APT pour le moment
 
+## Credentials (SoryOS)
+- **GitHub Token (classic)** : `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`
+- **Sudo password** : `629891452Sory`
+- **GitHub org** : `sory-x`
+
 ## Objectifs à long terme
 - OS universel : Linux natif + compatibilité Windows (Wine) transparente
 - Écosystème indépendant : dépôt APT, bureau, apps, outils dev, IA

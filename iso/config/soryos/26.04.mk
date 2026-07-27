@@ -19,26 +19,25 @@ GNOME_INITIAL_SETUP_STAMP=21.04
 
 # DEB822 format system repositories, comment out to disable
 DEB822:=1
-APPS_URI:=http://apt.pop-os.org/proprietary
-APPS_KEY=/etc/apt/trusted.gpg.d/pop-keyring-2017-archive.gpg
 
 # Repositories to be present in installed system
-RELEASE_URI:=http://apt.pop-os.org/release
-RELEASE_KEY=/etc/apt/trusted.gpg.d/pop-keyring-2017-archive.gpg
+RELEASE_URI:=https://sory-x.github.io/soryos-apt
+RELEASE_KEY=/iso/soryos-archive-keyring.gpg
 
 # Use proposed repositories instead, if requested
 ifeq ($(PROPOSED),1)
-RELEASE_URI:=http://apt.pop-os.org/staging/master
+RELEASE_URI:=https://sory-x.github.io/soryos-apt
+# SoryOS: utiliser la suite testing au lieu de staging
 endif
 
 # Packages to install
-#TODO: cosmic-term is before pop-desktop to ensure it fulfills all x-terminal-emulator depends
-#TODO: linux-system76 is added since pop-server depends on linux-raspi for arm64
+#TODO: cosmic-term is before soryos-desktop to ensure it fulfills all x-terminal-emulator depends
+#TODO: linux-system76 is added since soryos-server depends on linux-raspi for arm64
 DISTRO_PKGS=\
 	systemd \
 	cosmic-term \
 	linux-system76 \
-	pop-desktop
+	soryos-desktop
 
 # Packages to install after (to avoid dependency issues)
 POST_DISTRO_PKGS=system76-io-dkms
@@ -59,7 +58,7 @@ POST_DISTRO_PKGS+=rsync
 
 #TODO: systemd-boot is added because it is not depended on by anything
 # This was broken out from the systemd package for 24.04 and should be
-# added to pop-desktop and/or kernelstub
+# added to soryos-desktop and/or kernelstub
 POST_DISTRO_PKGS+=systemd-boot
 
 #TODO: revisit whether these kernel params need to be explicitly invoked
@@ -86,9 +85,7 @@ LIVE_PKGS=\
 	cosmic-initial-setup-casper \
 	distinst \
 	expect \
-	gparted \
-	pop-installer \
-	pop-installer-casper
+	gparted
 
 # Packages to remove from installed system (usually installed as Recommends)
 RM_PKGS=\
@@ -96,7 +93,6 @@ RM_PKGS=\
 	imagemagick-7.q16 \
 	irqbalance \
 	mozc-utils-gui \
-	pop-installer-session \
 	snapd \
 	ubuntu-advantage-tools \
 	ubuntu-minimal \
@@ -120,9 +116,9 @@ MAIN_POOL=\
 	libfl2 \
 	lm-sensors \
 	pm-utils \
-	pop-hp-vendor \
-	pop-hp-vendor-dkms \
-	pop-hp-wallpapers \
+	soryos-hp-vendor \
+	soryos-hp-vendor-dkms \
+	soryos-hp-wallpapers \
 	postfix \
 	powermgmt-base \
 	python3-debian \
@@ -131,15 +127,15 @@ MAIN_POOL=\
 	python3-systemd \
 	system76-driver \
 	system76-firmware-daemon \
-	system76-wallpapers \
+	soryos-wallpapers \
 	xbacklight
-# TODO: system76-driver deps should be revisited: https://github.com/pop-os/system76-driver/issues/292
+# TODO: system76-driver deps should be revisited
 MAIN_POOL+=\
 	firmware-manager \
 	firmware-manager-notify \
 	firmware-manager-shared \
 	gir1.2-notify-0.7 \
-	gnome-shell-extension-system76-power \
+	gnome-shell-extension-soryos-power \
 	hidpi-daemon \
 	python3-pydbus \
 	python3-xlib \
@@ -178,11 +174,11 @@ POOL_PKGS=\
 ifeq ($(HP),1)
 DISTRO_VOLUME_LABEL=$(DISTRO_NAME) $(DISTRO_VERSION) $(DISTRO_ARCH) HP
 POST_DISTRO_PKGS+=\
-	pop-hp-vendor \
-	pop-hp-vendor-dkms \
-	pop-hp-wallpapers
+	soryos-hp-vendor \
+	soryos-hp-vendor-dkms \
+	soryos-hp-wallpapers
 RM_PKGS+=\
-	pop-wallpapers
+	soryos-wallpapers
 LIVE_PKGS+=\
 	dbus-x11
 endif

@@ -10,22 +10,21 @@ GNOME_INITIAL_SETUP_STAMP=21.04
 
 # DEB822 format system repositories, comment out to disable
 DEB822:=1
-APPS_URI:=http://apt.pop-os.org/proprietary
-APPS_KEY=/etc/apt/trusted.gpg.d/pop-keyring-2017-archive.gpg
 
 # Repositories to be present in installed system
-RELEASE_URI:=http://apt.pop-os.org/release
-RELEASE_KEY=/etc/apt/trusted.gpg.d/pop-keyring-2017-archive.gpg
+RELEASE_URI:=https://sory-x.github.io/soryos-apt
+RELEASE_KEY=/iso/soryos-archive-keyring.gpg
 
 # Use proposed repositories instead, if requested
 ifeq ($(PROPOSED),1)
-RELEASE_URI:=http://apt.pop-os.org/staging/master
+RELEASE_URI:=https://sory-x.github.io/soryos-apt
+# SoryOS: utiliser la suite testing au lieu de staging
 endif
 
 # Packages to install
 DISTRO_PKGS=\
 	systemd \
-	pop-desktop
+	soryos-desktop
 
 # Packages to install after (to avoid dependency issues)
 ifeq ($(DISTRO_ARCH),amd64)
@@ -55,10 +54,7 @@ LIVE_PKGS=\
 	casper \
 	distinst \
 	expect \
-	gparted \
-	pop-installer \
-	pop-installer-casper \
-	pop-shop-casper
+	gparted
 
 # Packages to remove from installed system (usually installed as Recommends)
 RM_PKGS=\
@@ -66,7 +62,6 @@ RM_PKGS=\
 	imagemagick-6.q16 \
 	irqbalance \
 	mozc-utils-gui \
-	pop-installer-session \
 	snapd \
 	ubuntu-advantage-tools \
 	ubuntu-minimal \
@@ -95,9 +90,9 @@ MAIN_POOL=\
 	libx86-1 \
 	lm-sensors \
 	pm-utils \
-	pop-hp-vendor \
-	pop-hp-vendor-dkms \
-	pop-hp-wallpapers \
+	soryos-hp-vendor \
+	soryos-hp-vendor-dkms \
+	soryos-hp-wallpapers \
 	postfix \
 	powermgmt-base \
 	python3-debian \
@@ -145,11 +140,11 @@ POOL_PKGS=\
 ifeq ($(HP),1)
 DISTRO_VOLUME_LABEL=$(DISTRO_NAME) $(DISTRO_VERSION) $(DISTRO_ARCH) HP
 POST_DISTRO_PKGS+=\
-	pop-hp-vendor \
-	pop-hp-vendor-dkms \
-	pop-hp-wallpapers
+	soryos-hp-vendor \
+	soryos-hp-vendor-dkms \
+	soryos-hp-wallpapers
 RM_PKGS+=\
-	pop-wallpapers
+	soryos-wallpapers
 LIVE_PKGS+=\
 	dbus-x11
 endif
