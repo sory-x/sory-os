@@ -394,11 +394,6 @@ repos:
     type: local
     template: soryos-icon-theme
 
-  - name: soryos-fonts
-    type: local
-    local_path: /home/sory/Bureau/soryos/cosmic-epoch/fonts
-    has_debian: true
-
   - name: soryos-sound-theme
     type: local
     template: soryos-sound-theme

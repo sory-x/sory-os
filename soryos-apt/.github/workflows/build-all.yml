@@ -66,7 +66,6 @@ jobs:
           - cosmic-term
           - cosmic-wallpapers
           - cosmic-workspaces-epoch
-          - fonts
           - soryos-launcher
           - simple-wrapper
           - xdg-desktop-portal-cosmic

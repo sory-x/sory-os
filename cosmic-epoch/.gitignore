@@ -1,3 +1,4 @@
-.vscode
-cosmic-sysext
-*_build
+fonts/fira/
+fonts/roboto-slab/
+fonts/src/
+fonts/*.png
