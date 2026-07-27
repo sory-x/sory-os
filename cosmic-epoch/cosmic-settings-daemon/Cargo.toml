@@ -18,8 +18,8 @@ members = [
 ]
 
 [workspace.dependencies]
-cosmic-config = { path = "../../libcosmic" }
-cosmic-theme = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
 
 [workspace.dependencies.zlink]
 version = "0.5"

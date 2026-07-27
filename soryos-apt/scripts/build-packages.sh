@@ -121,7 +121,6 @@ build_package soryos-system-lock
 build_package soryos-identity
 build_package soryos-appstream-data
 build_package soryos-icon-theme
-build_package soryos-fonts
 build_package soryos-sound-theme
 build_package soryos-hp-vendor
 build_package soryos-hp-vendor-dkms

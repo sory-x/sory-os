@@ -77,10 +77,17 @@ Modèles d'IA pour les outils SoryOS. Recherche de solutions gratuites/ouvertes 
 2. GRUB theme Pop non remplacé
 3. Pas d'installateur dans LIVE_PKGS
 4. Clé GPG copiée avec `|| true` (silencieux si absent)
-5. chroot.sh détecte langues avec `XDG_CURRENT_DESKTOP=GNOME`
+5. chroot.sh détecte langues avec `XDC_CURRENT_DESKTOP=GNOME`
 6. Fichiers morts (system76-power.conf, prime-discrete) encore copiés
 7. Pas de splash plymouth SoryOS
 8. Aucun .deb COSMIC dans pool APT pour le moment
+
+### Problèmes connus (Build Cargo.toml)
+- `cosmic-config` est un sous-crate dans `libcosmic/cosmic-config/Cargo.toml` (name="cosmic-config").
+  Ne jamais pointer `cosmic-config = { path = "../../libcosmic" }` (le root est `name="libcosmic"`).
+  Toujours utiliser `path = "../../libcosmic/cosmic-config"`.
+- Même règle pour `cosmic-theme` : pointer vers `libcosmic/cosmic-theme/`.
+- Clé dupliquée `cosmic-config` dans `[workspace.dependencies]` de `cosmic-applets/Cargo.toml` — supprimer la ligne pointant vers `../../libcosmic` (sans `/cosmic-config`).
 
 ## Credentials (SoryOS)
 - **GitHub Token (classic)** : `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`

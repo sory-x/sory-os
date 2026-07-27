@@ -17,7 +17,7 @@ cosmic-comp-config = { path = "cosmic-comp-config", features = [
     "libdisplay-info",
     "output",
 ] }
-cosmic-config = { path = "../../libcosmic", features = [
+cosmic-config = { path = "../../libcosmic/cosmic-config", features = [
     "calloop",
     "macro",
 ] }

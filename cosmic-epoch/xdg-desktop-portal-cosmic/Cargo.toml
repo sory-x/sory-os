@@ -75,7 +75,7 @@ features = [
 ]
 
 [workspace.dependencies]
-cosmic-config = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
 log = "0.4.29"
 serde = "1.0.228"
 

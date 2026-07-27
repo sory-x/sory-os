@@ -20,7 +20,7 @@ libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "multi-window",
     "winit",
 ] }
-cosmic-config = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
 freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/sory-x/freedesktop-icons" }
 
 memmap2 = "0.9.10"
