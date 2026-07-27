@@ -32,6 +32,10 @@ build_package() {
   local arch
   local deb
 
+  if [[ ! -d "$PKG_DIR/$name" ]]; then
+    printf 'skipping %s: template directory not found\n' "$name" | tee -a "$LOG_FILE" >&2
+    return 0
+  fi
   if [[ ! -f "$control_file" ]]; then
     printf 'missing control file: %s\n' "$control_file" | tee -a "$LOG_FILE" >&2
     exit 1
