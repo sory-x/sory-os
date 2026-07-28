@@ -5,7 +5,7 @@ edition = "2024"
 rust-version = "1.93"
 
 [dependencies]
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "a7d2d7a" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
 cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility" }
 cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager" }
 cosmic-settings-network-manager-subscription = { git = "https://github.com/pop-os/cosmic-settings" }
