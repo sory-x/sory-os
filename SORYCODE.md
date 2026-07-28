@@ -88,6 +88,10 @@ Modèles d'IA pour les outils SoryOS. Recherche de solutions gratuites/ouvertes 
   Toujours utiliser `path = "../../libcosmic/cosmic-config"`.
 - Même règle pour `cosmic-theme` : pointer vers `libcosmic/cosmic-theme/`.
 - Clé dupliquée `cosmic-config` dans `[workspace.dependencies]` de `cosmic-applets/Cargo.toml` — supprimer la ligne pointant vers `../../libcosmic` (sans `/cosmic-config`).
+- Chemin `libcosmic` dans les composants : doivent utiliser `../../libcosmic` (2 niveaux, racine du monorepo).
+  Certains utilisaient `../../../libcosmic` (3 niveaux, sort du repo), déjà corrigé dans 7 composants.
+- `APT_REPO_TOKEN` (secret classic PAT) est nécessaire pour l'authentification Cargo aux repos privés `sory-x/*`.
+  `GITHUB_TOKEN` ne donne accès qu'au repo courant — insuffisant.
 
 ## Credentials (SoryOS)
 - **GitHub Token (classic)** : `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`
