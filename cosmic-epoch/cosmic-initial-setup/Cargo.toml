@@ -8,7 +8,7 @@ rust-version = "1.93"
 cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols" }
 cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility" }
 cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager" }
-cosmic-settings-network-manager-subscription = { git = "https://github.com/sory-x/cosmic-settings" }
+cosmic-settings-network-manager-subscription = { git = "https://github.com/pop-os/cosmic-settings" }
 crabtime = "1.1.4"
 eyre = "0.6.12"
 futures = "0.3.32"
