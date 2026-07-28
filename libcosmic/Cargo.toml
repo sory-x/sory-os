@@ -174,7 +174,7 @@ ron = { workspace = true, optional = true }
 # Enable DBus feature on Linux targets
 [target.'cfg(target_os = "linux")'.dependencies]
 cosmic-config = { path = "cosmic-config", features = ["dbus"] }
-cosmic-settings-daemon = { path = "../cosmic-epoch/cosmic-settings-daemon" }
+cosmic-settings-daemon = { git = "https://github.com/pop-os/cosmic-epoch", package = "cosmic-settings-daemon" }
 zbus.workspace = true
 
 [target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]

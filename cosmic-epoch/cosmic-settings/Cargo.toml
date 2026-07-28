@@ -30,7 +30,7 @@ features = [
 path = "../../libcosmic"
 
 [workspace.dependencies.cosmic-config]
-path = "../../libcosmic"
+path = "../../libcosmic/cosmic-config"
 
 [workspace.dependencies.cosmic-bg-config]
 git = "https://github.com/pop-os/cosmic-bg"
@@ -70,8 +70,8 @@ debug = true
 # cosmic-text = { git = "https://github.com/pop-os/cosmic-text//", rev = "b017d7c" }
 
 [patch.'https://github.com/pop-os/cosmic-protocols']
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "e95d895" }
-cosmic-client-toolkit = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "e95d895" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "e95d895" }
+cosmic-client-toolkit = { git = "https://github.com/pop-os/cosmic-protocols", rev = "e95d895" }
 
 # [patch.'https://github.com/pop-os/cosmic-settings-daemon']
 # cosmic-settings-config = { git = "https://github.com/pop-os/cosmic-settings-daemon//", branch = "input_nobuild" }

@@ -156,8 +156,8 @@ default-features = false
 features = ["advanced-shaping"]
 
 [patch."https://github.com/pop-os/cosmic-protocols"]
-cctk = { git = "https://github.com/pop-os/cosmic-protocols//", package = "cosmic-client-toolkit", rev = "32283d7" }
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "32283d7" }
+cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit", rev = "32283d7" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
 
 [patch."https://github.com/sory-x/sory-os"]
 # iced_core = { path = "../../libcosmic", branch = "theme-v2" }

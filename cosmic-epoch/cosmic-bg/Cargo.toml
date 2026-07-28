@@ -33,7 +33,7 @@ image = { version = "0.25.10", default-features = false }
 tracing = "0.1.44"
 
 [dependencies.cosmic-config]
-path = "../../libcosmic"
+path = "../../libcosmic/cosmic-config"
 features = ["calloop"]
 
 [profile.release]
