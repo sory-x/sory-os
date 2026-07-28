@@ -56,7 +56,7 @@ inherits = "release"
 debug = true
 
 [patch.'https://github.com/sory-x/soryos']
-libcosmic = { path = "../../../libcosmic" }
-cosmic-config = { path = "../../../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
+libcosmic = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
 

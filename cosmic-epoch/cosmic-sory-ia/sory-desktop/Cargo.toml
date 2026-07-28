@@ -29,5 +29,5 @@ sory-app-server-client = { path = "../sory-ia/sory-rs/app-server-client", versio
 sory-app-server-protocol = { path = "../sory-ia/sory-rs/app-server-protocol", version = "0.0.0" }
 sory-utils-absolute-path = { path = "../sory-ia/sory-rs/utils/absolute-path", version = "0.0.0" }
 sory-utils-home-dir = { path = "../sory-ia/sory-rs/utils/home-dir", version = "0.0.0" }
-libcosmic = { path = "../../../libcosmic", default-features = false, features = ["tokio", "winit", "wgpu", "wayland", "multi-window"] }
+libcosmic = { path = "../../libcosmic", default-features = false, features = ["tokio", "winit", "wgpu", "wayland", "multi-window"] }
 

@@ -143,15 +143,15 @@ features = ["output", "randr"]
 path = "cosmic-greeter-config"
 
 [workspace.dependencies.cosmic-config]
-path = "../../../libcosmic/cosmic-config"
+path = "../../libcosmic/cosmic-config"
 default-features = false
 
 [workspace.dependencies.cosmic-theme]
-path = "../../../libcosmic/cosmic-theme"
+path = "../../libcosmic/cosmic-theme"
 default-features = false
 
 [workspace.dependencies.libcosmic]
-path = "../../../libcosmic"
+path = "../../libcosmic"
 default-features = false
 features = ["advanced-shaping"]
 
@@ -160,13 +160,13 @@ cctk = { git = "https://github.com/sory-x/cosmic-protocols//", package = "cosmic
 cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols//", rev = "32283d7" }
 
 [patch."https://github.com/sory-x/soryos"]
-# iced_core = { path = "../../../libcosmic", branch = "theme-v2" }
-# iced_futures = { path = "../../../libcosmic", branch = "theme-v2" }
-# libcosmic = { path = "../../../libcosmic", branch = "theme-v2" }
-# cosmic-config = { path = "../../../libcosmic/cosmic-config", branch = "theme-v2" }
-# cosmic-theme = { path = "../../../libcosmic/cosmic-theme", branch = "theme-v2" }
-libcosmic = { path = "../../../libcosmic" }
-cosmic-config = { path = "../../../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
-iced_futures = { path = "../../../libcosmic/iced/futures" }
-iced_winit = { path = "../../../libcosmic/iced/winit" }
+# iced_core = { path = "../../libcosmic", branch = "theme-v2" }
+# iced_futures = { path = "../../libcosmic", branch = "theme-v2" }
+# libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
+# cosmic-config = { path = "../../libcosmic/cosmic-config", branch = "theme-v2" }
+# cosmic-theme = { path = "../../libcosmic/cosmic-theme", branch = "theme-v2" }
+libcosmic = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
+iced_futures = { path = "../../libcosmic/iced/futures" }
+iced_winit = { path = "../../libcosmic/iced/winit" }

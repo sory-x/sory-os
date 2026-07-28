@@ -49,7 +49,7 @@ switcheroo-control = { git = "https://github.com/sory-x/dbus-settings-bindings" 
 zbus = { version = "5.13", default-features = false, features = ["tokio"] }
 
 [patch.'https://github.com/sory-x/soryos']
-libcosmic = { path = "../../../libcosmic" }
-cosmic-config = { path = "../../../libcosmic/cosmic-config" }
-cosmic-theme = { path = "../../../libcosmic/cosmic-theme" }
+libcosmic = { path = "../../libcosmic" }
+cosmic-config = { path = "../../libcosmic/cosmic-config" }
+cosmic-theme = { path = "../../libcosmic/cosmic-theme" }
 
