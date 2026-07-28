@@ -5,7 +5,7 @@ edition = "2024"
 rust-version = "1.93"
 
 [dependencies]
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "a7d2d7a" }
 cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility" }
 cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager" }
 cosmic-settings-network-manager-subscription = { git = "https://github.com/pop-os/cosmic-settings" }
@@ -98,6 +98,4 @@ iced_futures = { path = "../../libcosmic/iced/futures" }
 # cosmic-theme = { path = "../../libcosmic", branch = "theme-v2" }
 # iced_futures = { path = "../../libcosmic", branch = "theme-v2" }
 
-[patch.'https://github.com/pop-os/cosmic-protocols']
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "a7d2d7a" }
-cosmic-client-toolkit = { git = "https://github.com/pop-os/cosmic-protocols//", rev = "a7d2d7a" }
+

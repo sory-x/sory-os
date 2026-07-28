@@ -62,7 +62,7 @@ tokio = { version = "1", features = [
     "time",
 ] }
 libcosmic = { path = "../../../libcosmic", default-features = false }
-iced_tiny_skia = { git = "https://github.com/pop-os/libcosmic" }
+iced_tiny_skia = { path = "../../../libcosmic/iced/tiny_skia" }
 tiny-skia = "0.11"
 ron = "0.12"
 rand = "0.10"

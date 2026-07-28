@@ -34,9 +34,7 @@ thiserror = { workspace = true }
 "unicode-segmentation" = { workspace = true }
 "web-time" = { workspace = true }
 
-serde = { workspace = true }
-serde.optional = true
-serde.features = ["derive"]
+serde = { workspace = true, optional = true, features = ["derive"] }
 # TODO(POP): I think some of these dependencies were removed. Check on that
 # xxhash-rust.workspace = true
 window_clipboard = { workspace = true }

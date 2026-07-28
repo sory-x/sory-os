@@ -134,14 +134,11 @@ iced_renderer = { workspace = true }
 iced_runtime = { workspace = true }
 iced_widget = { workspace = true }
 iced_winit = { workspace = true }
-iced_devtools.optional = true
-iced_tester = { workspace = true }
-iced_tester.optional = true
-iced_winit.optional = true
-iced_highlighter = { workspace = true }
-iced_highlighter.optional = true
-iced_accessibility = { workspace = true }
-iced_accessibility.optional = true
+iced_devtools = { workspace = true, optional = true }
+iced_tester = { workspace = true, optional = true }
+iced_winit = { workspace = true, optional = true }
+iced_highlighter = { workspace = true, optional = true }
+iced_accessibility = { workspace = true, optional = true }
 thiserror = { workspace = true }
 window_clipboard = { workspace = true }
 mime = { workspace = true }

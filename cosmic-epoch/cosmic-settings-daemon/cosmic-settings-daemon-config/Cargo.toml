@@ -6,8 +6,7 @@ edition = "2024"
 [dependencies]
 "cosmic-config" = { workspace = true }
 serde = { version = "1.0", features = ["derive"] }
-"cosmic-theme" = { workspace = true }
-cosmic-theme.optional = true
+"cosmic-theme" = { workspace = true, optional = true }
 
 [features]
 default = []

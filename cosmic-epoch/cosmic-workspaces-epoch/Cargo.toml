@@ -21,7 +21,7 @@ libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "winit",
 ] }
 cosmic-config = { path = "../../libcosmic/cosmic-config" }
-freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/pop-os/freedesktop-icons" }
+freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/pop-os/freedesktop-icons", rev = "ab4c57b" }
 
 memmap2 = "0.9.10"
 tokio = "1.49.0"

@@ -1,4 +1,3 @@
-set unstable
 
 # The cargo module contains cargo recipes shared by all cosmic projects.
 mod cargo 'cargo.just'
