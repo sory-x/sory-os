@@ -39,8 +39,8 @@ i18n-embed = { version = "0.16", features = [
     "desktop-requester",
 ] }
 i18n-embed-fl = "0.10"
-iced_tiny_skia = { path = "../../libcosmic" }
-iced_graphics = { path = "../../libcosmic", features = ["geometry"] }
+iced_tiny_skia = { path = "../../libcosmic/iced/tiny_skia" }
+iced_graphics = { path = "../../libcosmic/iced/graphics", features = ["geometry"] }
 indexmap = "2.13"
 keyframe = "1.1.1"
 libcosmic = { path = "../../libcosmic", default-features = false }

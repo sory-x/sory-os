@@ -17,6 +17,27 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          submodules: recursive
+
+      - name: Setup Rust toolchain
+        run: |
+          if ! command -v rustup >/dev/null 2>&1; then
+            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --default-toolchain 1.93
+          fi
+          echo "$HOME/.cargo/bin" >> $GITHUB_PATH
+          rustup default 1.93
+          rustc --version
+          cargo --version
+
+      - name: Cache Cargo registry
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+          key: ${{ runner.os }}-cargo-soryos-${{ hashFiles('**/Cargo.lock', 'libcosmic/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-soryos-
 
       - name: Install build dependencies
         run: |
@@ -24,7 +45,7 @@ jobs:
           sudo apt-get install -y \
             build-essential devscripts debhelper dpkg-dev \
             apt-utils gnupg gzip \
-            rustup pkg-config cmake just \
+            pkg-config cmake just \
             libwayland-dev libxkbcommon-dev libglib2.0-dev \
             libclang-dev libpipewire-0.3-dev libudev-dev \
             libinput-dev libgbm-dev libseat-dev libsystemd-dev \
@@ -36,13 +57,6 @@ jobs:
             libpulse-dev \
             imagemagick fonts-open-sans \
             meson patchelf
-
-      - name: Setup Rust toolchain
-        run: |
-          rustup default stable 2>/dev/null || {
-            curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-            echo "$HOME/.cargo/bin" >> $GITHUB_PATH
-          }
 
       - name: Build integration packages
         run: |

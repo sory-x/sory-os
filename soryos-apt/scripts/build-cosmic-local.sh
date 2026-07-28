@@ -20,6 +20,19 @@ require_tool() {
     fi
 }
 
+require_rust_toolchain() {
+    if ! command -v cargo >/dev/null 2>&1; then
+        printf 'ERROR: cargo not found. Install Rust 1.93+ (rustup) and ensure ~/.cargo/bin is on PATH.\n' | tee -a "$LOG_FILE" >&2
+        exit 1
+    fi
+    local rustc_version
+    rustc_version=$(rustc --version | awk '{print $2}')
+    if ! rustc --version | grep -qE '1\.(9[3-9]|[1-9][0-9]{2,})'; then
+        printf 'ERROR: Rust 1.93+ required (found %s). CI should use rustup default 1.93.\n' "$rustc_version" | tee -a "$LOG_FILE" >&2
+        exit 1
+    fi
+}
+
 require_tool dpkg-buildpackage
 require_tool dpkg-deb
 
@@ -105,6 +118,8 @@ if [ ! -d "$COSMIC_DIR" ]; then
     printf 'ERROR: cosmic-epoch not found at %s\n' "$COSMIC_DIR" >&2
     exit 1
 fi
+
+require_rust_toolchain
 
 cd "$COSMIC_DIR"
 

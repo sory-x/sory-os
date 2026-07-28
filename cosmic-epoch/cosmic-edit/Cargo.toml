@@ -33,7 +33,7 @@ i18n-embed-fl = "0.10"
 rust-embed = "8"
 
 [dependencies.cosmic-files]
-git = "https://github.com/pop-os/cosmic-files.git"
+path = "../cosmic-files"
 default-features = false
 
 [dependencies.cosmic-syntax-theme]

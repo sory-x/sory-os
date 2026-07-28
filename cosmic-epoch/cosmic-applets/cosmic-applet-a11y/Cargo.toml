@@ -17,9 +17,7 @@ tokio = { workspace = true }
 tracing = { workspace = true }
 
 [dependencies.cosmic-settings-a11y-manager-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
-# path = "../../cosmic-settings/subscriptions/a11y-manager"
+path = "../../cosmic-settings/subscriptions/a11y-manager"
 
 [dependencies.cosmic-settings-accessibility-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
-# path = "../../cosmic-settings/subscriptions/accessibility"
+path = "../../cosmic-settings/subscriptions/accessibility"
