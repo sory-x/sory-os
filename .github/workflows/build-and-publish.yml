@@ -47,6 +47,13 @@ jobs:
         run: |
           git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "https://github.com/"
           git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
+          # Cargo uses libgit2 by default, which ignores git config insteadOf.
+          # Force Cargo to use git CLI so our auth substitution takes effect.
+          mkdir -p ~/.cargo
+          cat > ~/.cargo/config.toml << 'EOF'
+[net]
+git-fetch-with-cli = true
+EOF
 
       - name: Build integration packages
         run: |
