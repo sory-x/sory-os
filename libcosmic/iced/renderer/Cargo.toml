@@ -34,11 +34,7 @@ wayland = ["iced_tiny_skia?/wayland"]
 [dependencies]
 iced_graphics = { workspace = true }
 
-iced_tiny_skia = { workspace = true }
-iced_tiny_skia.optional = true
-
-iced_wgpu = { workspace = true }
-iced_wgpu.optional = true
-
+iced_tiny_skia = { workspace = true, optional = true }
+iced_wgpu = { workspace = true, optional = true }
 log = { workspace = true }
 thiserror = { workspace = true }

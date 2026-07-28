@@ -11,19 +11,12 @@ categories = { workspace = true }
 keywords = { workspace = true }
 
 [dependencies]
-iced_core = { workspace = true }
-iced_core.features = ["serde"]
-
+iced_core = { workspace = true, features = ["serde"] }
 bincode = { workspace = true }
 futures = { workspace = true }
 log = { workspace = true }
 thiserror = { workspace = true }
 
-tokio = { workspace = true }
-tokio.features = ["rt", "rt-multi-thread", "net", "sync", "time", "io-util", "macros"]
-
-serde = { workspace = true }
-serde.features = ["derive"]
-
-semver = { workspace = true }
-semver.features = ["serde"]
+tokio = { workspace = true, features = ["rt", "rt-multi-thread", "net", "sync", "time", "io-util", "macros"] }
+serde = { workspace = true, features = ["derive"] }
+semver = { workspace = true, features = ["serde"] }

@@ -41,18 +41,13 @@ log = { workspace = true }
 thiserror = { workspace = true }
 wgpu = { workspace = true }
 
-lyon = { workspace = true }
-lyon.optional = true
-
-resvg = { workspace = true }
-resvg.optional = true
-
+lyon = { workspace = true, optional = true }
+resvg = { workspace = true, optional = true }
 [target.'cfg(all(unix, not(target_os = "macos"), not(target_os = "redox")))'.dependencies]
 
 rustix = { version = "0.38", features = ["fs"] }
 "raw-window-handle" = { workspace = true }
-cctk = { workspace = true }
-cctk.optional = true
+cctk = { workspace = true, optional = true }
 "wayland-protocols" = { workspace = true }
 wayland-backend = { version = "0.3.3", features = ["client_system"] }
 wayland-client = { version = "0.31.2" }

@@ -22,5 +22,4 @@ iced_debug = { workspace = true }
 iced_widget = { workspace = true }
 log = { workspace = true }
 
-iced_program = { workspace = true }
-iced_program.features = ["debug"]
+iced_program = { workspace = true, features = ["debug"] }

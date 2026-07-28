@@ -41,8 +41,7 @@ window_clipboard = { workspace = true }
 dnd = { workspace = true }
 mime = { workspace = true }
 
-cctk = { workspace = true }
-cctk.optional = true
+cctk = { workspace = true, optional = true }
 # /TODO(POP)
 [dependencies.iced_accessibility]
 version = "0.1.0"

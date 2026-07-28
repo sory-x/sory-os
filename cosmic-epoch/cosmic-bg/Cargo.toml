@@ -35,7 +35,7 @@ tracing = "0.1.44"
 [dependencies.cosmic-config]
 path = "../../libcosmic/cosmic-config"
 default-features = false
-features = ["calloop"]
+features = ["calloop", "macro"]
 
 [profile.release]
 opt-level = 3

@@ -34,10 +34,8 @@ cctk = ["iced_runtime/cctk", "dep:cctk"]
 [dependencies]
 iced_renderer = { workspace = true }
 iced_runtime = { workspace = true }
-iced_accessibility = { workspace = true }
-iced_accessibility.optional = true
-cctk = { workspace = true }
-cctk.optional = true
+iced_accessibility = { workspace = true, optional = true }
+cctk = { workspace = true, optional = true }
 "num-traits" = { workspace = true }
 log = { workspace = true }
 "rustc-hash" = { workspace = true }
@@ -46,14 +44,8 @@ thiserror = { workspace = true }
 window_clipboard = { workspace = true }
 dnd = { workspace = true }
 
-ouroboros = { workspace = true }
-ouroboros.optional = true
+ouroboros = { workspace = true, optional = true }
+qrcode = { workspace = true, optional = true }
+"pulldown-cmark" = { workspace = true, optional = true }
 
-qrcode = { workspace = true }
-qrcode.optional = true
-
-"pulldown-cmark" = { workspace = true }
-pulldown-cmark.optional = true
-
-iced_highlighter = { workspace = true }
-iced_highlighter.optional = true
+iced_highlighter = { workspace = true, optional = true }

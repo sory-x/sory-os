@@ -33,5 +33,4 @@ log = { workspace = true }
 softbuffer = { workspace = true }
 "tiny-skia" = { workspace = true }
 
-resvg = { workspace = true }
-resvg.optional = true
+resvg = { workspace = true, optional = true }

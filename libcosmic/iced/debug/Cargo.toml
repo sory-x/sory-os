@@ -20,8 +20,5 @@ iced_futures = { workspace = true }
 log = { workspace = true }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-iced_beacon = { workspace = true }
-iced_beacon.optional = true
-
-"cargo-hot" = { workspace = true }
-cargo-hot.optional = true
+iced_beacon = { workspace = true, optional = true }
+"cargo-hot" = { workspace = true, optional = true }

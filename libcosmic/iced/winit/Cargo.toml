@@ -45,9 +45,7 @@ single-instance = []
 iced_futures = { workspace = true }
 iced_graphics = { workspace = true }
 iced_runtime = { workspace = true }
-iced_accessibility = { workspace = true }
-iced_accessibility.optional = true
-iced_accessibility.features = ["accesskit_winit"]
+iced_accessibility = { workspace = true, optional = true, features = ["accesskit_winit"] }
 log = { workspace = true }
 "rustc-hash" = { workspace = true }
 thiserror = { workspace = true }
@@ -57,22 +55,16 @@ winit = { workspace = true }
 "winit-core" = { workspace = true }
 "cursor-icon" = { workspace = true }
 
-sysinfo = { workspace = true }
-sysinfo.optional = true
-
+sysinfo = { workspace = true, optional = true }
 iced_debug = { workspace = true }
 iced_program = { workspace = true }
 
 
 [target.'cfg(target_os = "linux")'.dependencies]
-mundy = { workspace = true }
-mundy.optional = true
-
+mundy = { workspace = true, optional = true }
 raw-window-handle = { version = "0.6", optional = true }
-cctk = { workspace = true }
-cctk.optional = true
-"wayland-protocols" = { workspace = true }
-wayland-protocols.optional = true
+cctk = { workspace = true, optional = true }
+"wayland-protocols" = { workspace = true, optional = true }
 "wayland-client" = { workspace = true }
 wayland-backend = { version = "0.3.1", features = [
     "client_system",
@@ -86,6 +78,5 @@ rustix = { version = "0.38" }
 winapi = { workspace = true }
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-"web-sys" = { workspace = true }
-web-sys.features = ["Document", "Window", "HtmlCanvasElement"]
+"web-sys" = { workspace = true, features = ["Document", "Window", "HtmlCanvasElement"] }
 "wasm-bindgen-futures" = { workspace = true }

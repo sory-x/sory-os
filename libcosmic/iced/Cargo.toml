@@ -124,7 +124,6 @@ cctk = ["iced_winit/cctk", "iced_widget/cctk", "iced_core/cctk", "wayland"]
 [dependencies]
 
 
-iced_devtools = { workspace = true }
 iced_debug = { workspace = true }
 
 iced_program = { workspace = true }
@@ -133,7 +132,6 @@ iced_futures = { workspace = true }
 iced_renderer = { workspace = true }
 iced_runtime = { workspace = true }
 iced_widget = { workspace = true }
-iced_winit = { workspace = true }
 iced_devtools = { workspace = true, optional = true }
 iced_tester = { workspace = true, optional = true }
 iced_winit = { workspace = true, optional = true }
@@ -144,8 +142,7 @@ window_clipboard = { workspace = true }
 mime = { workspace = true }
 dnd = { workspace = true }
 
-image = { workspace = true }
-image.optional = true
+image = { workspace = true, optional = true }
 
 [dev-dependencies]
 criterion = "0.5"
