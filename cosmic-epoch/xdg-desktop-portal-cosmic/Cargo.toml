@@ -47,8 +47,8 @@ i18n-embed = { version = "0.16", features = [
 i18n-embed-fl = "0.10"
 rust-embed = "8.11.0"
 # Workspace
-cosmic-config.workspace = true
-serde.workspace = true
+"cosmic-config" = { workspace = true }
+serde = { workspace = true }
 spa_sys = { package = "libspa-sys", git = "https://gitlab.freedesktop.org/pipewire/pipewire-rs" }
 pipewire-sys = { git = "https://gitlab.freedesktop.org/pipewire/pipewire-rs" }
 tempfile = "3.27.0"

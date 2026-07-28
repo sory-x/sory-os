@@ -9,20 +9,20 @@ edition = "2024"
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 libc = "0.2"
 nix = { version = "0.31", features = ["user"] }
-cosmic-applets-config.workspace = true
-cosmic-bg-config.workspace = true
-cosmic-comp-config.workspace = true
-cosmic-config.workspace = true
-cosmic-theme.workspace = true
-tracing.workspace = true
+"cosmic-applets-config" = { workspace = true }
+"cosmic-bg-config" = { workspace = true }
+"cosmic-comp-config" = { workspace = true }
+"cosmic-config" = { workspace = true }
+"cosmic-theme" = { workspace = true }
+tracing = { workspace = true }
 tracing-journald = { workspace = true, optional = true }
-color-eyre.workspace = true
-pwd.workspace = true
-ron.workspace = true
-serde.workspace = true
-zbus.workspace = true
-cosmic-randr-shell.workspace = true
-kdl.workspace = true
+"color-eyre" = { workspace = true }
+pwd = { workspace = true }
+ron = { workspace = true }
+serde = { workspace = true }
+zbus = { workspace = true }
+"cosmic-randr-shell" = { workspace = true }
+kdl = { workspace = true }
 whitespace-conf = "1"
 
 #TODO: reduce features

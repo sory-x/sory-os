@@ -1,14 +1,14 @@
 [package]
 name = "iced_renderer"
 description = "The official renderer for iced"
-version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
-homepage.workspace = true
-categories.workspace = true
-keywords.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
 
 [lints]
 workspace = true
@@ -32,13 +32,13 @@ x11 = ["iced_tiny_skia?/x11"]
 wayland = ["iced_tiny_skia?/wayland"]
 
 [dependencies]
-iced_graphics.workspace = true
+iced_graphics = { workspace = true }
 
-iced_tiny_skia.workspace = true
+iced_tiny_skia = { workspace = true }
 iced_tiny_skia.optional = true
 
-iced_wgpu.workspace = true
+iced_wgpu = { workspace = true }
 iced_wgpu.optional = true
 
-log.workspace = true
-thiserror.workspace = true
+log = { workspace = true }
+thiserror = { workspace = true }

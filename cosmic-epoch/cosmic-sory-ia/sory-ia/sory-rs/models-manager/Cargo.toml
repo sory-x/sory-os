@@ -1,8 +1,8 @@
 [package]
-edition.workspace = true
-license.workspace = true
+edition = { workspace = true }
+license = { workspace = true }
 name = "sory-models-manager"
-version.workspace = true
+version = { workspace = true }
 
 [lib]
 doctest = false

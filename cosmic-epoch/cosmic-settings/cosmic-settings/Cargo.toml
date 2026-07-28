@@ -18,13 +18,13 @@ chrono = "0.4"
 jiff = "0.2"
 clap = { version = "4.5.59", features = ["derive"] }
 color-eyre = "0.6.5"
-cosmic-bg-config.workspace = true
+"cosmic-bg-config" = { workspace = true }
 cosmic-comp-config = { workspace = true, optional = true }
-cosmic-config.workspace = true
-cosmic-idle-config.workspace = true
+"cosmic-config" = { workspace = true }
+"cosmic-idle-config" = { workspace = true }
 cosmic-panel-config = { workspace = true, optional = true }
 cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", optional = true }
-cosmic-randr-shell.workspace = true
+"cosmic-randr-shell" = { workspace = true }
 cosmic-randr = { workspace = true, optional = true }
 cosmic-settings-config = { path = "../../cosmic-settings-daemon/config", optional = true }
 cosmic-settings-page = { path = "../page" }
@@ -44,12 +44,12 @@ futures = "0.3.32"
 hostname-validator = "1.1.1"
 hostname1-zbus = { git = "https://github.com/pop-os/dbus-settings-bindings", optional = true }
 i18n-embed-fl = "0.10.0"
-image.workspace = true
+image = { workspace = true }
 indexmap = "2.13.0"
 itertools = "0.14.0"
 itoa = "1.0.17"
-libcosmic.workspace = true
-iced_winit.workspace = true
+libcosmic = { workspace = true }
+iced_winit = { workspace = true }
 locale1 = { git = "https://github.com/pop-os/dbus-settings-bindings", optional = true }
 sysinfo = { version = "=0.38.0", optional = true }
 mime-apps = { package = "cosmic-mime-apps", git = "https://github.com/pop-os/cosmic-mime-apps", features = ["tokio"], optional = true }

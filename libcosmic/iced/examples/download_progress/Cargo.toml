@@ -6,7 +6,7 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
+iced = { workspace = true }
 iced.features = ["tokio", "sipper"]
 
 [dependencies.reqwest]

@@ -19,7 +19,7 @@ smithay = { git = "https://github.com/smithay/smithay", default-features = false
     "renderer_gl",
 ], rev = "f0992e7" }
 # sctk = { git = "https://github.com/smithay/client-toolkit", package = "smithay-client-toolkit", features = ["calloop", "xkbcommon"] }
-sctk.workspace = true
+sctk = { workspace = true }
 # sctk = { package = "smithay-client-toolkit", path = "../../fork/client-toolkit", default-features = false, features = ["calloop", "xkbcommon"] }
 wayland-protocols = { version = "0.32.12", features = ["staging"] }
 

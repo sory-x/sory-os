@@ -1,8 +1,8 @@
 [package]
 name = "sory-network-proxy"
-edition.workspace = true
-version.workspace = true
-license.workspace = true
+edition = { workspace = true }
+version = { workspace = true }
+license = { workspace = true }
 
 [lib]
 name = "sory_network_proxy"

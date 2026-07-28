@@ -1,8 +1,8 @@
 [package]
 name = "sory-backend-openapi-models"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [lib]
 name = "sory_backend_openapi_models"

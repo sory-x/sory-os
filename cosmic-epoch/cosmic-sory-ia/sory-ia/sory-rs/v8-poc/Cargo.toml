@@ -1,8 +1,8 @@
 [package]
 name = "sory-v8-poc"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [lib]
 name = "sory_v8_poc"

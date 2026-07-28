@@ -7,6 +7,6 @@ repository = "https://github.com/pop-os/cosmic-greeter"
 license = "GPL-3.0-only"
 
 [dependencies]
-cosmic-config.workspace = true
-tracing.workspace = true
-serde.workspace = true
+"cosmic-config" = { workspace = true }
+tracing = { workspace = true }
+serde = { workspace = true }

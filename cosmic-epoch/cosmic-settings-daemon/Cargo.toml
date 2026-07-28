@@ -31,7 +31,7 @@ acpid_plug = "0.1.2"
 anyhow = "1.0.99"
 chrono = "0.4.42"
 cosmic-comp-config = { path = "../cosmic-comp/cosmic-comp-config" }
-cosmic-config.workspace = true
+"cosmic-config" = { workspace = true }
 cosmic-dbus-a11y = { git = "https://github.com/pop-os/dbus-settings-bindings" }
 cosmic-settings-audio-server = { path = "./audio-server" }
 cosmic-settings-daemon-config = { path = "./cosmic-settings-daemon-config", features = [

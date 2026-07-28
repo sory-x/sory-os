@@ -1,9 +1,9 @@
 
 [package]
-edition.workspace = true
-license.workspace = true
+edition = { workspace = true }
+license = { workspace = true }
 name = "sory-utils-plugins"
-version.workspace = true
+version = { workspace = true }
 
 [lib]
 doctest = false

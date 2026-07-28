@@ -5,7 +5,7 @@ license = "MPL-2.0"
 authors = ["Michael Aaron Murphy <michael@mmurphy.dev>"]
 description = "Library for writing plugins and frontends for pop-launcher"
 repository = "https://github.com/pop-os/launcher"
-edition.workspace = true
+edition = { workspace = true }
 
 [workspace]
 members = ["bin", "plugins", "service", "toolkit"]
@@ -31,11 +31,11 @@ tokio-stream = "0.1.17"
 
 [dependencies]
 const_format = "0.2.34"
-dirs.workspace = true
-futures.workspace = true
-serde.workspace = true
-serde_json.workspace = true
-serde_with.workspace = true
+dirs = { workspace = true }
+futures = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+serde_with = { workspace = true }
 
 [profile.release]
 lto = "fat"

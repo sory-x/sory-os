@@ -9,20 +9,20 @@ description = "Native SoryOS desktop client for Sory IA"
 
 [dependencies]
 # Dépendances partagées via workspace
-anyhow.workspace = true
-env_logger.workspace = true
-futures-util.workspace = true
-hashbrown.workspace = true
-log.workspace = true
-serde.workspace = true
-serde_json.workspace = true
-starlark_map.workspace = true
-icu_calendar.workspace = true
-rand.workspace = true
-thiserror.workspace = true
-tokio.workspace = true
-tokio-stream.workspace = true
-uuid.workspace = true
+anyhow = { workspace = true }
+env_logger = { workspace = true }
+"futures-util" = { workspace = true }
+hashbrown = { workspace = true }
+log = { workspace = true }
+serde = { workspace = true }
+serde_json = { workspace = true }
+starlark_map = { workspace = true }
+icu_calendar = { workspace = true }
+rand = { workspace = true }
+thiserror = { workspace = true }
+tokio = { workspace = true }
+"tokio-stream" = { workspace = true }
+uuid = { workspace = true }
 
 # Dépendances locales depuis sory-rs (maintenant dans le même workspace)
 sory-app-server-client = { path = "../sory-ia/sory-rs/app-server-client", version = "0.0.0" }

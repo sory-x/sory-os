@@ -1,9 +1,9 @@
 [package]
 build = "build.rs"
-edition.workspace = true
-license.workspace = true
+edition = { workspace = true }
+license = { workspace = true }
 name = "sory-windows-sandbox"
-version.workspace = true
+version = { workspace = true }
 
 [lib]
 name = "sory_windows_sandbox"

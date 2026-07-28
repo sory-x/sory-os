@@ -7,8 +7,8 @@ repository = "https://github.com/pop-os/xdg-desktop-portal-cosmic"
 license = "GPL-3.0-or-later"
 
 [dependencies]
-cosmic-config.workspace = true
-log.workspace = true
+"cosmic-config" = { workspace = true }
+log = { workspace = true }
 
 [dependencies.serde]
 features = ["derive"]

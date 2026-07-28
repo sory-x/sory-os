@@ -20,6 +20,4 @@ tracing = "0.1.44"
 url = "2.5.8"
 
 [dev-dependencies]
-libcosmic = { path = "../../../libcosmic", default-features = false, features = [ }
-    "tokio",
-] }
+libcosmic = { path = "../../../libcosmic", default-features = false, features = ["tokio"] }

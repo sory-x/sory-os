@@ -1,14 +1,14 @@
 [package]
 name = "iced_futures"
 description = "Commands, subscriptions, and future executors for iced"
-version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
-homepage.workspace = true
-categories.workspace = true
-keywords.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
 
 [lints]
 workspace = true
@@ -22,19 +22,19 @@ thread-pool = ["futures/thread-pool"]
 a11y = ["iced_core/a11y"]
 
 [dependencies]
-iced_core.workspace = true
-futures.workspace = true
-log.workspace = true
-rustc-hash.workspace = true
+iced_core = { workspace = true }
+futures = { workspace = true }
+log = { workspace = true }
+"rustc-hash" = { workspace = true }
 
 [target.'cfg(not(target_arch = "wasm32"))'.dependencies]
-smol.workspace = true
+smol = { workspace = true }
 smol.optional = true
 
-tokio.workspace = true
+tokio = { workspace = true }
 tokio.optional = true
 tokio.features = ["rt", "rt-multi-thread", "time"]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
-wasm-bindgen-futures.workspace = true
-wasmtimer.workspace = true
+"wasm-bindgen-futures" = { workspace = true }
+wasmtimer = { workspace = true }

@@ -1,8 +1,8 @@
 [package]
 name = "sory-responses-api-proxy"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [lib]
 name = "sory_responses_api_proxy"

@@ -10,7 +10,7 @@ ron = "0.12.0"
 intmap = "3.1.3"
 tracing = "0.1.44"
 numtoa = "1.0.0-alpha1"
-cosmic-config.workspace = true
+"cosmic-config" = { workspace = true }
 cosmic-settings-daemon-config = { path = "../cosmic-settings-daemon-config", features = [
     "greeter",
 ] }

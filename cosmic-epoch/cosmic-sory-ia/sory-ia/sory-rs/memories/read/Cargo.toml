@@ -1,8 +1,8 @@
 [package]
-edition.workspace = true
-license.workspace = true
+edition = { workspace = true }
+license = { workspace = true }
 name = "sory-memories-read"
-version.workspace = true
+version = { workspace = true }
 
 [lib]
 name = "sory_memories_read"

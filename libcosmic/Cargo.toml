@@ -153,7 +153,7 @@ image-extras = { version = "0.1.0", default-features = false, features = [
 libc = { version = "0.2.186", optional = true }
 log = "0.4"
 mime = { version = "0.3.17", optional = true }
-palette.workspace = true
+palette = { workspace = true }
 rfd = { version = "0.16.0", default-features = false, features = [
     "xdg-portal",
 ], optional = true }
@@ -161,10 +161,10 @@ rustix = { version = "1.1", features = ["pipe", "process"], optional = true }
 serde = { workspace = true, features = ["derive"] }
 slotmap = "1.1.1"
 smol = { version = "2.0.2", optional = true }
-thiserror.workspace = true
+thiserror = { workspace = true }
 taffy = { version = "0.9.2", features = ["grid"] }
 tokio = { workspace = true, optional = true }
-tracing.workspace = true
+tracing = { workspace = true }
 unicode-segmentation = "1.13"
 url = "2.5.8"
 zbus = { workspace = true, optional = true }
@@ -175,7 +175,7 @@ ron = { workspace = true, optional = true }
 [target.'cfg(target_os = "linux")'.dependencies]
 cosmic-config = { path = "cosmic-config", features = ["dbus"] }
 cosmic-settings-daemon = { git = "https://github.com/pop-os/cosmic-epoch", package = "cosmic-settings-daemon" }
-zbus.workspace = true
+zbus = { workspace = true }
 
 [target.'cfg(all(unix, not(target_os = "macos")))'.dependencies]
 freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/pop-os/freedesktop-icons" }

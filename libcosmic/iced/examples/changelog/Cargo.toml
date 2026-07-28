@@ -9,16 +9,16 @@ publish = false
 large_enum_variant = "allow"
 
 [dependencies]
-iced.workspace = true
+iced = { workspace = true }
 iced.features = ["tokio", "markdown", "highlighter", "debug"]
 
-log.workspace = true
-thiserror.workspace = true
+log = { workspace = true }
+thiserror = { workspace = true }
 
 tokio.features = ["fs", "process"]
-tokio.workspace = true
+tokio = { workspace = true }
 
-serde.workspace = true
+serde = { workspace = true }
 serde.features = ["derive"]
 
 jiff = "0.2"

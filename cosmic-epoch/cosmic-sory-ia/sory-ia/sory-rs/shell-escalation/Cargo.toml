@@ -1,8 +1,8 @@
 [package]
-edition.workspace = true
-license.workspace = true
+edition = { workspace = true }
+license = { workspace = true }
 name = "sory-shell-escalation"
-version.workspace = true
+version = { workspace = true }
 
 [[bin]]
 name = "sory-execve-wrapper"

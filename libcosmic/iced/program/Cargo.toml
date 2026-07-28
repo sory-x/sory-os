@@ -1,15 +1,15 @@
 [package]
 name = "iced_program"
 description = "The definition of an iced program"
-version.workspace = true
-authors.workspace = true
-edition.workspace = true
-license.workspace = true
-repository.workspace = true
-homepage.workspace = true
-categories.workspace = true
-keywords.workspace = true
-rust-version.workspace = true
+version = { workspace = true }
+authors = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
+"rust-version" = { workspace = true }
 
 [lints]
 workspace = true
@@ -20,5 +20,5 @@ debug = []
 time-travel = []
 
 [dependencies]
-iced_graphics.workspace = true
-iced_runtime.workspace = true
+iced_graphics = { workspace = true }
+iced_runtime = { workspace = true }

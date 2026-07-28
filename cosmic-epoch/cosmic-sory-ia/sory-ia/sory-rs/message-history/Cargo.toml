@@ -1,8 +1,8 @@
 [package]
 name = "sory-message-history"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [lib]
 name = "sory_message_history"

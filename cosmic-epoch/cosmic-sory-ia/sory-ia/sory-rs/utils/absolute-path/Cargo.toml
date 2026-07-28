@@ -1,9 +1,9 @@
 
 [package]
 name = "sory-utils-absolute-path"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [lints]
 workspace = true

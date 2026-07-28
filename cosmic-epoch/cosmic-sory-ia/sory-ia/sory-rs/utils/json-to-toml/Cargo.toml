@@ -1,8 +1,8 @@
 [package]
 name = "sory-utils-json-to-toml"
-version.workspace = true
-edition.workspace = true
-license.workspace = true
+version = { workspace = true }
+edition = { workspace = true }
+license = { workspace = true }
 
 [dependencies]
 serde_json = { workspace = true }

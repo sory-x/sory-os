@@ -6,17 +6,17 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
+iced = { workspace = true }
 iced.features = ["markdown", "highlighter", "image", "tokio", "debug", "winit"]
 
 reqwest.version = "0.12"
 reqwest.features = ["json"]
 
-tokio.workspace = true
+tokio = { workspace = true }
 tokio.features = ["fs"]
 
-image.workspace = true
-url.workspace = true
+image = { workspace = true }
+url = { workspace = true }
 
 webbrowser = "1"
 

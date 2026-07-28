@@ -6,10 +6,10 @@ edition = "2024"
 publish = false
 
 [dependencies]
-iced.workspace = true
+iced = { workspace = true }
 iced.features = ["highlighter", "tokio", "debug", "winit", "tiny-skia"]
 
-tokio.workspace = true
+tokio = { workspace = true }
 tokio.features = ["fs"]
 
-rfd.workspace = true
+rfd = { workspace = true }

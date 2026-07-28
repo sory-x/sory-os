@@ -2,13 +2,13 @@
 name = "iced_widget"
 description = "The built-in widgets for iced"
 version = "0.14.2"
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
-homepage.workspace = true
-categories.workspace = true
-keywords.workspace = true
+edition = { workspace = true }
+authors = { workspace = true }
+license = { workspace = true }
+repository = { workspace = true }
+homepage = { workspace = true }
+categories = { workspace = true }
+keywords = { workspace = true }
 
 [lints]
 workspace = true
@@ -32,28 +32,28 @@ a11y = ["iced_accessibility"]
 cctk = ["iced_runtime/cctk", "dep:cctk"]
 
 [dependencies]
-iced_renderer.workspace = true
-iced_runtime.workspace = true
-iced_accessibility.workspace = true
+iced_renderer = { workspace = true }
+iced_runtime = { workspace = true }
+iced_accessibility = { workspace = true }
 iced_accessibility.optional = true
-cctk.workspace = true
+cctk = { workspace = true }
 cctk.optional = true
-num-traits.workspace = true
-log.workspace = true
-rustc-hash.workspace = true
-thiserror.workspace = true
-unicode-segmentation.workspace = true
-window_clipboard.workspace = true
-dnd.workspace = true
+"num-traits" = { workspace = true }
+log = { workspace = true }
+"rustc-hash" = { workspace = true }
+thiserror = { workspace = true }
+"unicode-segmentation" = { workspace = true }
+window_clipboard = { workspace = true }
+dnd = { workspace = true }
 
-ouroboros.workspace = true
+ouroboros = { workspace = true }
 ouroboros.optional = true
 
-qrcode.workspace = true
+qrcode = { workspace = true }
 qrcode.optional = true
 
-pulldown-cmark.workspace = true
+"pulldown-cmark" = { workspace = true }
 pulldown-cmark.optional = true
 
-iced_highlighter.workspace = true
+iced_highlighter = { workspace = true }
 iced_highlighter.optional = true
