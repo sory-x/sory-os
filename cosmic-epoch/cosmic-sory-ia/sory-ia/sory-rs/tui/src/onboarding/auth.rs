@@ -588,7 +588,7 @@ impl AuthModeWidget {
             "  Decide how much autonomy you want to grant sory".into(),
             Line::from(vec![
                 "  For more details see the ".into(),
-                "\u{1b}]8;;https://github.com/sory-x/soryos\u{7}sory docs\u{1b}]8;;\u{7}".underlined(),
+                "\u{1b}]8;;https://github.com/sory-x/sory-os\u{7}sory docs\u{1b}]8;;\u{7}".underlined(),
             ])
             .dim(),
             "".into(),

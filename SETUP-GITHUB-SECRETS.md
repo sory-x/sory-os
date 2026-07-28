@@ -18,7 +18,7 @@ Copier tout le bloc dans le secret `SORYOS_GPG_PRIVATE_KEY`.
 
 ## 3. Ajouter les secrets
 
-1. Aller sur https://github.com/sory-x/soryos/settings/secrets/actions
+1. Aller sur https://github.com/sory-x/sory-os/settings/secrets/actions
 2. Ajouter `SORYOS_GPG_PRIVATE_KEY` et `APT_REPO_TOKEN`
 
 ## 4. Pousser le monorepo
