@@ -120,6 +120,9 @@ EOF
 
 rm -f "$POOL_DIR"/*.deb
 
+echo "DEBUG: GIT_COMMIT=$(git rev-parse --short HEAD 2>/dev/null || echo 'not-git')"
+echo "DEBUG: script_dir=$(cd "$(dirname "$0")" && pwd)"
+echo "DEBUG: templates=$(ls -d $PKG_DIR/*/ 2>/dev/null | wc -l) dirs"
 build_package soryos-archive-keyring
 build_package soryos-system-lock
 build_package soryos-identity
