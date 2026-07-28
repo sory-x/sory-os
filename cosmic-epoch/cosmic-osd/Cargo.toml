@@ -37,7 +37,7 @@ uzers = "0.12.2"
 xdg = "3.0"
 zbus = { version = "5.14", default-features = false, features = ["tokio"] }
 kdl = "6"
-cosmic-randr-shell = { path = "../cosmic-randr/shell", , default-features = false }
+cosmic-randr-shell = { path = "../cosmic-randr/shell", default-features = false }
 
 [dependencies.cosmic-settings-airplane-mode-subscription]
 git = "https://github.com/pop-os/cosmic-settings"

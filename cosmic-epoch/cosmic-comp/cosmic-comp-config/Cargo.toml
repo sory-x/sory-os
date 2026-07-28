@@ -5,7 +5,7 @@ edition = "2024"
 
 [dependencies]
 cosmic-config = { path = "../../../libcosmic/cosmic-config" }
-cosmic-randr-shell = { path = "../../cosmic-randr/shell", , optional = true }
+cosmic-randr-shell = { path = "../../cosmic-randr/shell", optional = true }
 input = "0.10.0"
 libdisplay-info = { version = "0.3.0", optional = true }
 serde = { version = "1", features = ["derive"] }

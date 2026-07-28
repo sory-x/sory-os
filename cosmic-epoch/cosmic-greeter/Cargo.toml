@@ -45,9 +45,9 @@ wayland-client = "0.31.14"
 #     "cosmic_a11y_manager",
 # ] }
 
-cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility", , default-features = false }
-cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager", , default-features = false }
-cosmic-settings-daemon-config = { path = "../cosmic-settings-daemon/cosmic-settings-daemon-config", , default-features = false, features = [ }
+cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility", default-features = false }
+cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager", default-features = false }
+cosmic-settings-daemon-config = { path = "../cosmic-settings-daemon/cosmic-settings-daemon-config", default-features = false, features = [ }
     "greeter",
 ] }
 
@@ -124,7 +124,7 @@ serde = "1"
 tokio = "1.52.1"
 zbus = "5"
 kdl = "6"
-cosmic-randr-shell = { path = "../cosmic-randr/shell", , default-features = false }
+cosmic-randr-shell = { path = "../cosmic-randr/shell", default-features = false }
 
 [workspace.dependencies.cosmic-applets-config]
 git = "https://github.com/pop-os/cosmic-applets"

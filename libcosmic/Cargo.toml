@@ -130,7 +130,7 @@ auto_enums = "0.8.8"
 cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit", rev = "c253ec1", optional = true }
 jiff = "0.2"
 cosmic-config = { path = "cosmic-config" }
-cosmic-settings-config = { path = "../cosmic-epoch/cosmic-settings-daemon/config", , optional = true }
+cosmic-settings-config = { path = "../cosmic-epoch/cosmic-settings-daemon/config", optional = true }
 # Internationalization
 i18n-embed = { version = "0.16.0", features = [
     "fluent-system",
