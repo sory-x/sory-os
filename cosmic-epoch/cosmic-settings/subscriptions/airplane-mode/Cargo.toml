@@ -8,7 +8,7 @@ publish = true
 
 [dependencies]
 futures = "0.3.32"
-iced_futures = { git = "https://github.com/sory-x/libcosmic" }
+iced_futures = { path = "../../../../libcosmic/iced/futures" }
 log = "0.4.29"
 rustix = "1.1.3"
 tokio = "1.49.0"

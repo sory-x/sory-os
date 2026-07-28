@@ -43,14 +43,14 @@ itertools = "0.14"
 url = "2.5"
 nix = "0.30"
 clap = { version = "4.5", features = ["derive"] }
-switcheroo-control = { git = "https://github.com/sory-x/dbus-settings-bindings" }
-cosmic-app-list-config = { git = "https://github.com/sory-x/cosmic-applets" }
+switcheroo-control = { git = "https://github.com/pop-os/dbus-settings-bindings" }
+cosmic-app-list-config = { path = "../cosmic-applets/cosmic-app-list/cosmic-app-list-config" }
 # cosmic-app-list-config = { path = "../cosmic-applets/cosmic-app-list/cosmic-app-list-config/" }
 
 [profile.release]
 lto = "thin"
 
-[patch."https://github.com/sory-x/libcosmic/"]
+[patch."https://github.com/pop-os/libcosmic/"]
 # libcosmic = { path = "../../libcosmic", branch = "theme-v2" }
 # cosmic-config = { path = "../../libcosmic", branch = "theme-v2" }
 # cosmic-theme = { path = "../../libcosmic", branch = "theme-v2" }

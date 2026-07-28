@@ -21,11 +21,11 @@ cosmic-config = { path = "../../libcosmic/cosmic-config", features = [
     "calloop",
     "macro",
 ] }
-cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols", rev = "160b086", default-features = false, features = [
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "160b086", default-features = false, features = [
     "server",
 ] }
-cosmic-settings-config = { git = "https://github.com/sory-x/cosmic-settings-daemon" }
-cosmic-settings-daemon-config = { git = "https://github.com/sory-x/cosmic-settings-daemon", features = [
+cosmic-settings-config = { path = "../cosmic-settings-daemon/config" }
+cosmic-settings-daemon-config = { path = "../cosmic-settings-daemon/cosmic-settings-daemon-config", , features = [ }
     "greeter",
 ] }
 cosmic-text = { version = "0.19", features = [
@@ -140,8 +140,8 @@ inherits = "release"
 [profile.release]
 lto = "fat"
 
-[patch."https://github.com/sory-x/cosmic-protocols"]
-cosmic-protocols = { git = "https://github.com/sory-x//cosmic-protocols", branch = "main" }
+[patch."https://github.com/pop-os/cosmic-protocols"]
+cosmic-protocols = { git = "https://github.com/pop-os//cosmic-protocols", branch = "main" }
 
 [patch.crates-io]
 smithay = { git = "https://github.com/smithay/smithay.git", rev = "1ed69cb" }

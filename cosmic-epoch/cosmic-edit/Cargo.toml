@@ -33,11 +33,11 @@ i18n-embed-fl = "0.10"
 rust-embed = "8"
 
 [dependencies.cosmic-files]
-git = "https://github.com/sory-x/cosmic-files.git"
+git = "https://github.com/pop-os/cosmic-files.git"
 default-features = false
 
 [dependencies.cosmic-syntax-theme]
-git = "https://github.com/sory-x/cosmic-syntax-theme.git"
+git = "https://github.com/pop-os/cosmic-syntax-theme.git"
 
 [dependencies.cosmic-text]
 version = "0.19"

@@ -8,8 +8,8 @@ rust-version = "1.93"
 anyhow = "1.0.102"
 calloop = { version = "0.14.4", features = ["executor"] }
 clap = { version = "4", features = ["derive"] }
-cosmic-bg-config = { git = "https://github.com/sory-x/cosmic-bg" }
-cosmic-comp-config = { git = "https://github.com/sory-x/cosmic-comp" }
+cosmic-bg-config = { path = "../cosmic-bg/config" }
+cosmic-comp-config = { path = "../cosmic-comp/cosmic-comp-config" }
 env_logger = "0.11.9"
 gbm = "0.18.0"
 libcosmic = { path = "../../libcosmic", default-features = false, features = [
@@ -21,7 +21,7 @@ libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "winit",
 ] }
 cosmic-config = { path = "../../libcosmic/cosmic-config" }
-freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/sory-x/freedesktop-icons" }
+freedesktop-icons = { package = "cosmic-freedesktop-icons", git = "https://github.com/pop-os/freedesktop-icons" }
 
 memmap2 = "0.9.10"
 tokio = "1.49.0"
@@ -38,7 +38,7 @@ zbus = "5.13.2"
 tokio-stream = { version = "0.1.18", features = ["sync"] }
 ash = { version = "0.38.0", features = ["loaded"] }
 bytemuck = "1.25.0"
-cosmic-panel-config = { git = "https://github.com/sory-x/cosmic-panel" }
+cosmic-panel-config = { path = "../cosmic-panel/cosmic-panel-config" }
 
 [dependencies.i18n-embed]
 version = "0.16"

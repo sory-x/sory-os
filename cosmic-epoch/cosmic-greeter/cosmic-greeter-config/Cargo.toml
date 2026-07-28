@@ -3,7 +3,7 @@ name = "cosmic-greeter-config"
 version = "0.1.0"
 edition = "2024"
 description = "Configuration for COSMIC Greeter"
-repository = "https://github.com/sory-x/cosmic-greeter"
+repository = "https://github.com/pop-os/cosmic-greeter"
 license = "GPL-3.0-only"
 
 [dependencies]

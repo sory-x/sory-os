@@ -44,12 +44,6 @@ jobs:
             echo "$HOME/.cargo/bin" >> $GITHUB_PATH
           }
 
-      - name: Configure git for private repos
-        run: |
-          git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "https://github.com/"
-          git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
-          # CARGO_NET_GIT_FETCH_WITH_CLI=true is set as env var at workflow level
-
       - name: Build integration packages
         run: |
           cd soryos-apt

@@ -4,7 +4,7 @@ version = "1.2.7"
 license = "MPL-2.0"
 authors = ["Michael Aaron Murphy <michael@mmurphy.dev>"]
 description = "Library for writing plugins and frontends for pop-launcher"
-repository = "https://github.com/sory-x/launcher"
+repository = "https://github.com/pop-os/launcher"
 edition.workspace = true
 
 [workspace]
@@ -52,5 +52,5 @@ features = ["io-util"]
 # [patch.crates-io]
 # freedesktop-desktop-entry = { path = "../freedesktop-desktop-entry" }
 
-[patch."https://github.com/sory-x/cosmic-protocols"]
-"cosmic-client-toolkit" = { git = "https://github.com/sory-x//cosmic-protocols" }
+[patch."https://github.com/pop-os/cosmic-protocols"]
+"cosmic-client-toolkit" = { git = "https://github.com/pop-os//cosmic-protocols" }

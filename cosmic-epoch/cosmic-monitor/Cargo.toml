@@ -55,7 +55,7 @@ wayland = ["libcosmic/wayland", "libcosmic/multi-window"]
 inherits = "release"
 debug = true
 
-[patch.'https://github.com/sory-x/soryos']
+[patch.'https://github.com/sory-x/sory-os']
 libcosmic = { path = "../../libcosmic" }
 cosmic-config = { path = "../../libcosmic/cosmic-config" }
 cosmic-theme = { path = "../../libcosmic/cosmic-theme" }

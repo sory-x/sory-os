@@ -15,7 +15,7 @@ i18n-embed = { version = "0.16", features = [
 ] }
 i18n-embed-fl = "0.10"
 cosmic-config = { path = "../../libcosmic/cosmic-config" }
-cosmic-comp-config = { git = "https://github.com/sory-x/cosmic-comp" }
+cosmic-comp-config = { path = "../cosmic-comp/cosmic-comp-config" }
 libcosmic = { path = "../../libcosmic", default-features = false, features = [
     "autosize",
     "dbus-config",
@@ -37,22 +37,22 @@ uzers = "0.12.2"
 xdg = "3.0"
 zbus = { version = "5.14", default-features = false, features = ["tokio"] }
 kdl = "6"
-cosmic-randr-shell = { git = "https://github.com/sory-x/cosmic-randr", default-features = false }
+cosmic-randr-shell = { path = "../cosmic-randr/shell", , default-features = false }
 
 [dependencies.cosmic-settings-airplane-mode-subscription]
-git = "https://github.com/sory-x/cosmic-settings"
+git = "https://github.com/pop-os/cosmic-settings"
 
 [dependencies.cosmic-settings-audio-client]
-git = "https://github.com/sory-x/cosmic-settings-daemon"
+git = "https://github.com/pop-os/cosmic-settings-daemon"
 features = ["codec"]
 
 [dependencies.cosmic-settings-upower-subscription]
-git = "https://github.com/sory-x/cosmic-settings"
+git = "https://github.com/pop-os/cosmic-settings"
 
 [dependencies.cosmic-settings-daemon-subscription]
-git = "https://github.com/sory-x/cosmic-settings"
+git = "https://github.com/pop-os/cosmic-settings"
 
-[patch.'https://github.com/sory-x/soryos']
+[patch.'https://github.com/sory-x/sory-os']
 libcosmic = { path = "../../libcosmic" }
 cosmic-config = { path = "../../libcosmic/cosmic-config" }
 cosmic-theme = { path = "../../libcosmic/cosmic-theme" }

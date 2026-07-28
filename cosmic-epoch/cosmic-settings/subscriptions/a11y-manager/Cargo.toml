@@ -7,8 +7,8 @@ rust-version.workspace = true
 publish = true
 
 [dependencies]
-cosmic-protocols = { git = "https://github.com/sory-x/cosmic-protocols" }
-iced_futures = { git = "https://github.com/sory-x/libcosmic" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols" }
+iced_futures = { path = "../../../../libcosmic/iced/futures" }
 num-derive = "0.4.2"
 num-traits = "0.2.19"
 sctk.workspace = true
