@@ -45,8 +45,8 @@ jobs:
 
       - name: Configure git for private repos
         run: |
-          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "https://github.com/"
-          git config --global url."https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/".insteadOf "git@github.com:"
+          git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "https://github.com/"
+          git config --global url."https://x-access-token:${{ secrets.APT_REPO_TOKEN }}@github.com/".insteadOf "git@github.com:"
 
       - name: Build integration packages
         run: |
