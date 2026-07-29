@@ -40,6 +40,11 @@ pub mod clipboard;
 pub mod conversion;
 pub mod platform_specific;
 
+#[cfg(all(feature = "wayland", target_os = "linux"))]
+pub mod commands {
+    pub use crate::platform_specific::wayland::commands::*;
+}
+
 #[cfg(feature = "program")]
 pub mod program;
 

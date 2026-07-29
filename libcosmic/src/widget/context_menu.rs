@@ -3,12 +3,7 @@
 
 //! A context menu is a menu in a graphical user interface that appears upon user interaction, such as a right-click mouse operation.
 
-#[cfg(all(
-    feature = "wayland",
-    target_os = "linux",
-    feature = "winit",
-    feature = "surface-message"
-))]
+#[cfg(all(feature = "wayland", target_os = "linux"))]
 use crate::app::cosmic::{WINDOWING_SYSTEM, WindowingSystem};
 use crate::widget::menu::{
     self, CloseCondition, Direction, ItemHeight, ItemWidth, MenuBarState, PathHighlight,
@@ -64,12 +59,7 @@ pub struct ContextMenu<'a, Message> {
 }
 
 impl<Message: Clone + 'static> ContextMenu<'_, Message> {
-    #[cfg(all(
-        feature = "wayland",
-        target_os = "linux",
-        feature = "winit",
-        feature = "surface-message"
-    ))]
+    #[cfg(all(feature = "wayland", target_os = "linux"))]
     #[allow(clippy::too_many_lines)]
     fn create_popup(
         &mut self,
@@ -81,8 +71,10 @@ impl<Message: Clone + 'static> ContextMenu<'_, Message> {
         my_state: &mut LocalState,
     ) {
         if self.window_id != window::Id::NONE && self.on_surface_action.is_some() {
-            use crate::surface::action::destroy_popup;
-            use crate::widget::menu::Menu;
+            use crate::surface::action::{LiveSettings, destroy_popup};
+            use crate::theme::THEME;
+            use crate::widget::menu::{Menu, StyleSheet as _};
+            use iced_runtime::platform_specific::wayland::CornerRadius;
             use iced_runtime::platform_specific::wayland::popup::{
                 SctkPopupSettings, SctkPositioner,
             };
@@ -185,8 +177,22 @@ impl<Message: Clone + 'static> ContextMenu<'_, Message> {
                 ..Default::default()
             };
             let parent = self.window_id;
+            let t = THEME.lock().unwrap();
+            let styling = t.appearance(&crate::theme::menu_bar::MenuBarStyle::Default, false);
+            drop(t);
+            let rad = styling.menu_border_radius;
+
             shell.publish((self.on_surface_action.as_ref().unwrap())(
                 crate::surface::action::simple_popup(
+                    move || LiveSettings {
+                        corners: Some(CornerRadius {
+                            top_left: rad[0] as u32,
+                            top_right: rad[1] as u32,
+                            bottom_left: rad[2] as u32,
+                            bottom_right: rad[3] as u32,
+                        }),
+                        ..Default::default()
+                    },
                     move || SctkPopupSettings {
                         parent,
                         id,
@@ -375,12 +381,7 @@ impl<Message: 'static + Clone> Widget<Message, crate::Theme, crate::Renderer>
                 state.active_root.clear();
                 state.open = false;
 
-                #[cfg(all(
-                    feature = "wayland",
-                    target_os = "linux",
-                    feature = "winit",
-                    feature = "surface-message"
-                ))]
+                #[cfg(all(feature = "wayland", target_os = "linux"))]
                 if matches!(WINDOWING_SYSTEM.get(), Some(WindowingSystem::Wayland))
                     && let Some(id) = state.popup_id.remove(&self.window_id)
                 {
@@ -419,12 +420,7 @@ impl<Message: 'static + Clone> Widget<Message, crate::Theme, crate::Renderer>
                     state.open = true;
                     state.view_cursor = cursor;
                 });
-                #[cfg(all(
-                    feature = "wayland",
-                    target_os = "linux",
-                    feature = "winit",
-                    feature = "surface-message"
-                ))]
+                #[cfg(all(feature = "wayland", target_os = "linux"))]
                 if matches!(WINDOWING_SYSTEM.get(), Some(WindowingSystem::Wayland)) {
                     self.create_popup(layout, cursor, renderer, shell, viewport, state);
                 }
@@ -441,12 +437,7 @@ impl<Message: 'static + Clone> Widget<Message, crate::Theme, crate::Renderer>
                     state.active_root.clear();
                     state.open = false;
 
-                    #[cfg(all(
-                        feature = "wayland",
-                        target_os = "linux",
-                        feature = "winit",
-                        feature = "surface-message"
-                    ))]
+                    #[cfg(all(feature = "wayland", target_os = "linux"))]
                     if matches!(WINDOWING_SYSTEM.get(), Some(WindowingSystem::Wayland))
                         && let Some(id) = state.popup_id.remove(&self.window_id)
                     {
@@ -480,12 +471,7 @@ impl<Message: 'static + Clone> Widget<Message, crate::Theme, crate::Renderer>
         _viewport: &iced::Rectangle,
         translation: Vector,
     ) -> Option<iced_core::overlay::Element<'b, Message, crate::Theme, crate::Renderer>> {
-        #[cfg(all(
-            feature = "wayland",
-            target_os = "linux",
-            feature = "winit",
-            feature = "surface-message"
-        ))]
+        #[cfg(all(feature = "wayland", target_os = "linux"))]
         if matches!(WINDOWING_SYSTEM.get(), Some(WindowingSystem::Wayland))
             && self.window_id != window::Id::NONE
             && self.on_surface_action.is_some()

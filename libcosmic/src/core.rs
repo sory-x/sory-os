@@ -534,7 +534,14 @@ impl Core {
 
     #[cfg(all(feature = "wayland", target_os = "linux"))]
     pub fn sync_window_border_radii_to_theme(&self) -> bool {
-        self.sync_window_border_radii_to_theme
+        if !self.sync_window_border_radii_to_theme {
+            return false;
+        }
+        match self.app_type {
+            AppType::Window => self.auto_corner_radius.contains(Auto::Window),
+            AppType::System => self.auto_corner_radius.contains(Auto::System),
+            AppType::Applet => false,
+        }
     }
 
     pub fn set_auto_blur(&mut self, auto_blur: BitFlags<Auto>) {
@@ -559,5 +566,80 @@ impl Core {
 
     pub fn app_type(&self) -> AppType {
         self.app_type
+    }
+
+    #[must_use]
+    #[cfg(feature = "winit")]
+    pub fn blur(
+        &self,
+        theme: &Theme,
+        surface_id_wrapper: Option<iced_winit::SurfaceIdWrapper>,
+    ) -> bool {
+        use iced_winit::SurfaceIdWrapper;
+        let theme = theme.cosmic();
+        match surface_id_wrapper {
+            Some(SurfaceIdWrapper::LayerSurface(_)) => {
+                theme.frosted_system_interface && self.auto_blur.contains(Auto::System)
+            }
+            Some(SurfaceIdWrapper::Window(_)) => {
+                theme.frosted_windows && self.auto_blur.contains(Auto::Window)
+            }
+            Some(SurfaceIdWrapper::Popup(_))
+                if matches!(self.app_type, AppType::Window | AppType::System) =>
+            {
+                theme.frosted_windows && self.auto_blur.contains(Auto::Popup)
+            }
+            Some(SurfaceIdWrapper::Popup(_)) if matches!(self.app_type, AppType::Applet) => {
+                theme.frosted_applets && self.auto_blur.contains(Auto::Popup)
+            }
+            None => match self.app_type {
+                AppType::Window => theme.frosted_windows && self.auto_blur.contains(Auto::Window),
+                AppType::System => {
+                    theme.frosted_system_interface && self.auto_blur.contains(Auto::System)
+                }
+                AppType::Applet => false,
+            },
+            _ => false,
+        }
+    }
+
+    /// Calculate suggested corners for each app type main window
+    #[must_use]
+    #[cfg(all(feature = "wayland", target_os = "linux"))]
+    pub fn corners(
+        &self,
+        theme: &Theme,
+        rounded: bool,
+    ) -> Option<iced_runtime::platform_specific::wayland::CornerRadius> {
+        if !self.sync_window_border_radii_to_theme() {
+            return None;
+        }
+        let theme = theme.cosmic();
+        let ret = if let AppType::Applet = self.app_type {
+            let radius_l = theme.radius_l();
+            iced_runtime::platform_specific::wayland::CornerRadius {
+                top_left: radius_l[0].round() as u32,
+                top_right: radius_l[1].round() as u32,
+                bottom_right: radius_l[2].round() as u32,
+                bottom_left: radius_l[3].round() as u32,
+            }
+        } else if let AppType::Window = self.app_type && !rounded {
+            let radius_0 = theme.radius_0();
+            iced_runtime::platform_specific::wayland::CornerRadius {
+                top_left: radius_0[0].round() as u32,
+                top_right: radius_0[1].round() as u32,
+                bottom_right: radius_0[2].round() as u32,
+                bottom_left: radius_0[3].round() as u32,
+            }
+        } else {
+            let radius_s = theme.radius_s().map(|x| if x < 4.0 { x } else { x + 4.0 });
+            iced_runtime::platform_specific::wayland::CornerRadius {
+                top_left: radius_s[0].round() as u32,
+                top_right: radius_s[1].round() as u32,
+                bottom_right: radius_s[2].round() as u32,
+                bottom_left: radius_s[3].round() as u32,
+            }
+        };
+        Some(ret)
     }
 }

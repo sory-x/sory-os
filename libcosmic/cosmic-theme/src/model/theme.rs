@@ -106,7 +106,26 @@ pub struct Theme {
     pub active_hint: u32,
     /// cosmic-comp custom window hint color
     pub window_hint: Option<Srgb>,
-    /// enables blurred transparency
+    /// frosted glass blur strength
+    #[serde(default)]
+    pub frosted: BlurStrength,
+    /// frosted windows
+    #[serde(default)]
+    pub frosted_windows: bool,
+    /// frosted system interface
+    #[serde(default)]
+    pub frosted_system_interface: bool,
+    /// frosted panel
+    #[serde(default)]
+    pub frosted_panel: bool,
+    /// frosted applet popups
+    #[serde(default)]
+    pub frosted_applets: bool,
+    /// alpha map for frosted surfaces
+    #[serde(default)]
+    pub alpha_map: AlphaMap,
+    /// enables blurred transparency (legacy)
+    #[serde(default)]
     pub is_frosted: bool,
     /// shade color for dialogs
     pub shade: Srgba,
@@ -1385,6 +1404,12 @@ impl ThemeBuilder {
             gaps,
             active_hint,
             window_hint,
+            frosted: BlurStrength::default(),
+            frosted_windows: is_frosted,
+            frosted_system_interface: is_frosted,
+            frosted_panel: is_frosted,
+            frosted_applets: is_frosted,
+            alpha_map: AlphaMap::default(),
             is_frosted,
             accent_text,
             control_tint: neutral_tint,
@@ -1411,5 +1436,96 @@ impl ThemeBuilder {
     /// Get the builder for the light config
     pub fn light_config() -> Result<Config, cosmic_config::Error> {
         Config::new(LIGHT_THEME_BUILDER_ID, Self::VERSION)
+    }
+}
+
+/// Actual blur radius is decided by cosmic-comp,
+/// but this represents the strength of the blur effect.
+#[allow(missing_docs)]
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, PartialEq)]
+pub enum BlurStrength {
+    ExtremelyLow,
+    ExtremelyLow2,
+    VeryLow,
+    VeryLow2,
+    Low,
+    Low2,
+    Medium,
+    Medium2,
+    High,
+    High2,
+    VeryHigh,
+    VeryHigh2,
+    ExtremelyHigh,
+    ExtremelyHigh2,
+}
+
+impl Default for BlurStrength {
+    fn default() -> Self {
+        Self::Medium
+    }
+}
+
+impl TryFrom<u8> for BlurStrength {
+    type Error = ();
+
+    fn try_from(value: u8) -> Result<Self, Self::Error> {
+        match value {
+            0 => Ok(BlurStrength::ExtremelyLow),
+            1 => Ok(BlurStrength::ExtremelyLow2),
+            2 => Ok(BlurStrength::VeryLow),
+            3 => Ok(BlurStrength::VeryLow2),
+            4 => Ok(BlurStrength::Low),
+            5 => Ok(BlurStrength::Low2),
+            6 => Ok(BlurStrength::Medium),
+            7 => Ok(BlurStrength::Medium2),
+            8 => Ok(BlurStrength::High),
+            9 => Ok(BlurStrength::High2),
+            10 => Ok(BlurStrength::VeryHigh),
+            11 => Ok(BlurStrength::VeryHigh2),
+            12 => Ok(BlurStrength::ExtremelyHigh),
+            13 => Ok(BlurStrength::ExtremelyHigh2),
+            _ => Err(()),
+        }
+    }
+}
+
+#[derive(Copy, Clone, Debug, Serialize, Deserialize, PartialEq, Default)]
+pub struct AlphaMap {
+    pub extremely_low: f32,
+    pub extremely_low_2: f32,
+    pub very_low: f32,
+    pub very_low_2: f32,
+    pub low: f32,
+    pub low_2: f32,
+    pub medium: f32,
+    pub medium_2: f32,
+    pub high: f32,
+    pub high_2: f32,
+    pub very_high: f32,
+    pub very_high_2: f32,
+    pub extremely_high: f32,
+    pub extremely_high_2: f32,
+}
+
+impl AlphaMap {
+    pub fn blurred_alpha(&self, blur: BlurStrength) -> f32 {
+        match blur {
+            BlurStrength::ExtremelyLow => self.extremely_low,
+            BlurStrength::ExtremelyLow2 => self.extremely_low_2,
+            BlurStrength::VeryLow => self.very_low,
+            BlurStrength::VeryLow2 => self.very_low_2,
+            BlurStrength::Low => self.low,
+            BlurStrength::Low2 => self.low_2,
+            BlurStrength::Medium => self.medium,
+            BlurStrength::Medium2 => self.medium_2,
+            BlurStrength::High => self.high,
+            BlurStrength::High2 => self.high_2,
+            BlurStrength::VeryHigh => self.very_high,
+            BlurStrength::VeryHigh2 => self.very_high_2,
+            BlurStrength::ExtremelyHigh => self.extremely_high,
+            BlurStrength::ExtremelyHigh2 => self.extremely_high_2,
+        }
     }
 }

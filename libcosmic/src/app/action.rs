@@ -45,6 +45,8 @@ pub enum Action {
     /// Tracks updates to window suggested size.
     #[cfg(feature = "applet")]
     SuggestedBounds(Option<iced::Size>),
+    /// Wayland blur support was enabled for the window.
+    BlurEnabled,
     /// Internal surface message
     Surface(surface::Action),
     /// Notifies that a surface was closed.

@@ -114,3 +114,8 @@ pub fn set_layer<Message>(id: SurfaceId, layer: Layer) -> Task<Message> {
         )),
     ))
 }
+
+/// Set layer surface padding when supported by the compositor.
+pub fn set_padding<Message>(id: SurfaceId, padding: IcedMargin) -> Task<Message> {
+    set_margin(id, padding.top, padding.right, padding.bottom, padding.left)
+}

@@ -67,4 +67,4 @@ uninstall:
 
 # Vendor sources
 vendor:
-    just cargo vendor
+    just --unstable cargo vendor
