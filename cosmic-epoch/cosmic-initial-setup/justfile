@@ -26,18 +26,18 @@ themes-dst := base-dir / 'share' / 'cosmic-themes'
 
 # Default recipe which runs `just cargo build-release`
 default:
-    @just cargo build-release
+    @just --unstable cargo build-release
 
 build-release:
-    @just cargo build-release
+    @just --unstable cargo build-release
 
 # Build release binary from vendored sources
 build-vendored:
-    @just cargo build-vendored
+    @just --unstable cargo build-vendored
 
 # Clean
 clean:
-    @just cargo clean
+    @just --unstable cargo clean
     rm -rf {{layouts-dst}} {{themes-dst}} {{bin-dst}} {{icon-dst}} {{desktop-dst}} {{autostart-dst}} {{polkit-rules-dst}}
 
 # Installs files

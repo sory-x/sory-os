@@ -6,6 +6,7 @@
 
 pub mod easing;
 pub mod spring;
+#[cfg(any(feature = "tokio", feature = "smol"))]
 pub mod subscription;
 pub mod tween;
 

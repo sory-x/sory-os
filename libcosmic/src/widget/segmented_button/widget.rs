@@ -192,6 +192,11 @@ where
     #[setters(skip)]
     pub(super) on_reorder: Option<Box<dyn Fn(ReorderEvent) -> Message + 'static>>,
     #[setters(skip)]
+    window_id: window::Id,
+    #[cfg(all(feature = "wayland", target_os = "linux"))]
+    pub(crate) on_surface_action:
+        Option<std::sync::Arc<dyn Fn(crate::surface::Action) -> Message + Send + Sync + 'static>>,
+    #[setters(skip)]
     /// Defines the implementation of this struct
     variant: PhantomData<Variant>,
 }
@@ -243,6 +248,9 @@ where
             tab_drag: None,
             on_drop_hint: None,
             on_reorder: None,
+            window_id: window::Id::RESERVED,
+            #[cfg(all(feature = "wayland", target_os = "linux"))]
+            on_surface_action: None,
         }
     }
 
@@ -374,6 +382,30 @@ where
     /// Emit a message when a tab drag is dropped inside this widget.
     pub fn on_reorder(mut self, callback: impl Fn(ReorderEvent) -> Message + 'static) -> Self {
         self.on_reorder = Some(Box::new(callback));
+        self
+    }
+
+    #[must_use]
+    pub fn window_id(mut self, id: window::Id) -> Self {
+        self.window_id = id;
+        self
+    }
+
+    #[must_use]
+    pub fn window_id_maybe(mut self, id: Option<window::Id>) -> Self {
+        if let Some(id) = id {
+            self.window_id = id;
+        }
+        self
+    }
+
+    #[cfg(all(feature = "wayland", target_os = "linux"))]
+    #[must_use]
+    pub fn on_surface_action(
+        mut self,
+        handler: impl Fn(crate::surface::Action) -> Message + Send + Sync + 'static,
+    ) -> Self {
+        self.on_surface_action = Some(std::sync::Arc::new(handler));
         self
     }
 
@@ -2194,8 +2226,11 @@ where
                 style: std::borrow::Cow::Borrowed(&crate::theme::menu_bar::MenuBarStyle::Default),
                 position: Point::new(translation.x, translation.y),
                 is_overlay: true,
-                window_id: window::Id::NONE,
+                window_id: self.window_id,
                 depth: 0,
+                #[cfg(all(feature = "wayland", target_os = "linux"))]
+                on_surface_action: self.on_surface_action.clone(),
+                #[cfg(not(all(feature = "wayland", target_os = "linux")))]
                 on_surface_action: None,
             }
             .overlay(),

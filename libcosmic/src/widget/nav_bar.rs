@@ -91,6 +91,28 @@ impl<'a, Message: Clone + 'static> NavBar<'a, Message> {
         self
     }
 
+    #[must_use]
+    pub fn window_id(mut self, id: iced::window::Id) -> Self {
+        self.segmented_button = self.segmented_button.window_id(id);
+        self
+    }
+
+    #[must_use]
+    pub fn window_id_maybe(mut self, id: Option<iced::window::Id>) -> Self {
+        self.segmented_button = self.segmented_button.window_id_maybe(id);
+        self
+    }
+
+    #[cfg(all(feature = "wayland", target_os = "linux"))]
+    #[must_use]
+    pub fn on_surface_action(
+        mut self,
+        handler: impl Fn(crate::surface::Action) -> Message + Send + Sync + 'static,
+    ) -> Self {
+        self.segmented_button = self.segmented_button.on_surface_action(handler);
+        self
+    }
+
     /// Pre-convert this widget into the [`Container`] widget that it becomes.
     #[must_use]
     #[inline]

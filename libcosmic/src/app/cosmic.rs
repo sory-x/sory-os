@@ -1637,19 +1637,23 @@ impl<App: Application> Cosmic<App> {
             });
         }
         #[cfg(all(feature = "wayland", target_os = "linux"))]
-        if let Some(corners) = live_settings.corners {
-            cmds.push(
-                iced_winit::commands::corner_radius::corner_radius(id, Some(corners)).discard(),
-            );
-        } else {
-            let rounded = !self.app.core().window.sharp_corners
-                && self.app.core().sync_window_border_radii_to_theme();
-            if let Some(cur_rad) =
-                corners(id_wrapper, rounded, &t, self.app.core().auto_corner_radius)
-            {
+        {
+            if let Some(corners) = live_settings.corners {
                 cmds.push(
-                    iced_winit::commands::corner_radius::corner_radius(id, Some(cur_rad)).discard(),
+                    iced_winit::commands::corner_radius::corner_radius(id, Some(corners))
+                        .discard(),
                 );
+            } else {
+                let rounded = !self.app.core().window.sharp_corners
+                    && self.app.core().sync_window_border_radii_to_theme();
+                if let Some(cur_rad) =
+                    corners(id_wrapper, rounded, &t, self.app.core().auto_corner_radius)
+                {
+                    cmds.push(
+                        iced_winit::commands::corner_radius::corner_radius(id, Some(cur_rad))
+                            .discard(),
+                    );
+                }
             }
         }
         #[cfg(all(feature = "wayland", target_os = "linux"))]
