@@ -194,6 +194,7 @@ where
     #[setters(skip)]
     window_id: window::Id,
     #[cfg(all(feature = "wayland", target_os = "linux"))]
+    #[setters(skip)]
     pub(crate) on_surface_action:
         Option<std::sync::Arc<dyn Fn(crate::surface::Action) -> Message + Send + Sync + 'static>>,
     #[setters(skip)]
