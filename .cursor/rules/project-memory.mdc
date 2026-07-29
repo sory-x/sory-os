@@ -16,6 +16,7 @@ Mettre à jour **`.cursor/PROJECT_MEMORY.md`** :
 
 - section **État actuel** (commits, CI, blocages) ;
 - section **Prochaines étapes** ;
+- section **Commandes** si une nouvelle commande utile est découverte ;
 - une ligne dans **Journal** (date + résumé court).
 
 Ne pas supprimer la section **Protocole agent** : elle doit rappeler aux sessions futures de continuer cette habitude.
