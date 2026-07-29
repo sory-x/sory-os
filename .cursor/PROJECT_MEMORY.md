@@ -343,6 +343,8 @@ Commande suivi : `gh run watch --workflow=build-and-publish.yml`
 
 | Date | Session | Action |
 |------|---------|--------|
+| 2026-07-29 | CI | Push fix `on_surface_action` Setters skip (cosmic-applets E0592) |
+| 2026-07-29 | CI | Push `cfe65001` : fix cosmic-comp, nav_bar, greeter macro, initial-setup unstable |
 | 2026-07-29 | mémoire | Ajout section **Commandes** complète dans PROJECT_MEMORY.md |
 | 2026-07-29 | CI | Création de `.cursor/PROJECT_MEMORY.md` + règle Cursor `project-memory.mdc` |
 | 2026-07-29 | CI | Push `9a0f33af` : `menu_column` + `config.rs` applibrary |
