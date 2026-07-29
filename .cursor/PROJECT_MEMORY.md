@@ -3,7 +3,7 @@
 > **Fichier de continuité entre sessions Cursor.**  
 > Toute session (actuelle ou future) doit **lire ce fichier en premier** au début d’un travail sur ce dépôt, puis **le mettre à jour en fin de tâche** (voir section « Protocole agent »).
 
-Dernière mise à jour : **2026-07-29** (session CI APT / libcosmic + référence commandes)
+Dernière mise à jour : **2026-07-29** (fix cosmic-comp / cosmic-files / greeter / initial-setup)
 
 ---
 
@@ -286,15 +286,14 @@ sudo apt install soryos-desktop
 ## État actuel
 
 ### Tâche active
-Corriger les échecs de build APT un par un ; dernière poussée : **menu_column** + **config.rs** cosmic-applibrary.
+Corriger les échecs CI restants après fix `cfe65001` (cosmic-comp OK attendu, vérifier cosmic-files, cosmic-edit, greeter, initial-setup).
 
 ### Derniers commits (main)
 | Commit | Résumé |
 |--------|--------|
-| `b3e13325` | Mémoire cross-session `.cursor/PROJECT_MEMORY.md` + règle Cursor |
-| `9a0f33af` | `menu_column` dans libcosmic ; `cosmic-applibrary/src/config.rs` versionné (plus gitignored) |
-| `e88aadad` | Sync API surface libcosmic (blur, popup, frosted, layer-shell) + fixes greeter/monitor/initial-setup/sory-ia |
-| `1def811b` | API transparence libcosmic, gstreamer CI, lockfiles partiels |
+| `cfe65001` | anim sans tokio (cosmic-comp), nav_bar `window_id_maybe`, applets-config macro, initial-setup `--unstable` |
+| `754a4a26` | Référence commandes complète dans PROJECT_MEMORY |
+| `9a0f33af` | `menu_column` + `config.rs` cosmic-applibrary |
 
 ### CI
 | Run | Statut | Notes |
@@ -309,13 +308,11 @@ Commande suivi : `gh run watch --workflow=build-and-publish.yml`
 `cosmic-bg`, `cosmic-icons`, `cosmic-idle`, `cosmic-randr`, `cosmic-screenshot`, `cosmic-session`, `cosmic-store`, `cosmic-wallpapers`, `simple-wrapper`
 
 ### Corrections récentes (détail)
-- **libcosmic** : `transparent`, `AppType`, `Auto`, `blur`, `LiveSettings`, `simple_popup` 3 args, `menu_column`, stubs iced_winit (`blur`, `set_padding`, `BlurEnabled`)
-- **cosmic-applibrary** : `src/config.rs` était gitignored → absent en CI
-- **cosmic-greeter** : `cosmic-config` feature `macro` sur daemon
-- **cosmic-monitor** : `rust-version = "1.93"`
-- **cosmic-initial-setup** : `just --unstable` pour vendor
-- **cosmic-sory-ia** : suppression `debian/compat` (conflit `debhelper-compat`)
-- **cosmic-files** : `Cargo.lock` régénéré (local)
+- **libcosmic** : `anim::subscription` gated sans tokio (fix cosmic-comp E0425), `nav_bar`/`segmented_button` `window_id_maybe` + `on_surface_action`, cfg `corner_radius` dans `apply_live_settings`
+- **cosmic-applets-config** : `cosmic-config` feature `macro` (fix greeter `TimeAppletConfig::VERSION`)
+- **cosmic-initial-setup** : `just --unstable` sur toutes les recettes cargo (fix modules instables)
+- **cosmic-applibrary** : `src/config.rs` versionné
+- **cosmic-greeter daemon** : `cosmic-config` feature `macro` (commit antérieur `e88aadad`)
 
 ### Échecs CI typiques encore possibles
 - Dérive API **libcosmic** vs cosmic-epoch (panel, settings, applets, comp, term, osd, notifications…)
