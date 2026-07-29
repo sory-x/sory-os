@@ -67,6 +67,7 @@ pub(crate) use menu_bar::MenuBarState;
 pub use menu_bar::{MenuBar, menu_bar as bar};
 
 mod menu_inner;
+pub mod menu_column;
 mod menu_tree;
 pub use menu_tree::{
     MenuItem as Item, MenuTree as Tree, menu_button, menu_items as items, menu_root as root,
