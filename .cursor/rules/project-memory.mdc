@@ -1,0 +1,26 @@
+---
+description: Lire et mettre à jour la mémoire de projet entre sessions
+alwaysApply: true
+---
+
+# Mémoire de session SoryOS
+
+## Au début de chaque conversation sur ce dépôt
+
+1. Lire **`.cursor/PROJECT_MEMORY.md`** en entier avant toute action significative.
+2. S’aligner sur l’**état actuel**, les **prochaines étapes** et les **contraintes** documentées.
+
+## À la fin de chaque tâche accomplie
+
+Mettre à jour **`.cursor/PROJECT_MEMORY.md`** :
+
+- section **État actuel** (commits, CI, blocages) ;
+- section **Prochaines étapes** ;
+- une ligne dans **Journal** (date + résumé court).
+
+Ne pas supprimer la section **Protocole agent** : elle doit rappeler aux sessions futures de continuer cette habitude.
+
+## Rappels
+
+- Éviter les `cargo build` complets en local (RAM/disque limités) ; préférer CI ou `cargo check -j1` ciblé.
+- Commits CI : ne pas inclure les changements hors scope (launcher, player, docs unrelated) sauf demande explicite.
