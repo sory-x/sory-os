@@ -122,7 +122,7 @@ pub mod command;
 /// State which is managed by the cosmic runtime.
 pub mod core;
 #[doc(inline)]
-pub use core::Core;
+pub use core::{AppType, Auto, Core};
 
 pub mod config;
 

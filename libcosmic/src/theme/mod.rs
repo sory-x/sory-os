@@ -8,6 +8,7 @@ pub mod portal;
 pub mod style;
 pub mod sory;
 
+use ::iced::Alignment;
 use cosmic_config::{CosmicConfigEntry, config_subscription};
 use cosmic_theme::{Component, LayeredTheme, Spacing, ThemeMode};
 use iced_futures::Subscription;
@@ -47,6 +48,8 @@ pub static TRANSPARENT_COMPONENT: LazyLock<Component> = LazyLock::new(|| Compone
 pub(crate) static THEME: Mutex<Theme> = Mutex::new(Theme {
     theme_type: ThemeType::Dark,
     layer: cosmic_theme::Layer::Background,
+    transparent: false,
+    list_item_position: None,
 });
 
 /// Currently-defined theme.
@@ -210,6 +213,9 @@ impl ThemeType {
 pub struct Theme {
     pub theme_type: ThemeType,
     pub layer: cosmic_theme::Layer,
+    pub transparent: bool,
+    /// Only meaningful for widgets that must be in a list. Otherwise it should be ignored.
+    pub list_item_position: Option<(Alignment, usize)>,
 }
 
 impl Theme {
@@ -280,10 +286,18 @@ impl Theme {
     /// can be used in a component that is intended to be a child of a `CosmicContainer`
     pub fn current_container(&self) -> &cosmic_theme::Container {
         match self.layer {
-            cosmic_theme::Layer::Background => &self.cosmic().background,
-            cosmic_theme::Layer::Primary => &self.cosmic().primary,
-            cosmic_theme::Layer::Secondary => &self.cosmic().secondary,
+            cosmic_theme::Layer::Background => self.cosmic().background(self.transparent),
+            cosmic_theme::Layer::Primary => self.cosmic().primary(self.transparent),
+            cosmic_theme::Layer::Secondary => self.cosmic().secondary(self.transparent),
         }
+    }
+
+    #[inline]
+    /// Clone theme with a list position
+    pub fn with_list_item_position(&self, position: Option<(Alignment, usize)>) -> Self {
+        let mut new = self.clone();
+        new.list_item_position = position;
+        new
     }
 
     #[inline]

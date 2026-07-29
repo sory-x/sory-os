@@ -6,6 +6,7 @@ use std::collections::HashMap;
 use crate::widget::nav_bar;
 use cosmic_config::CosmicConfigEntry;
 use cosmic_theme::ThemeMode;
+use enumflags2::{self, BitFlags, bitflags};
 use iced::{Limits, Size, window};
 use iced_core::window::Id;
 use palette::Srgba;
@@ -39,8 +40,21 @@ pub struct Window {
     pub show_maximize: bool,
     pub show_minimize: bool,
     pub is_maximized: bool,
+    pub border_padding: Option<f32>,
     height: f32,
     width: f32,
+}
+
+#[bitflags]
+#[repr(u8)]
+#[derive(Copy, Clone, Debug, PartialEq)]
+pub enum Auto {
+    /// Automatically apply effect to regular windows
+    Window,
+    /// Automatically apply effect to popups
+    Popup,
+    /// Automatically apply effect to system interface elements (layer shell surfaces)
+    System,
 }
 
 /// COSMIC-specific application settings
@@ -99,8 +113,24 @@ pub struct Core {
 
     pub(crate) menu_bars: HashMap<crate::widget::Id, (Limits, Size)>,
 
+    pub(crate) auto_blur: BitFlags<Auto>,
+
+    pub(crate) auto_corner_radius: BitFlags<Auto>,
+
+    pub(crate) app_type: AppType,
+
     #[cfg(all(feature = "wayland", target_os = "linux"))]
     pub(crate) sync_window_border_radii_to_theme: bool,
+}
+
+#[derive(Clone, Copy, Debug, PartialEq, Eq)]
+pub enum AppType {
+    /// A regular application
+    Window,
+    /// A system application
+    System,
+    /// An applet
+    Applet,
 }
 
 impl Default for Core {
@@ -143,6 +173,7 @@ impl Default for Core {
                 show_minimize: true,
                 show_window_menu: false,
                 is_maximized: false,
+                border_padding: None,
                 height: 0.,
                 width: 0.,
             },
@@ -159,6 +190,9 @@ impl Default for Core {
             main_window: None,
             exit_on_main_window_closed: true,
             menu_bars: HashMap::new(),
+            auto_blur: Auto::System | Auto::Popup | Auto::Window,
+            auto_corner_radius: Auto::System | Auto::Popup | Auto::Window,
+            app_type: AppType::Window,
             #[cfg(all(feature = "wayland", target_os = "linux"))]
             sync_window_border_radii_to_theme: true,
         }
@@ -501,5 +535,29 @@ impl Core {
     #[cfg(all(feature = "wayland", target_os = "linux"))]
     pub fn sync_window_border_radii_to_theme(&self) -> bool {
         self.sync_window_border_radii_to_theme
+    }
+
+    pub fn set_auto_blur(&mut self, auto_blur: BitFlags<Auto>) {
+        self.auto_blur = auto_blur;
+    }
+
+    pub fn auto_blur(&self) -> BitFlags<Auto> {
+        self.auto_blur
+    }
+
+    pub fn set_auto_corner_radius(&mut self, auto_corner_radius: BitFlags<Auto>) {
+        self.auto_corner_radius = auto_corner_radius;
+    }
+
+    pub fn auto_corner_radius(&self) -> BitFlags<Auto> {
+        self.auto_corner_radius
+    }
+
+    pub fn set_app_type(&mut self, app_type: AppType) {
+        self.app_type = app_type;
+    }
+
+    pub fn app_type(&self) -> AppType {
+        self.app_type
     }
 }

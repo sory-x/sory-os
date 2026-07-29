@@ -55,6 +55,15 @@ pub struct Theme {
     pub primary: Container,
     /// secondary element colors
     pub secondary: Container,
+    /// transparent background element colors
+    #[serde(default)]
+    pub(crate) transparent_background: Container,
+    /// transparent primary element colors
+    #[serde(default)]
+    pub(crate) transparent_primary: Container,
+    /// transparent secondary element colors
+    #[serde(default)]
+    pub(crate) transparent_secondary: Container,
     /// accent element colors
     pub accent: Component,
     /// suggested element colors
@@ -170,6 +179,39 @@ impl Theme {
     /// Convert the theme to a high-contrast variant
     pub fn to_high_contrast(&self) -> Self {
         todo!();
+    }
+
+    #[allow(clippy::doc_markdown)]
+    #[inline]
+    /// get opaque or transparent background based on whether blur is active
+    pub fn background(&self, transparent: bool) -> &Container {
+        if transparent && self.transparent_background != Container::default() {
+            &self.transparent_background
+        } else {
+            &self.background
+        }
+    }
+
+    #[allow(clippy::doc_markdown)]
+    #[inline]
+    /// get opaque or transparent primary based on whether blur is active
+    pub fn primary(&self, transparent: bool) -> &Container {
+        if transparent && self.transparent_primary != Container::default() {
+            &self.transparent_primary
+        } else {
+            &self.primary
+        }
+    }
+
+    #[allow(clippy::doc_markdown)]
+    #[inline]
+    /// get opaque or transparent secondary based on whether blur is active
+    pub fn secondary(&self, transparent: bool) -> &Container {
+        if transparent && self.transparent_secondary != Container::default() {
+            &self.transparent_secondary
+        } else {
+            &self.secondary
+        }
     }
 
     #[must_use]
@@ -1347,7 +1389,13 @@ impl ThemeBuilder {
             accent_text,
             control_tint: neutral_tint,
             text_tint,
+            transparent_background: Container::default(),
+            transparent_primary: Container::default(),
+            transparent_secondary: Container::default(),
         };
+        theme.transparent_background = theme.background.clone();
+        theme.transparent_primary = theme.primary.clone();
+        theme.transparent_secondary = theme.secondary.clone();
         theme.spacing = spacing;
         theme.corner_radii = corner_radii;
         theme

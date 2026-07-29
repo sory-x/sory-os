@@ -9,7 +9,7 @@ rust-version = "1.93"
 [workspace.dependencies]
 cosmic-randr = { path = "../cosmic-randr/lib" }
 tokio = { version = "1.49.0", features = ["macros"] }
-iced_winit = { path = "../../libcosmic", default-features = false }
+iced_winit = { path = "../../libcosmic/iced/winit", default-features = false }
 image = { version = "0.25.10", default-features = false, features = [
     "jpeg",
     "png",

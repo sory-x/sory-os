@@ -1159,20 +1159,7 @@ version = "0.2.0"
 source = "git+https://github.com/pop-os/cosmic-protocols?rev=32283d7#32283d76a8d0342da74c4cc022a533c52dcf378f"
 dependencies = [
  "bitflags 2.13.1",
- "cosmic-protocols 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
- "libc",
- "smithay-client-toolkit",
- "wayland-client",
- "wayland-protocols",
-]
-
-[[package]]
-name = "cosmic-client-toolkit"
-version = "0.2.0"
-source = "git+https://github.com/pop-os/cosmic-protocols#e95d89504513e1407f89a189aca328fbecc9eeef"
-dependencies = [
- "bitflags 2.13.1",
- "cosmic-protocols 0.2.0 (git+https://github.com/pop-os/cosmic-protocols)",
+ "cosmic-protocols",
  "libc",
  "smithay-client-toolkit",
  "wayland-client",
@@ -1182,7 +1169,7 @@ dependencies = [
 [[package]]
 name = "cosmic-comp-config"
 version = "1.0.0"
-source = "git+https://github.com/pop-os/cosmic-comp#9514b4945edc2656b38a34419c3a8618f490cb17"
+source = "git+https://github.com/pop-os/cosmic-comp#ffeda3375a7e60ace6ae64b19432f1f0c1fc1034"
 dependencies = [
  "cosmic-config 1.0.0 (git+https://github.com/pop-os/libcosmic)",
  "cosmic-randr-shell 0.1.0 (git+https://github.com/pop-os/cosmic-randr/)",
@@ -1292,13 +1279,13 @@ dependencies = [
  "color-eyre",
  "cosmic-applets-config",
  "cosmic-bg-config",
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols)",
+ "cosmic-client-toolkit",
  "cosmic-comp-config",
  "cosmic-config 1.0.0",
  "cosmic-dbus-networkmanager",
  "cosmic-greeter-config",
  "cosmic-greeter-daemon",
- "cosmic-protocols 0.2.0 (git+https://github.com/pop-os/cosmic-protocols)",
+ "cosmic-protocols",
  "cosmic-randr-shell 0.1.0",
  "cosmic-settings-a11y-manager-subscription",
  "cosmic-settings-accessibility-subscription",
@@ -1383,20 +1370,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "cosmic-protocols"
-version = "0.2.0"
-source = "git+https://github.com/pop-os/cosmic-protocols#e95d89504513e1407f89a189aca328fbecc9eeef"
-dependencies = [
- "bitflags 2.13.1",
- "wayland-backend",
- "wayland-client",
- "wayland-protocols",
- "wayland-protocols-wlr",
- "wayland-scanner",
- "wayland-server",
-]
-
-[[package]]
 name = "cosmic-randr-shell"
 version = "0.1.0"
 dependencies = [
@@ -1419,7 +1392,7 @@ dependencies = [
 name = "cosmic-settings-a11y-manager-subscription"
 version = "1.0.7"
 dependencies = [
- "cosmic-protocols 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-protocols",
  "iced_futures 0.14.0",
  "num-derive",
  "num-traits",
@@ -1845,7 +1818,7 @@ dependencies = [
  "libc",
  "option-ext",
  "redox_users",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -2040,7 +2013,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb"
 dependencies = [
  "libc",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -2866,7 +2839,7 @@ version = "0.14.0"
 dependencies = [
  "bitflags 2.13.1",
  "bytes",
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "dnd",
  "glam",
  "lilt",
@@ -2987,7 +2960,7 @@ name = "iced_runtime"
 version = "0.14.0"
 dependencies = [
  "bytes",
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "dnd",
  "iced_core 0.14.0",
  "iced_futures 0.14.0",
@@ -3019,7 +2992,7 @@ dependencies = [
  "as-raw-xcb-connection",
  "bitflags 2.13.1",
  "bytemuck",
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "cryoglyph",
  "futures",
  "glam",
@@ -3046,7 +3019,7 @@ dependencies = [
 name = "iced_widget"
 version = "0.14.2"
 dependencies = [
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "dnd",
  "iced_renderer",
  "iced_runtime",
@@ -3063,7 +3036,7 @@ dependencies = [
 name = "iced_winit"
 version = "0.14.0"
 dependencies = [
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "cursor-icon",
  "dnd",
  "iced_debug",
@@ -3901,7 +3874,7 @@ version = "1.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7a1886916523694cd6ea3d175f03a1e5010699a2a4cc13696d83d7bea1d80638"
 dependencies = [
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -3976,7 +3949,7 @@ dependencies = [
  "apply",
  "ashpd 0.12.3",
  "auto_enums",
- "cosmic-client-toolkit 0.2.0 (git+https://github.com/pop-os/cosmic-protocols?rev=32283d7)",
+ "cosmic-client-toolkit",
  "cosmic-config 1.0.0",
  "cosmic-freedesktop-icons",
  "cosmic-settings-config",
@@ -3984,6 +3957,7 @@ dependencies = [
  "cosmic-theme",
  "css-color",
  "derive_setters",
+ "enumflags2",
  "float-cmp 0.10.0",
  "freedesktop-desktop-entry",
  "futures",
@@ -4514,7 +4488,7 @@ version = "0.50.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5"
 dependencies = [
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -5871,7 +5845,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys 0.4.15",
- "windows-sys 0.52.0",
+ "windows-sys 0.59.0",
 ]
 
 [[package]]
@@ -5884,7 +5858,7 @@ dependencies = [
  "errno",
  "libc",
  "linux-raw-sys 0.12.1",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -6267,7 +6241,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c3d1e2c7f27f8d4cb10542a02c49005dbd6e93095799d6f3be745fae9f8fedd4"
 dependencies = [
  "libc",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -6441,10 +6415,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd"
 dependencies = [
  "fastrand",
- "getrandom 0.3.4",
+ "getrandom 0.4.3",
  "once_cell",
  "rustix 1.1.4",
- "windows-sys 0.52.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -6847,7 +6821,7 @@ checksum = "f2f6fb2847f6742cd76af783a2a2c49e9375d0a111c7bef6f71cd9e738c72d6e"
 dependencies = [
  "memoffset",
  "tempfile",
- "windows-sys 0.60.2",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]
@@ -7512,7 +7486,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.48.0",
+ "windows-sys 0.61.2",
 ]
 
 [[package]]

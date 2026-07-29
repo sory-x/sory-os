@@ -33,7 +33,7 @@ bytes = "1.10.1"
 recently-used-xbel = "1.1.0"
 
 # dependencies cosmic toplevel
-cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit" }
+cctk = { git = "https://github.com/pop-os/cosmic-protocols", package = "cosmic-client-toolkit", rev = "32283d7" }
 sctk = { package = "smithay-client-toolkit", version = "0.20.0", features = [
     "calloop",
 ] }

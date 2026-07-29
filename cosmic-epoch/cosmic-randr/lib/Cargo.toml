@@ -6,7 +6,7 @@ license = "MPL-2.0"
 edition = "2024"
 
 [dependencies]
-cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols" }
+cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
 indexmap = "2.12.1"
 thiserror = "2.0.17"
 tokio = { version = "1.48.0", default-features = false, features = ["net", "sync"] }
