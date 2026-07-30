@@ -131,11 +131,11 @@ path = "../cosmic-applets/cosmic-applets-config"
 default-features = false
 
 [workspace.dependencies.cosmic-bg-config]
-git = "https://github.com/pop-os/cosmic-bg"
+path = "../cosmic-bg/config"
 default-features = false
 
 [workspace.dependencies.cosmic-comp-config]
-git = "https://github.com/pop-os/cosmic-comp"
+path = "../cosmic-comp/cosmic-comp-config"
 default-features = false
 features = ["output", "randr"]
 
