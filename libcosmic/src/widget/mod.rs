@@ -352,7 +352,7 @@ pub use sory_modal::{
 pub mod sory_toast;
 #[doc(inline)]
 pub use sory_toast::{
-    ToastItem, ToastId, ToastVariant, ToastPosition, ToastManager,
+    ToastItem, ToastVariant, ToastPosition, ToastManager,
     toast_view, toast_content,
     toast_info, toast_success, toast_warning, toast_error,
 };
@@ -378,7 +378,7 @@ pub use modern::{
 
 pub mod toaster;
 #[doc(inline)]
-pub use toaster::{Toast, Toasts, toaster};
+pub use toaster::{Toast, ToastId, Toasts, toaster};
 
 mod toggler;
 #[doc(inline)]

@@ -3,7 +3,7 @@
 > **Fichier de continuité entre sessions Cursor.**  
 > Toute session (actuelle ou future) doit **lire ce fichier en premier** au début d’un travail sur ce dépôt, puis **le mettre à jour en fin de tâche** (voir section « Protocole agent »).
 
-Dernière mise à jour : **2026-07-29** (fix cosmic-comp / cosmic-files / greeter / initial-setup)
+Dernière mise à jour : **2026-07-30** (fix cosmic-files / cosmic-edit — nav_context, ToastId, nav_context_menu)
 
 ---
 
@@ -286,14 +286,18 @@ sudo apt install soryos-desktop
 ## État actuel
 
 ### Tâche active
-Corriger les échecs CI restants après fix `cfe65001` (cosmic-comp OK attendu, vérifier cosmic-files, cosmic-edit, greeter, initial-setup).
+Pousser les fixes libcosmic (`nav_context`, `ToastId`, `nav_context_menu`) et relancer CI ; vérifier cosmic-edit, greeter, initial-setup, launcher, etc.
 
 ### Derniers commits (main)
 | Commit | Résumé |
 |--------|--------|
+| `3ac8793b` | segmented_button Setters alignement upstream |
+| `d214af5d` | segmented_button surface fields + positioner |
 | `cfe65001` | anim sans tokio (cosmic-comp), nav_bar `window_id_maybe`, applets-config macro, initial-setup `--unstable` |
-| `754a4a26` | Référence commandes complète dans PROJECT_MEMORY |
-| `9a0f33af` | `menu_column` + `config.rs` cosmic-applibrary |
+
+### Fixes locaux non poussés (2026-07-30)
+- `libcosmic`: `menu::nav_context`, trait `nav_context_menu(&self)`, réexport `toaster::ToastId`, exemple nav-context
+- `cosmic-files`: compile OK localement (`cargo check --features wayland`)
 
 ### CI
 | Run | Statut | Notes |
@@ -332,10 +336,9 @@ Commande suivi : `gh run watch --workflow=build-and-publish.yml`
 ---
 
 ## Prochaines étapes
-1. Attendre résultat CI `#30496194437` ; analyser logs des composants encore en FAIL.
-2. Si nouveaux erreurs libcosmic → sync ciblé depuis `pop-os/libcosmic` (pas de rebuild local complet).
-3. Scanner les `.gitignore` avec `src/config.rs` pour les crates qui ont `mod config` dans `main.rs`.
-4. Committer **uniquement** les fichiers liés au CI (pas launcher/player/doc unrelated).
+1. Commit + push fixes libcosmic (`nav_context`, ToastId, `nav_context_menu`).
+2. `gh run watch --workflow=build-and-publish.yml` — cosmic-edit devrait passer si cosmic-files OK.
+3. Traiter greeter, initial-setup, launcher, notifications selon logs CI.
 
 ---
 
@@ -343,6 +346,7 @@ Commande suivi : `gh run watch --workflow=build-and-publish.yml`
 
 | Date | Session | Action |
 |------|---------|--------|
+| 2026-07-30 | CI | Fix cosmic-files : `nav_context`, `nav_context_menu(&self)`, `toaster::ToastId` — `cargo check` OK |
 | 2026-07-29 | CI | Push `d214af5d` : align segmented_button Setters avec upstream (on_surface_action toujours défini) |
 | 2026-07-29 | CI | Push fix `on_surface_action` Setters skip (cosmic-applets E0592) |
 | 2026-07-29 | CI | Push `cfe65001` : fix cosmic-comp, nav_bar, greeter macro, initial-setup unstable |

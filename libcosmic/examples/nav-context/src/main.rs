@@ -127,18 +127,20 @@ impl cosmic::Application for App {
         Some(&self.nav_model)
     }
 
-    /// The context menu to display for the given nav bar item ID.
-    fn nav_context_menu(
-        &self,
-        id: nav_bar::Id,
-    ) -> Option<Vec<menu::Tree<cosmic::Action<Self::Message>>>> {
-        Some(menu::items(
+    /// The context menu to display for nav bar items.
+    fn nav_context_menu(&self) -> Option<Vec<menu::Tree<cosmic::Action<Self::Message>>>> {
+        Some(menu::nav_context(
             &HashMap::new(),
-            vec![
-                menu::Item::Button("Move Up", None, NavMenuAction::MoveUp(id)),
-                menu::Item::Button("Move Down", None, NavMenuAction::MoveDown(id)),
-                menu::Item::Button("Delete", None, NavMenuAction::Delete(id)),
-            ],
+            self.nav_model
+                .iter()
+                .map(|e| {
+                    vec![
+                        menu::Item::Button("Move Up", None, NavMenuAction::MoveUp(e)),
+                        menu::Item::Button("Move Down", None, NavMenuAction::MoveDown(e)),
+                        menu::Item::Button("Delete", None, NavMenuAction::Delete(e)),
+                    ]
+                })
+                .collect(),
         ))
     }
 

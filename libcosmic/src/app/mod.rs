@@ -389,10 +389,17 @@ where
         let mut nav =
             crate::widget::nav_bar(nav_model, |id| crate::Action::Cosmic(Action::NavBar(id)))
                 .on_context(|id| crate::Action::Cosmic(Action::NavBarContext(id)))
-                .context_menu(self.nav_context_menu(self.core().nav_bar_context()))
-                .into_container()
-                .width(iced::Length::Shrink)
-                .height(iced::Length::Fill);
+                .context_menu(self.nav_context_menu());
+        #[cfg(all(feature = "wayland", target_os = "linux"))]
+        {
+            nav = nav
+                .window_id_maybe(self.core().main_window_id())
+                .on_surface_action(|m| crate::Action::Cosmic(crate::app::Action::Surface(m)))
+        }
+        let mut nav = nav
+            .into_container()
+            .width(iced::Length::Shrink)
+            .height(iced::Length::Fill);
 
         if !self.core().is_condensed() {
             nav = nav.max_width(280);
@@ -404,7 +411,6 @@ where
     /// Shows a context menu for the active nav bar item.
     fn nav_context_menu(
         &self,
-        id: nav_bar::Id,
     ) -> Option<Vec<menu::Tree<crate::Action<Self::Message>>>> {
         None
     }
