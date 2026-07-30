@@ -127,7 +127,7 @@ kdl = "6"
 cosmic-randr-shell = { path = "../cosmic-randr/shell", default-features = false }
 
 [workspace.dependencies.cosmic-applets-config]
-git = "https://github.com/pop-os/cosmic-applets"
+path = "../cosmic-applets/cosmic-applets-config"
 default-features = false
 
 [workspace.dependencies.cosmic-bg-config]
