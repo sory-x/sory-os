@@ -194,10 +194,10 @@ where
     #[setters(skip)]
     window_id: window::Id,
     #[cfg(all(feature = "wayland", target_os = "linux"))]
+    positioner: iced_runtime::platform_specific::wayland::popup::SctkPositioner,
     #[setters(skip)]
     pub(crate) on_surface_action:
         Option<std::sync::Arc<dyn Fn(crate::surface::Action) -> Message + Send + Sync + 'static>>,
-    #[setters(skip)]
     /// Defines the implementation of this struct
     variant: PhantomData<Variant>,
 }
@@ -251,6 +251,7 @@ where
             on_reorder: None,
             window_id: window::Id::RESERVED,
             #[cfg(all(feature = "wayland", target_os = "linux"))]
+            positioner: iced_runtime::platform_specific::wayland::popup::SctkPositioner::default(),
             on_surface_action: None,
         }
     }
@@ -400,7 +401,6 @@ where
         self
     }
 
-    #[cfg(all(feature = "wayland", target_os = "linux"))]
     #[must_use]
     pub fn on_surface_action(
         mut self,
@@ -2229,10 +2229,7 @@ where
                 is_overlay: true,
                 window_id: self.window_id,
                 depth: 0,
-                #[cfg(all(feature = "wayland", target_os = "linux"))]
                 on_surface_action: self.on_surface_action.clone(),
-                #[cfg(not(all(feature = "wayland", target_os = "linux")))]
-                on_surface_action: None,
             }
             .overlay(),
         )

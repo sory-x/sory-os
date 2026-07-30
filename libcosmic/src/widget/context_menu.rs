@@ -51,6 +51,7 @@ pub struct ContextMenu<'a, Message> {
     content: crate::Element<'a, Message>,
     #[setters(skip)]
     context_menu: Option<Vec<menu::Tree<Message>>>,
+    #[setters(skip)]
     pub window_id: window::Id,
     pub close_on_escape: bool,
     #[setters(skip)]
