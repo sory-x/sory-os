@@ -397,7 +397,7 @@ impl<M: From<Message> + Send + 'static> Common<M> {
                         rects.append(&mut rounded_rect_strips(other, rad));
                     }
 
-                    return blur(id, Some(rects)).discard();
+                    return blur::<M>(id, Some(rects)).discard();
                 } else {
                     tracing::error!("no rectangle for surface {id:?}");
                 }

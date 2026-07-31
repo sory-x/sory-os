@@ -1199,7 +1199,7 @@ impl cosmic::Application for App {
 
         struct TimeAppletSubscription;
         subscriptions.push(
-            cosmic_config::config_subscription(
+            cosmic_config::config_subscription::<_, TimeAppletConfig>(
                 TypeId::of::<TimeAppletSubscription>(),
                 "com.system76.CosmicAppletTime".into(),
                 TimeAppletConfig::VERSION,
