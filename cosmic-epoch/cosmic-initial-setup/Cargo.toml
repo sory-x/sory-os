@@ -8,7 +8,7 @@ rust-version = "1.93"
 cosmic-protocols = { git = "https://github.com/pop-os/cosmic-protocols", rev = "32283d7" }
 cosmic-settings-accessibility-subscription = { path = "../cosmic-settings/subscriptions/accessibility" }
 cosmic-settings-a11y-manager-subscription = { path = "../cosmic-settings/subscriptions/a11y-manager" }
-cosmic-settings-network-manager-subscription = { git = "https://github.com/pop-os/cosmic-settings" }
+cosmic-settings-network-manager-subscription = { path = "../cosmic-settings/subscriptions/network-manager" }
 crabtime = "1.1.4"
 eyre = "0.6.12"
 futures = "0.3.32"
@@ -46,10 +46,10 @@ zbus_polkit = "5.0.0"
 git = "https://github.com/pop-os/dbus-settings-bindings"
 
 [dependencies.cosmic-comp-config]
-git = "https://github.com/pop-os/cosmic-comp"
+path = "../cosmic-comp/cosmic-comp-config"
 
 [dependencies.cosmic-randr-shell]
-git = "https://github.com/pop-os/cosmic-randr"
+path = "../cosmic-randr/shell"
 
 [dependencies.libcosmic]
 path = "../../libcosmic"
