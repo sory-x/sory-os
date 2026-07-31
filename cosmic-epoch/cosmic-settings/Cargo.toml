@@ -33,20 +33,20 @@ path = "../../libcosmic"
 path = "../../libcosmic/cosmic-config"
 
 [workspace.dependencies.cosmic-bg-config]
-git = "https://github.com/pop-os/cosmic-bg"
+path = "../cosmic-bg/config"
 
 [workspace.dependencies.cosmic-comp-config]
-git = "https://github.com/pop-os/cosmic-comp"
+path = "../cosmic-comp/cosmic-comp-config"
 features = ["output"]
 
 [workspace.dependencies.cosmic-idle-config]
-git = "https://github.com/pop-os/cosmic-idle"
+path = "../cosmic-idle/cosmic-idle-config"
 
 [workspace.dependencies.cosmic-panel-config]
-git = "https://github.com/pop-os/cosmic-panel"
+path = "../cosmic-panel/cosmic-panel-config"
 
 [workspace.dependencies.cosmic-randr-shell]
-git = "https://github.com/pop-os/cosmic-randr"
+path = "../cosmic-randr/shell"
 
 [workspace.dependencies.sctk]
 version = "0.20"

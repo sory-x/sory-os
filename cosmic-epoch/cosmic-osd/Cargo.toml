@@ -40,17 +40,17 @@ kdl = "6"
 cosmic-randr-shell = { path = "../cosmic-randr/shell", default-features = false }
 
 [dependencies.cosmic-settings-airplane-mode-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
+path = "../cosmic-settings/subscriptions/airplane-mode"
 
 [dependencies.cosmic-settings-audio-client]
-git = "https://github.com/pop-os/cosmic-settings-daemon"
+path = "../cosmic-settings-daemon/audio-client"
 features = ["codec"]
 
 [dependencies.cosmic-settings-upower-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
+path = "../cosmic-settings/subscriptions/upower"
 
 [dependencies.cosmic-settings-daemon-subscription]
-git = "https://github.com/pop-os/cosmic-settings"
+path = "../cosmic-settings/subscriptions/settings-daemon"
 
 [patch.'https://github.com/sory-x/sory-os']
 libcosmic = { path = "../../libcosmic" }
